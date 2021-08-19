@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 
+import colours from "../components/colours";
+
 function SplashScreen(props) {
   return <View style={styles.container}>
      <Image
@@ -13,7 +15,7 @@ function SplashScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fcd95c",
+    backgroundColor: colours.yellow,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
