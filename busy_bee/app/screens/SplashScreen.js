@@ -2,15 +2,13 @@ import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 
 function SplashScreen(props) {
-  return (
-    <View style={styles.container}>
-      <Image
+  return <View style={styles.container}>
+     <Image
         resizeMode="contain"
         style={styles.image}
         source={require("../assets/beeLogo.png")}
       />
-    </View>
-  );
+  </View>;
 }
 
 const styles = StyleSheet.create({
