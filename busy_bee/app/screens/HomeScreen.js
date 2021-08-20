@@ -1,15 +1,11 @@
-import React from 'react';
+import React from "react";
+import { StyleSheet, Image, View } from "react-native";
+import FAB from "../components/FloatingActionButton";
 
 function HomeScreen(props) {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <FAB></FAB>;
 }
 
-const styles = StyleSheet.create({
-    
-})
+const styles = StyleSheet.create({});
 
 export default HomeScreen;
