@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
-import BottomMenu from "../components/BottomMenu";
-import FAB from "../components/FloatingActionButton";
+import { StyleSheet, Image, View, Button } from "react-native";
 
-function HomeScreen(props) {
-  return <BottomMenu/>;
-}
+import BottomMenu from "../components/BottomMenu";
+
+const HomeScreen = (props) => {
+  return <BottomMenu />;
+};
 
 const styles = StyleSheet.create({});
 
