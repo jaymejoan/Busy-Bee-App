@@ -14,7 +14,7 @@ const FloatingActionButton = (props) => {
       name="pluscircleo"
       size={70}
       color={colors.black}
-      onPress={() => navigation.navigate("SplashScreen")}
+      onPress={() => navigation.navigate("NewTaskScreen")}
     />
   );
 };
