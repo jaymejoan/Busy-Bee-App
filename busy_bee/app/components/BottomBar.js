@@ -9,21 +9,19 @@ import OptionsButton from "./OptionsButton";
 
 /** Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419 */
 
-class BottomMenu extends Component {
-  render() {
-    return (
-      <View style={styles.background}>
-        <View style={styles.fab}>
-          <FAB />
-        </View>
-        <View style={styles.bottomContainer}>
-          <MenuBotton />
-          <OptionsButton />
-        </View>
+const BottomMenu = () => {
+  return (
+    <View style={styles.background}>
+      <View style={styles.fab}>
+        <FAB />
       </View>
-    );
-  }
-}
+      <View style={styles.bottomContainer}>
+        <MenuBotton />
+        <OptionsButton />
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   background: {
