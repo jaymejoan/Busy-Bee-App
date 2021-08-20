@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 
-import colors from "./colors";
+import colors from "../config/colors";
 import FAB from "./FloatingActionButton";
 
 /** Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419 */

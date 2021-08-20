@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-import colors from "./colors";
+import colors from "../config/colors";
 
 /** Reference: https://www.youtube.com/watch?v=IEyUouhcuNQ */
 
