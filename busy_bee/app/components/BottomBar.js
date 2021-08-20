@@ -4,6 +4,8 @@ import { Icon } from "react-native-elements";
 
 import colors from "../config/colors";
 import FAB from "./FloatingActionButton";
+import MenuBotton from "./MenuButton";
+import OptionsButton from "./OptionsButton";
 
 /** Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419 */
 
@@ -15,8 +17,8 @@ class BottomMenu extends Component {
           <FAB />
         </View>
         <View style={styles.bottomContainer}>
-          <Icon name="menu" type="material" color="#000" size={35} onPress={() => console.log("clicked menu")}/>
-          <Icon name="search" type="material" color="#000" size={35}/>
+          <MenuBotton />
+          <OptionsButton />
         </View>
       </View>
     );
