@@ -10,60 +10,13 @@ import FAB from "./FloatingActionButton";
 class BottomMenu extends Component {
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          flexDirection: "column",
-          backgroundColor: "#f8f4f4",
-        }}
-      >
-        <View
-          style={{
-            position: "absolute",
-            alignSelf: "center",
-            backgroundColor: "#f8f4f4",
-            width: 70,
-            height: 70,
-            borderRadius: 35,
-            bottom: 25,
-            zIndex: 10,
-          }}
-        >
-          <Icon
-            name="add"
-            type="material"
-            color="#f00"
-            containerStyle={{ alignSelf: "center" }}
-            reverse
-            size={28}
-            onPress={() => {}}
-          />
+      <View style={styles.background}>
+        <View style={styles.fab}>
+          <FAB />
         </View>
-        <View
-          style={{
-            position: "absolute",
-            backgroundColor: "#2196F3",
-            bottom: 0,
-            zIndex: 1,
-            width: "100%",
-            height: 60,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            paddingHorizontal: 15,
-            paddingVertical: 10,
-          }}
-        >
-          <Icon name="menu" type="material" color="#fff" onPress={() => {}} />
-          <View style={{ flexDirection: "row", justifyContent: "center" }}>
-            <Icon
-              name="favorite"
-              type="material"
-              color="#fff"
-              onPress={() => {}}
-              containerStyle={{ marginHorizontal: 16 }}
-            />
-            <Icon name="search" type="material" color="#fff" />
-          </View>
+        <View style={styles.bottomContainer}>
+          <Icon name="menu" type="material" color="#000" size={35} onPress={() => {}} />
+          <Icon name="search" type="material" color="#000" size={35}/>
         </View>
       </View>
     );
@@ -71,10 +24,32 @@ class BottomMenu extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.yellow,
-    flex: 1,
+  background: {
+    backgroundColor: colors.white,
     flexDirection: "column",
+    flex: 1,
+  },
+  bottomContainer: {
+    position: "absolute",
+    backgroundColor: colors.yellow,
+    bottom: 0,
+    zIndex: 1,
+    width: "100%",
+    height: 80,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+  },
+  fab: {
+    position: "absolute",
+    alignSelf: "center",
+    backgroundColor: colors.white,
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    bottom: 45,
+    zIndex: 10,
   },
 });
 

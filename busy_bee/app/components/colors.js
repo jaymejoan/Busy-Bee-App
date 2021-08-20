@@ -3,8 +3,8 @@
  */
 
 export default {
-    yellow: "#fcd95c",
-    black: "#000",
-    white: "#fff"
-  };
-  
+  black: "#000",
+  fabYellow: "#fcd447",
+  white: "#fff",
+  yellow: "#fcd95c",
+};
