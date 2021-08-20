@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 
-import colours from "../components/colours";
+import colours from "../components/colors";
 
 function SplashScreen(props) {
   return <View style={styles.container}>
