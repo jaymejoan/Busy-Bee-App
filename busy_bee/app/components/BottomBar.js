@@ -15,7 +15,7 @@ class BottomMenu extends Component {
           <FAB />
         </View>
         <View style={styles.bottomContainer}>
-          <Icon name="menu" type="material" color="#000" size={35} onPress={() => {}} />
+          <Icon name="menu" type="material" color="#000" size={35} onPress={() => console.log("clicked menu")}/>
           <Icon name="search" type="material" color="#000" size={35}/>
         </View>
       </View>
