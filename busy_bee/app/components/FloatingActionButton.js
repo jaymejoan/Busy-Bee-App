@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   View,
   StyleSheet,
@@ -11,7 +11,7 @@ import colors from "./colors";
 
 /** Reference: https://www.youtube.com/watch?v=IEyUouhcuNQ */
 
-export default class FloatingActionButton extends React.Component {
+class FloatingActionButton extends Component {
   render() {
     return (
       <View style={[styles.container, this.props.style]}>
@@ -54,3 +54,5 @@ const styles = StyleSheet.create({
     backgroundColor: colors.yellow,
   },
 });
+
+export default FloatingActionButton;

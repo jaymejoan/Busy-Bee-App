@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
+import BottomMenu from "../components/BottomMenu";
 import FAB from "../components/FloatingActionButton";
 
 function HomeScreen(props) {
-  return <FAB></FAB>;
+  return <BottomMenu/>;
 }
 
 const styles = StyleSheet.create({});
