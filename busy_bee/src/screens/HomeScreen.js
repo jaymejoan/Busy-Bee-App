@@ -11,6 +11,11 @@ const HomeScreen = (props) => {
   return <BottomMenu />;
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  
+
+
+
+});
 
 export default HomeScreen;
