@@ -1,7 +1,11 @@
+/**
+ * This file contains the code for the Splash screen.
+ */
+
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 
-import colours from "../components/colors";
+import colours from "../config/colors";
 
 function SplashScreen(props) {
   return <View style={styles.container}>
