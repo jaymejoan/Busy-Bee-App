@@ -1,5 +1,5 @@
 /**
- * This file contains all of the colours used throughout the app.
+ * This file contains all the colours used throughout the app.
  */
 
 export default {

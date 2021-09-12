@@ -1,3 +1,7 @@
+/**
+ * This file contains the code for the NewTask screen.
+ */
+
 import React from 'react';
 import { StyleSheet, Image, View, Button, Text } from "react-native";
 

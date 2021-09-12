@@ -1,3 +1,8 @@
+/** 
+ * This file contains the code for the Bottom Menu displayed at the bottom of the app.
+ * Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419 
+ */
+
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
@@ -6,8 +11,6 @@ import colors from "../styles/colors";
 import FAB from "./FloatingActionButton";
 import MenuBotton from "./MenuButton";
 import OptionsButton from "./OptionsButton";
-
-/** Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419 */
 
 const BottomMenu = () => {
   return (

@@ -4,9 +4,9 @@
     "slug": "busy_bee",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/adaptive-icon.png",
+    "icon": "./src/assets/adaptive-icon.png",
     "splash": {
-      "image": "./app/assets/SplashScreen.png",
+      "image": "./src/assets/SplashScreen.png",
       "resizeMode": "contain",
       "backgroundColor": "#fcd95c"
     },
@@ -21,12 +21,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#fcd95c"
       }
     },
     "web": {
-      "favicon": "./app/assets/favicon.png"
+      "favicon": "./src/assets/favicon.png"
     }
   }
 }
