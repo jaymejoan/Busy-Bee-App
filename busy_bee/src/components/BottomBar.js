@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 
-import colors from "../config/colors";
+import colors from "../styles/colors";
 import FAB from "./FloatingActionButton";
 import MenuBotton from "./MenuButton";
 import OptionsButton from "./OptionsButton";

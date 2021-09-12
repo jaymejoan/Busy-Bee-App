@@ -5,8 +5,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as SplashScreenTiming from "expo-splash-screen";
 
-import HomeScreen from "./app/screens/HomeScreen";
-import NewTaskScreen from "./app/screens/NewTaskScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import NewTaskScreen from "./src/screens/NewTaskScreen";
 
 // Displays Splash Screen for 3 seconds
 SplashScreenTiming.preventAutoHideAsync();

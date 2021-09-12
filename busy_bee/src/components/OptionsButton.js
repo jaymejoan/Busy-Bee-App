@@ -1,17 +1,17 @@
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import colors from "../config/colors";
+import colors from "../styles/colors";
 
 /** Reference: https://www.youtube.com/watch?v=IEyUouhcuNQ */
 
-const MenuButton = (props) => {
+const OptionsButton = (props) => {
   const navigation = useNavigation();
 
   return (
-    <Ionicons
-      name="ios-menu-sharp"
+    <Entypo
+      name="dots-three-horizontal"
       size={35}
       color={colors.black}
       onPress={() => navigation.navigate("NewTaskScreen")}
@@ -19,4 +19,4 @@ const MenuButton = (props) => {
   );
 };
 
-export default MenuButton;
+export default OptionsButton;
