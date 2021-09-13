@@ -3,19 +3,23 @@
  */
 
 import React from "react";
-import { StyleSheet, Image, View, Button } from "react-native";
+import { StyleSheet, Image, View, Text } from "react-native";
 
 import colors from "@styles/colors";
 import icons from "@styles/icons";
 
 import BottomMenu from "@components/BottomMenu";
 import Card from "@components/Card.js";
-import { DebugInstructions } from "react-native/Libraries/NewAppScreen";
 
 const HomeScreen = (props) => {
   return (
     <View style={styles.background}>
-      <View style={styles.topView}></View>
+      <View style={styles.topView}>
+        <Image style={styles.image} source={require("../assets/beehive.png")} />
+      </View>
+      <View style={styles.quoteView}>
+        <Text>"Motivational Quote"</Text>
+      </View>
       <View style={styles.cardView}>
         <Card
           title="Top 3 Tasks"
@@ -47,12 +51,12 @@ const HomeScreen = (props) => {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: colors.white,
+    backgroundColor: "#FFF4CA",
+    // backgroundColor: colors.white,
     flex: 1,
   },
-  topView: {
-    backgroundColor: "blue",
-    flex: 0.6,
+  bottomView: {
+    flex: 0.5,
   },
   cardView: {
     backgroundColor: colors.blue,
@@ -61,10 +65,28 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     paddingTop: 25,
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
   },
-  bottomView: {
-    flex: 0.5,
+  image: {
+    width: 180,
+    height: 190,
+    resizeMode: "cover",
+  },
+  quoteView: {
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    flex: 0.1,
+  },
+  topView: {
+    // backgroundColor: "#FFF4CA", // FFF4CA // FDF9DA
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingTop: 10,
+    flex: 0.6,
   },
 });
 
