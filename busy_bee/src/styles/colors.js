@@ -8,5 +8,6 @@ export default {
   fabYellow: "#fcd447",
   yellowBackground: "#FFF4CA",
   yellow: "#FFE172",  // original: #fcd95c potential option: "#FFE172",
-  green: "#00FF00"
+  green: "#00FF00",
+  grey: "#D3D3D3",
 };
