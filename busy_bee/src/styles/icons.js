@@ -11,7 +11,7 @@ export default {
   calendar: {
     // https://icons.expo.fyi/MaterialCommunityIcons/calendar-check
     name: "calendar-check",
-    size: 30,
+    size: 40,
     color: colors.black,
   },
   cancelButton: {
@@ -28,7 +28,7 @@ export default {
   list: {
     // https://icons.expo.fyi/Ionicons/list-outline
     name: "list-outline",
-    size: 30,
+    size: 40,
     color: colors.black,
   },
   menuButton: {
@@ -39,7 +39,7 @@ export default {
   note: {
     // https://icons.expo.fyi/FontAwesome/sticky-note-o
     name: "sticky-note-o",
-    size: 30,
+    size: 40,
     color: colors.black,
   },
   optionsButton: {

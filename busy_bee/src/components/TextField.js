@@ -24,7 +24,7 @@ const TextField = (props) => {
 const styles = StyleSheet.create({
   layout: {
     height: 50,
-    marginTop: 12,
+    // marginTop: 12,
     borderWidth: 1,
     padding: 10,
     borderRadius: 20,

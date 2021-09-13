@@ -46,124 +46,44 @@ const TaskOptions = (props) => {
     <View style={styles.container}>
       <View style={styles.row}>
         <CalendarIcon />
-        <TextField placeholderText="Add due date"/>
+        <View style={styles.spacer} />
+        <TextField placeholderText="Add due date" />
       </View>
       <View style={styles.row}>
         <NoteIcon />
-        <TextField placeholderText="Add details"/>
+        <View style={styles.spacer} />
+        <TextField placeholderText="Add details" />
       </View>
       <View style={styles.row}>
         <ListIcon />
-        <TextField placeholderText="Add to list"/>
+        <View style={styles.spacer} />
+        <TextField placeholderText="Add to list" />
       </View>
     </View>
-
-    //   <View style={styles.layout}>
-    //     <FlatList
-    //       contentContainerStyle={styles.listItem}
-    //       data={[
-    //         { key: <TextField placeholderText="Add due date"/>, icon: bookIcon },
-    //         { key: <TextField placeholderText="Add details"/>, icon: calendarIcon },
-    //         { key: <TextField placeholderText="Add to list"/>, icon: questionIcon },
-    //       ]}
-    //       renderItem={({ item }) => {
-    //         return (
-    //           <TouchableHighlight onPress={() => console.log("clicked button")}>
-    //             <Text>
-    //               {item.icon}
-    //               {item.key}
-    //             </Text>
-    //           </TouchableHighlight>
-    //         );
-    //       }}
-    //     />
-    //   </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "tomato",
+    // backgroundColor: "tomato",
     flexDirection: "column",
-    justifyContent: "space-evenly",
+    justifyContent: "flex-start",
+    alignItems: "center",
     width: "100%",
+    paddingTop: 20
   },
   row: {
     backgroundColor: colors.white,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     alignItems: "center",
+    padding: 10,
+    width: "80%",
   },
-
-  // layout: {
-  //   // flex: 4,
-  //   backgroundColor: "orange",
-  //   padding: 20,
-  //   width: "100%",
-  //   height: "100%",
-  //   justifyContent: "center",
-  //   alignItems: "center"
-  // },
-  // listItem: {
-  //   backgroundColor: colors.white,
-  //   justifyContent: "space-evenly",
-  //   alignItems: "center",
-  //   paddingHorizontal: 100
-  // },
-  // text: {
-  //   fontSize: 20,
-  // },
+  spacer: {
+    flex: 0.15,
+  },
 });
 
 export default TaskOptions;
-
-// import SocialIcon from 'react-native-vector-icons/AntDesign';
-// import BookingIcon from 'react-native-vector-icons/FontAwesome';
-// import FeatherIcons from 'react-native-vector-icons/Feather';
-
-// export const bookIcon = (<BookingIcon name="pencil-square-o" size={40} color="purple" />);
-// export const calendarIcon = (<SocialIcon name="calendar" size={40} color="purple" />);
-// export const questionIcon = (<SocialIcon name="questioncircleo" size={40} color="purple" />);
-// export const externalLinkIcon = (<FeatherIcons name="external-link" size={40} color="purple" />);
-
-// class AboutMe extends Component {
-//   static navigationOptions = {
-//     title: "About Me",
-//   };
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <View style={styles.topBox}>
-//           <View style={styles.circleOuter} />
-//           <View style={styles.circle} />
-//         </View>
-//         <View style={styles.middleBox}></View>
-//         <View style={styles.bottomBox}>
-//           <FlatList
-//             contentContainerStyle={styles.listItem}
-//             data={[
-//               { key: "Book a free appointment", page: "Book", icon: bookIcon },
-//               { key: "Availability", page: "Availability", icon: calendarIcon },
-//               { key: "FAQ", page: "Faq", icon: questionIcon },
-//               { key: "Useful Links", page: "Links", icon: externalLinkIcon },
-//             ]}
-//             onPress={() => this.props.navigation.navigate("Book")}
-//             renderItem={({ item }) => {
-//               return (
-//                 <TouchableHighlight
-//                   onPress={() => this.props.navigation.navigate(`${item.page}`)}
-//                 >
-//                   <Text>
-//                     {item.icon}
-//                     {item.key}
-//                   </Text>
-//                 </TouchableHighlight>
-//               );
-//             }}
-//           />
-//         </View>
-//       </View>
-//     );
-//   }
-// }

@@ -30,6 +30,7 @@ const NewTaskScreen = () => {
       </View>
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
+        <View style={styles.spacer}/>
         <TextField placeholderText="Add task name" />
       </View>
       <View style={styles.textFieldsView}>
@@ -51,6 +52,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20,
   },
+  spacer: {
+      flex: 0.3,
+  },
   taskNameView: {
     // backgroundColor: colors.yellow,
     padding: 20,
@@ -58,7 +62,8 @@ const styles = StyleSheet.create({
     flex: 0.4,
   },
   textFieldsView: {
-    backgroundColor: colors.grey,
+    // backgroundColor: colors.grey,
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     flex: 2,
