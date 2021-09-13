@@ -8,7 +8,6 @@ import React from "react";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import colors from "@styles/colors";
 import icons from "@styles/icons";
 
 const OptionsButton = (props) => {
@@ -16,9 +15,9 @@ const OptionsButton = (props) => {
 
   return (
     <Entypo
-      name={icons.optionsButton}
-      size={35}
-      color={colors.black}
+      name={icons.optionsButton.name}
+      size={icons.optionsButton.size}
+      color={icons.optionsButton.color}
       onPress={() => navigation.navigate("NewTaskScreen")}
     />
   );

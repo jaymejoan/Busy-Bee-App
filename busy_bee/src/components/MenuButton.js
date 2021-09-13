@@ -9,7 +9,6 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import colors from "@styles/colors";
 import icons from "@styles/icons";
 
 const MenuButton = (props) => {
@@ -17,9 +16,9 @@ const MenuButton = (props) => {
 
   return (
     <Ionicons
-      name={icons.menuButton}
-      size={35}
-      color={colors.black}
+      name={icons.menuButton.name}
+      size={icons.menuButton.size}
+      color={icons.menuButton.color}
       onPress={() => navigation.navigate("NewTaskScreen")}
     />
   );

@@ -4,14 +4,23 @@
 
 import React from "react";
 import { StyleSheet, Image, View, Button, Text } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 
 import colors from "@styles/colors";
+import text from "@styles/text";
+import icons from "@styles/icons";
 
 const NewTaskScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
-        <Text>New Task Screen!</Text>
+        <Text style={text.title}>New Task</Text>
+        <Entypo
+          name={icons.cancelButton.name}
+          size={icons.cancelButton.size}
+          color={icons.cancelButton.color}
+          onPress={() => navigation.navigate("NewTaskScreen")}
+        />
       </View>
       <View style={styles.middleView}></View>
       <View style={styles.bottomView}></View>
@@ -22,7 +31,7 @@ const NewTaskScreen = () => {
 const styles = StyleSheet.create({
   background: {
     backgroundColor: colors.yellowBackground,
-    flex: 1
+    flex: 1,
   },
   bottomView: {
     backgroundColor: "gold",
@@ -30,11 +39,13 @@ const styles = StyleSheet.create({
   },
   middleView: {
     backgroundColor: "blue",
-    flex: 1,
+    flex: 2,
   },
   topView: {
     backgroundColor: "tomato",
-    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 0.5,
   },
 });
 

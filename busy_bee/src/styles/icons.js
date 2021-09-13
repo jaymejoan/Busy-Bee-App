@@ -3,12 +3,31 @@
  * Reference: https://icons.expo.fyi/
  */
 
+import colors from "@styles/colors";
+
 export default {
-  menuButton: "ios-menu-sharp",
-  optionsButton: "dots-three-horizontal",
-  fab: "pluscircleo",
+  menuButton: {
+    name: "ios-menu-sharp",
+    size: 35,
+    color: colors.black,
+  },
+  optionsButton: {
+    name: "dots-three-horizontal",
+    size: 35,
+    color: colors.black,
+  },
+  fab: {
+    name: "pluscircleo",
+    size: 70,
+    color: colors.black,
+  },
   topTasks: "star-outline",
   allList: "list-outline",
   createList: "create-outline",
-  allTasks: "grid-outline"
+  allTasks: "grid-outline",
+  cancelButton: {
+    name: "cross",
+    size: 25,
+    color: colors.black,
+  },
 };
