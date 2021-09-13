@@ -15,7 +15,7 @@ const TextField = (props) => {
         style={styles.layout}
         onChangeText={onChangeText}
         value={text}
-        placeholder={props.defaultText}
+        placeholder={props.placeholderText}
       />
     </View>
   );

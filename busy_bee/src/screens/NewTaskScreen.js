@@ -10,7 +10,6 @@ import text from "@styles/text";
 
 import CancelButton from "@components/CancelButton";
 import TextField from "@components/TextField";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const NewTaskScreen = () => {
   return (
@@ -21,15 +20,11 @@ const NewTaskScreen = () => {
           <CancelButton />
         </View>
       </View>
-      <View style={styles.middleView}>
+      <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
-        <TextField
-          defaultText="Enter task name"
-          textColor={colors.grey}
-          textSize="15"
-        ></TextField>
+        <TextField placeholderText="Enter task name" />
       </View>
-      <View style={styles.bottomView}></View>
+      <View style={styles.textFieldsView}></View>
     </View>
   );
 };
@@ -39,18 +34,18 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     flex: 1,
   },
-  bottomView: {
-    backgroundColor: "gold",
-    flex: 1,
-  },
   cancelView: {
     position: "absolute",
     right: 20,
   },
-  middleView: {
+  taskNameView: {
     // backgroundColor: colors.yellow,
     padding: 20,
     flexDirection: "column",
+    flex: 0.4,
+  },
+  textFieldsView: {
+    backgroundColor: colors.grey,
     flex: 2,
   },
   topView: {
