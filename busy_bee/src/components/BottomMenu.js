@@ -28,7 +28,6 @@ const BottomMenu = () => {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: colors.white,
     flexDirection: "column",
     flex: 1,
   },

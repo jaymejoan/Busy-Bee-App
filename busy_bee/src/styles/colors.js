@@ -7,4 +7,5 @@ export default {
   fabYellow: "#fcd447",
   white: "#fff",
   yellow: "#fcd95c",
+  green: "#00FF00"
 };
