@@ -19,7 +19,9 @@ const NewTaskScreen = () => {
           <CancelButton />
         </View>
       </View>
-      <View style={styles.middleView}></View>
+      <View style={styles.middleView}>
+          <Text style={text.normalText}>What would you like to achieve?</Text>
+      </View>
       <View style={styles.bottomView}></View>
     </View>
   );
@@ -27,7 +29,7 @@ const NewTaskScreen = () => {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: colors.yellowBackground,
+    backgroundColor: colors.white,
     flex: 1,
   },
   bottomView: {
@@ -40,10 +42,12 @@ const styles = StyleSheet.create({
   },
   middleView: {
     backgroundColor: colors.white,
+    padding: 20,
+    flexDirection: "column",
     flex: 2,
   },
   topView: {
-    backgroundColor: "tomato",
+    // backgroundColor: "tomato",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
