@@ -14,6 +14,8 @@ import AppLoading from "expo-app-loading";
 import { useFonts } from "@expo-google-fonts/montserrat";
 import { useNavigation } from "@react-navigation/native";
 
+import colors from "@styles/colors";
+
 function Card(props) {
   let [fontsLoaded] = useFonts({
     Montserrat: require("../assets/fonts/Montserrat/Montserrat-Bold.ttf"),
@@ -25,21 +27,30 @@ function Card(props) {
     return <AppLoading />;
   } else {
     return (
-      <CardViewWithIcon
-        // androidIcon={"md-bonfire"}
-        // iosIcon={"ios-bonfire-outline"}
-        // width={20}
-        // iconType="Entypo"
-        // iconBgColor={"#b13757"}
-        // iconColor={"#FFFFFF"}
+      <CardViewWithIcon style={styles.layout}
+        androidIcon={props.iconName}
+        iosIcon={props.iconName}
+        iconBgColor={colors.black}
+        iconColor={colors.yellow}
         title={props.title}
         titleFontFamily={"Montserrat"}
+        titleTextAlign={"left"}
         titleFontSize={20}
         borderRadius={50}
+        withBorder={"true"}
         onPress={() => navigation.navigate(props.nextPage)}
       />
     );
   }
 }
+
+const styles = StyleSheet.create({
+  layout: {
+    width: 150,
+    height: 50,
+    borderWidth:2,
+    borderColor: colors.black,
+  }
+})
 
 export default Card;
