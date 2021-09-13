@@ -14,10 +14,10 @@ const HomeScreen = (props) => {
     <View style={styles.background}>
       <View style={styles.topView}></View>
       <View style={styles.cardView}>
-        <Card title="Top 3 Tasks"></Card>
-        <Card title="All Lists"></Card>
-        <Card title="Create List"></Card>
-        <Card title="Top 3 Tasks"></Card>
+        <Card title="Top 3 Tasks" nextPage="NewTaskScreen"/>
+        <Card title="All Lists" nextPage="NewTaskScreen"/>
+        <Card title="Create List" nextPage="NewTaskScreen"/>
+        <Card title="Top 3 Tasks" nextPage="NewTaskScreen"/>
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />

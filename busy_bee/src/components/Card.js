@@ -12,19 +12,22 @@ import { StyleSheet, Image, View, Button } from "react-native";
 import { CardViewWithIcon } from "react-native-simple-card-view";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "@expo-google-fonts/montserrat";
+import { useNavigation } from "@react-navigation/native";
 
 function Card(props) {
   let [fontsLoaded] = useFonts({
     Montserrat: require("../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf"),
   });
 
+  const navigation = useNavigation();
+
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
     return (
       <CardViewWithIcon
-        // androidIcon={"md-bonfire"}
-        // iosIcon={"ios-bonfire-outline"}
+        androidIcon={"md-bonfire"}
+        iosIcon={"ios-bonfire-outline"}
         iconType="Entypo"
         iconBgColor={"#b13757"}
         iconColor={"#FFFFFF"}
@@ -32,7 +35,7 @@ function Card(props) {
         titleFontFamily={"Montserrat"}
         titleFontSize={20}
         borderRadius={50}
-        onPress={() => {}}
+        onPress={() => navigation.navigate(props.nextPage)}
       />
     );
   }
