@@ -9,13 +9,14 @@ import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
+import icons from "@styles/icons";
 
 const FloatingActionButton = (props) => {
   const navigation = useNavigation();
 
   return (
     <AntDesign
-      name="pluscircleo"
+      name={icons.fab}
       size={70}
       color={colors.black}
       onPress={() => navigation.navigate("NewTaskScreen")}
