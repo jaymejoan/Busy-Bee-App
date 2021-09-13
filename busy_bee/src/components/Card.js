@@ -5,6 +5,7 @@
  * https://github.com/talut/react-native-simple-card-view/blob/master/docs/en/cardviewwithicon.md
  * https://docs.expo.dev/guides/using-custom-fonts/
  * https://fonts.google.com/specimen/Montserrat
+ * https://talut.medium.com/react-native-simple-card-view-8a39ac83b1e0
  */
 
 import React from "react";
@@ -23,11 +24,25 @@ function Card(props) {
 
   const navigation = useNavigation();
 
+  const miniCardStyle = {
+    shadowColor: "#000000",
+    shadowOffsetWidth: 2,
+    shadowOffsetHeight: 2,
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    bgColor: "#ffffff",
+    padding: 5,
+    margin: 5,
+    borderRadius: 3,
+    elevation: 3,
+    width: 150,
+  };
+
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
     return (
-      <CardViewWithIcon style={styles.layout}
+      <CardViewWithIcon style={ miniCardStyle }
         androidIcon={props.iconName}
         iosIcon={props.iconName}
         iconBgColor={colors.black}
@@ -37,20 +52,10 @@ function Card(props) {
         titleTextAlign={"left"}
         titleFontSize={20}
         borderRadius={50}
-        withBorder={"true"}
         onPress={() => navigation.navigate(props.nextPage)}
       />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  layout: {
-    width: 150,
-    height: 50,
-    borderWidth:2,
-    borderColor: colors.black,
-  }
-})
 
 export default Card;

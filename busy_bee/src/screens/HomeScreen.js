@@ -17,10 +17,26 @@ const HomeScreen = (props) => {
     <View style={styles.background}>
       <View style={styles.topView}></View>
       <View style={styles.cardView}>
-        <Card title="Top 3 Tasks" nextPage="NewTaskScreen" iconName={icons.topTasks}/>
-        <Card title="All Lists" nextPage="NewTaskScreen" iconName={icons.allList}/>
-        <Card title="Create List" nextPage="NewTaskScreen" iconName={icons.createList}/>
-        <Card title="All Tasks" nextPage="NewTaskScreen" iconName={icons.allTasks}/>
+        <Card
+          title="Top 3 Tasks"
+          nextPage="NewTaskScreen"
+          iconName={icons.topTasks}
+        />
+        <Card
+          title="All Lists"
+          nextPage="NewTaskScreen"
+          iconName={icons.allList}
+        />
+        <Card
+          title="Create List"
+          nextPage="NewTaskScreen"
+          iconName={icons.createList}
+        />
+        <Card
+          title="All Tasks"
+          nextPage="NewTaskScreen"
+          iconName={icons.allTasks}
+        />
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
@@ -39,8 +55,13 @@ const styles = StyleSheet.create({
     flex: 0.5,
   },
   cardView: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.blue,
     flex: 2,
+    alignItems: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingTop: 25,
+    justifyContent: "space-evenly"
   },
   bottomView: {
     backgroundColor: "tomato",
