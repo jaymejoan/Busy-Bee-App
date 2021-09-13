@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import colors from "../styles/colors";
+import colors from "@styles/colors";
 
 const FloatingActionButton = (props) => {
   const navigation = useNavigation();

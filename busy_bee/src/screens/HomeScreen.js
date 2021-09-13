@@ -5,7 +5,7 @@
 import React from "react";
 import { StyleSheet, Image, View, Button } from "react-native";
 
-import BottomMenu from "../components/BottomMenu";
+import BottomMenu from "@components/BottomMenu";
 
 const HomeScreen = (props) => {
   return <BottomMenu />;

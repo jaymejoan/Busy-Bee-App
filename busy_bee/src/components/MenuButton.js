@@ -9,7 +9,7 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import colors from "../styles/colors";
+import colors from "@styles/colors";
 
 const MenuButton = (props) => {
   const navigation = useNavigation();
