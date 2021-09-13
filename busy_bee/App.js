@@ -18,22 +18,33 @@ export default function App() {
   // loads all the fonts required in the app
   const customFonts = {
     Montserrat: require("@assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+    MontserratItalic: require("@assets/fonts/Montserrat/Montserrat-Italic.ttf"),
   };
 
   const [isLoaded] = useFonts(customFonts);
 
   if (!isLoaded) {
-      return <AppLoading />;
+    return <AppLoading />;
+  } else {
+    const Stack = createStackNavigator();
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="NewTaskScreen" component={NewTaskScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
   }
 
   // implements navigation throughout the app
-  const Stack = createStackNavigator();
-  return (
-      <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="NewTaskScreen" component={NewTaskScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  // const Stack = createStackNavigator();
+  // return (
+  //     <NavigationContainer>
+  //     <Stack.Navigator initialRouteName="Home">
+  //       <Stack.Screen name="Home" component={HomeScreen} />
+  //       <Stack.Screen name="NewTaskScreen" component={NewTaskScreen} />
+  //     </Stack.Navigator>
+  //   </NavigationContainer>
+  // );
 }

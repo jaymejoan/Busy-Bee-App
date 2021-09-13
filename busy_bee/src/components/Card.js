@@ -19,9 +19,9 @@ import text from "@styles/text";
 // import font from "@styles/font.js";
 
 function Card(props) {
-  let [fontsLoaded] = useFonts({
-    Montserrat: require("../assets/fonts/Montserrat/Montserrat-Bold.ttf"),
-  });
+  // let [fontsLoaded] = useFonts({
+  //   Montserrat: require("../assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+  // });
 
   const navigation = useNavigation();
 
@@ -39,26 +39,43 @@ function Card(props) {
     width: 160,
   };
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  } else {
-    return (
-      <CardViewWithIcon
-        style={miniCardStyle}
-        androidIcon={props.iconName}
-        iosIcon={props.iconName}
-        iconBgColor={colors.white}
-        iconColor={colors.yellow}
-        title={props.title}
-        titleFontFamily={"Montserrat"}
-        // titleFontFamily={font.Montserrat}
-        titleTextAlign={"left"}
-        titleFontSize={text.cardTitle}
-        borderRadius={50}
-        onPress={() => navigation.navigate(props.nextPage)}
-      />
-    );
-  }
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // } else {
+  //   return (
+  //     <CardViewWithIcon
+  //       style={miniCardStyle}
+  //       androidIcon={props.iconName}
+  //       iosIcon={props.iconName}
+  //       iconBgColor={colors.white}
+  //       iconColor={colors.yellow}
+  //       title={props.title}
+  //       // titleFontFamily={"Montserrat"}
+  //       titleFontFamily={text.cardTitle.fontFamily}
+  //       titleTextAlign={"left"}
+  //       titleFontSize={text.cardTitle.fontSize}
+  //       borderRadius={50}
+  //       onPress={() => navigation.navigate(props.nextPage)}
+  //     />
+  //   );
+  // }
+
+  return (
+    <CardViewWithIcon
+      style={miniCardStyle}
+      androidIcon={props.iconName}
+      iosIcon={props.iconName}
+      iconBgColor={colors.white}
+      iconColor={colors.yellow}
+      title={props.title}
+      // titleFontFamily={"Montserrat"}
+      titleFontFamily={text.cardTitle.fontFamily}
+      titleTextAlign={"left"}
+      titleFontSize={text.cardTitle.fontSize}
+      borderRadius={50}
+      onPress={() => navigation.navigate(props.nextPage)}
+    />
+  );
 }
 
 export default Card;
