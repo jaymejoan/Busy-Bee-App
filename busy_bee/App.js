@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as SplashScreenTiming from "expo-splash-screen";
+import AppLoading from "expo-app-loading";
+import { useFonts } from "@expo-google-fonts/montserrat";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import NewTaskScreen from "./src/screens/NewTaskScreen";
@@ -13,6 +15,18 @@ SplashScreenTiming.preventAutoHideAsync();
 setTimeout(SplashScreenTiming.hideAsync, 3000);
 
 export default function App() {
+  // loads all the fonts required in the app
+  const customFonts = {
+    Montserrat: require("@assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+  };
+
+  const [isLoaded] = useFonts(customFonts);
+
+  if (!isLoaded) {
+      return <AppLoading />;
+  }
+
+  // implements navigation throughout the app
   const Stack = createStackNavigator();
   return (
       <NavigationContainer>

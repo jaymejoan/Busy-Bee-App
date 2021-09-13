@@ -9,13 +9,13 @@
  */
 
 import React from "react";
-import { StyleSheet, Image, View, Button } from "react-native";
 import { CardViewWithIcon } from "react-native-simple-card-view";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "@expo-google-fonts/montserrat";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
+import text from "@styles/text";
 // import font from "@styles/font.js";
 
 function Card(props) {
@@ -53,7 +53,7 @@ function Card(props) {
         titleFontFamily={"Montserrat"}
         // titleFontFamily={font.Montserrat}
         titleTextAlign={"left"}
-        titleFontSize={20}
+        titleFontSize={text.cardTitle}
         borderRadius={50}
         onPress={() => navigation.navigate(props.nextPage)}
       />
