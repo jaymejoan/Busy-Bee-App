@@ -19,7 +19,7 @@ const MenuButton = (props) => {
       name={icons.menuButton.name}
       size={icons.menuButton.size}
       color={icons.menuButton.color}
-      onPress={() => navigation.navigate("NewTaskScreen")}
+      onPress={() => navigation.navigate("New Task Screen")}
     />
   );
 };

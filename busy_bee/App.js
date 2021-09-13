@@ -34,7 +34,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="NewTaskScreen" component={NewTaskScreen} />
+          <Stack.Screen name="New Task Screen" component={NewTaskScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );

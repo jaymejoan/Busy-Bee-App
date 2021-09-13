@@ -1,7 +1,7 @@
-/**
+/** 
  * This file contains the code for the Floating Action Button (FAB) located in the centre of the Bottom Menu.
  * The FAB is used to add a new task.
- * Reference: https://www.youtube.com/watch?v=IEyUouhcuNQ
+ * Reference: https://www.youtube.com/watch?v=IEyUouhcuNQ 
  */
 
 import React, { Component } from "react";
@@ -18,7 +18,7 @@ const FloatingActionButton = (props) => {
       name={icons.fab.name}
       size={icons.fab.size}
       color={icons.fab.color}
-      onPress={() => navigation.navigate("NewTaskScreen")}
+      onPress={() => navigation.navigate("New Task Screen")}
     />
   );
 };

@@ -18,7 +18,7 @@ const OptionsButton = (props) => {
       name={icons.optionsButton.name}
       size={icons.optionsButton.size}
       color={icons.optionsButton.color}
-      onPress={() => navigation.navigate("NewTaskScreen")}
+      onPress={() => navigation.navigate("New Task Screen")}
     />
   );
 };
