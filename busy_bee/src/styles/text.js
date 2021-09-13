@@ -5,16 +5,19 @@
 
 export default {
   cardTitle: {
+    fontFamily: "MontserratBold",
     fontSize: 20,
-    fontFamily: "Montserrat",
   },
-  normalText: 15,
+  normalText: {
+    fontFamily: "Montserrat",
+    fontSize: 15,
+  },
   quote: {
-      fontSize: 25,
-      fontFamily: "MontserratItalic"
+    fontFamily: "MontserratItalic",
+    fontSize: 25,
   },
   title: {
-      fontSize: 20,
-      fontFamily: "MontserratExtraBold"
-  }
+    fontFamily: "MontserratExtraBold",
+    fontSize: 25,
+  },
 };

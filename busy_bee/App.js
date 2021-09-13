@@ -17,7 +17,8 @@ setTimeout(SplashScreenTiming.hideAsync, 3000);
 export default function App() {
   // loads all the required fonts
   const customFonts = {
-    Montserrat: require("@assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+    Montserrat: require("@assets/fonts/Montserrat/Montserrat-Regular.ttf"),
+    MontserratBold: require("@assets/fonts/Montserrat/Montserrat-Bold.ttf"),
     MontserratItalic: require("@assets/fonts/Montserrat/Montserrat-Italic.ttf"),
     MontserratExtraBold: require("@assets/fonts/Montserrat/Montserrat-ExtraBold.ttf")
   };
