@@ -11,7 +11,11 @@ import BottomMenu from "@components/BottomMenu";
 const HomeScreen = (props) => {
   return (
     <View style={styles.background}>
-      <BottomMenu />
+      <View style={styles.topView}></View>
+      <View style={styles.cardView}></View>
+      <View style={styles.bottomView}>
+        <BottomMenu />
+      </View>
     </View>
   );
 };
@@ -19,7 +23,19 @@ const HomeScreen = (props) => {
 const styles = StyleSheet.create({
   background: {
     backgroundColor: colors.white,
-    flex: 1
+    flex: 1,
+  },
+  topView: {
+    backgroundColor: colors.green,
+    flex: 0.5,
+  },
+  cardView: {
+    backgroundColor: colors.white,
+    flex: 2,
+  },
+  bottomView: {
+    backgroundColor: "tomato",
+    flex: 0.4,
   },
 });
 
