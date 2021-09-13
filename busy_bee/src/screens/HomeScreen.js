@@ -7,12 +7,15 @@ import { StyleSheet, Image, View, Button } from "react-native";
 
 import colors from "@styles/colors";
 import BottomMenu from "@components/BottomMenu";
+import Card from "@components/Card.js";
 
 const HomeScreen = (props) => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}></View>
-      <View style={styles.cardView}></View>
+      <View style={styles.cardView}>
+        <Card title="Top 3 Tasks"></Card>
+      </View>
       <View style={styles.bottomView}>
         <BottomMenu />
       </View>
