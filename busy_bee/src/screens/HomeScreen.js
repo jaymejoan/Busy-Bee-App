@@ -15,6 +15,9 @@ const HomeScreen = (props) => {
       <View style={styles.topView}></View>
       <View style={styles.cardView}>
         <Card title="Top 3 Tasks"></Card>
+        <Card title="All Lists"></Card>
+        <Card title="Create List"></Card>
+        <Card title="Top 3 Tasks"></Card>
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
