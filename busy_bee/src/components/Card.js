@@ -19,12 +19,12 @@ function Card(props) {
   const navigation = useNavigation();
 
   const miniCardStyle = {
-    shadowColor: "#000000",
+    shadowColor: colors.black,
     shadowOffsetWidth: 5,
     shadowOffsetHeight: 5,
     shadowOpacity: 0.1,
     shadowRadius: 10,
-    bgColor: "#ffffff",
+    bgColor: colors.white,
     padding: 5,
     margin: 10,
     borderRadius: 15,
