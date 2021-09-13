@@ -15,10 +15,11 @@ SplashScreenTiming.preventAutoHideAsync();
 setTimeout(SplashScreenTiming.hideAsync, 3000);
 
 export default function App() {
-  // loads all the fonts required in the app
+  // loads all the required fonts
   const customFonts = {
     Montserrat: require("@assets/fonts/Montserrat/Montserrat-Bold.ttf"),
     MontserratItalic: require("@assets/fonts/Montserrat/Montserrat-Italic.ttf"),
+    MontserratExtraBold: require("@assets/fonts/Montserrat/Montserrat-ExtraBold.ttf")
   };
 
   const [isLoaded] = useFonts(customFonts);
@@ -26,6 +27,7 @@ export default function App() {
   if (!isLoaded) {
     return <AppLoading />;
   } else {
+    // implements navigation throughout the app
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
@@ -36,15 +38,4 @@ export default function App() {
       </NavigationContainer>
     );
   }
-
-  // implements navigation throughout the app
-  // const Stack = createStackNavigator();
-  // return (
-  //     <NavigationContainer>
-  //     <Stack.Navigator initialRouteName="Home">
-  //       <Stack.Screen name="Home" component={HomeScreen} />
-  //       <Stack.Screen name="NewTaskScreen" component={NewTaskScreen} />
-  //     </Stack.Navigator>
-  //   </NavigationContainer>
-  // );
 }
