@@ -15,7 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-function Card(props) {
+const Card = (props) => {
   const navigation = useNavigation();
 
   const miniCardStyle = {

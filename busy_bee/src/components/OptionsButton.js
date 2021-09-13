@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
 
-const OptionsButton = (props) => {
+const OptionsButton = () => {
   const navigation = useNavigation();
 
   return (

@@ -23,7 +23,7 @@ import CalendarIcon from "@components/CalendarIcon";
 import NoteIcon from "@components/NoteIcon";
 import ListIcon from "@components/ListIcon";
 
-const TaskOptions = (props) => {
+const TaskOptions = () => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>

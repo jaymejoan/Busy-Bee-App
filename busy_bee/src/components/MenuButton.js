@@ -11,7 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
 
-const MenuButton = (props) => {
+const MenuButton = () => {
   const navigation = useNavigation();
 
   return (

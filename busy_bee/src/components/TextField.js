@@ -6,7 +6,7 @@ import React from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 import { colors } from "react-native-elements";
 
-const TextField = (props) => {
+const TextField = () => {
   const [text, onChangeText] = React.useState(null);
 
   return (

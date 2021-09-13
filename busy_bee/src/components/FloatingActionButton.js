@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
 
-const FloatingActionButton = (props) => {
+const FloatingActionButton = () => {
   const navigation = useNavigation();
 
   return (
