@@ -23,12 +23,11 @@ const TextField = (props) => {
 
 const styles = StyleSheet.create({
   layout: {
+    backgroundColor: colors.white,
     height: 50,
-    // marginTop: 12,
     borderWidth: 1,
     padding: 10,
     borderRadius: 20,
-    // width: "100%",
     fontSize: 20,
     fontFamily: "Montserrat",
   },

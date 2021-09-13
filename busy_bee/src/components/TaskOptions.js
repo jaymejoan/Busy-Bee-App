@@ -16,32 +16,14 @@ import {
   Text,
 } from "react-native";
 
-import SocialIcon from "react-native-vector-icons/AntDesign";
-import BookingIcon from "react-native-vector-icons/FontAwesome";
-import FeatherIcons from "react-native-vector-icons/Feather";
-
-export const bookIcon = (
-  <BookingIcon name="pencil-square-o" size={40} color="purple" />
-);
-export const calendarIcon = (
-  <SocialIcon name="calendar" size={40} color="purple" />
-);
-export const questionIcon = (
-  <SocialIcon name="questioncircleo" size={40} color="purple" />
-);
-export const externalLinkIcon = (
-  <FeatherIcons name="external-link" size={40} color="purple" />
-);
+import colors from "@styles/colors";
 
 import TextField from "@components/TextField";
-import { colors } from "react-native-elements";
 import CalendarIcon from "@components/CalendarIcon";
 import NoteIcon from "@components/NoteIcon";
 import ListIcon from "@components/ListIcon";
 
 const TaskOptions = (props) => {
-  //   const [text, onChangeText] = React.useState(null);
-
   return (
     <View style={styles.container}>
       <View style={styles.row}>
@@ -53,6 +35,7 @@ const TaskOptions = (props) => {
           <TextField placeholderText="Add due date" />
         </View>
       </View>
+      <View style={styles.colSpacer}></View>
       <View style={styles.row}>
         <View style={styles.icon}>
           <NoteIcon />
@@ -62,6 +45,7 @@ const TaskOptions = (props) => {
           <TextField placeholderText="Add details" />
         </View>
       </View>
+      <View style={styles.colSpacer}></View>
       <View style={styles.row}>
         <View style={styles.icon}>
           <ListIcon />
@@ -76,14 +60,20 @@ const TaskOptions = (props) => {
 };
 
 const styles = StyleSheet.create({
+  colSpacer: {
+    flex: 0.1,
+  },
   container: {
     flex: 1,
-    // backgroundColor: "tomato",
+    backgroundColor: colors.white,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    width: "100%",
+    width: "90%",
+    height: "10%",
     paddingTop: 20,
+    borderRadius: 20,
+    borderWidth: 1,
   },
   field: {
     width: "80%",
@@ -93,7 +83,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   row: {
-    backgroundColor: colors.white,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

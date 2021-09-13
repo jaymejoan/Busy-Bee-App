@@ -1,6 +1,6 @@
-/** 
+/**
  * This file contains the code for the Bottom Menu displayed at the bottom of the app.
- * Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419 
+ * Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419
  */
 
 import React, { Component } from "react";
