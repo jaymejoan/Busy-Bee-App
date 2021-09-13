@@ -36,7 +36,7 @@ export default {
     size: 35,
     color: colors.black,
   },
-  notepad: {
+  note: {
     // https://icons.expo.fyi/FontAwesome/sticky-note-o
     name: "sticky-note-o",
     size: 30,
