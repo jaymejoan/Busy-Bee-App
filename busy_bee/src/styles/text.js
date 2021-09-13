@@ -9,7 +9,10 @@ export default {
     fontFamily: "Montserrat",
   },
   normalText: 15,
-  quoteText: 25,
+  quote: {
+      fontSize: 25,
+      fontFamily: "MontserratItalic"
+  },
   title: {
       fontSize: 20,
       fontFamily: "MontserratExtraBold"
