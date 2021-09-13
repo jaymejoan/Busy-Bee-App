@@ -19,7 +19,7 @@ const HomeScreen = (props) => {
         <Image style={styles.image} source={require("../assets/beehive.png")} />
       </View>
       <View style={styles.quoteView}>
-        <Text style={styles.quoteText}>"Motivational Quote"</Text>
+        <Text style={text.quote}>"Motivational Quote"</Text>
       </View>
       <View style={styles.cardView}>
         <Card
@@ -76,10 +76,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     flex: 0.1,
-  },
-  quoteText: {
-    fontSize: text.quote.fontSize,
-    fontFamily: text.quote.fontFamily,
   },
   topView: {
     justifyContent: "center",
