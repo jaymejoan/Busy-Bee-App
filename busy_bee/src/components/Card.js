@@ -26,26 +26,27 @@ function Card(props) {
 
   const miniCardStyle = {
     shadowColor: "#000000",
-    shadowOffsetWidth: 2,
-    shadowOffsetHeight: 2,
+    shadowOffsetWidth: 5,
+    shadowOffsetHeight: 5,
     shadowOpacity: 0.1,
-    shadowRadius: 5,
+    shadowRadius: 10,
     bgColor: "#ffffff",
     padding: 5,
-    margin: 5,
-    borderRadius: 3,
-    elevation: 3,
-    width: 150,
+    margin: 10,
+    borderRadius: 15,
+    elevation: 5,
+    width: 160,
   };
 
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
     return (
-      <CardViewWithIcon style={ miniCardStyle }
+      <CardViewWithIcon
+        style={miniCardStyle}
         androidIcon={props.iconName}
         iosIcon={props.iconName}
-        iconBgColor={colors.black}
+        iconBgColor={colors.white}
         iconColor={colors.yellow}
         title={props.title}
         titleFontFamily={"Montserrat"}

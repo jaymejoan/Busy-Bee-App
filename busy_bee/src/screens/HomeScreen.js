@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
   },
   topView: {
     backgroundColor: "blue",
-    flex: 0.5,
+    flex: 0.6,
   },
   cardView: {
     backgroundColor: colors.blue,
-    flex: 2,
+    flex: 1,
     alignItems: "center",
     flexDirection: "row",
     flexWrap: "wrap",
@@ -64,8 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly"
   },
   bottomView: {
-    backgroundColor: "tomato",
-    flex: 0.4,
+    flex: 0.5,
   },
 });
 
