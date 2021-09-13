@@ -27,7 +27,7 @@ export default {
   allTasks: "grid-outline",
   cancelButton: {
     name: "cross",
-    size: 25,
+    size: 30,
     color: colors.black,
   },
 };
