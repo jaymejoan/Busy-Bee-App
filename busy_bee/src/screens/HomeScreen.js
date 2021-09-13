@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
   cardView: {
     backgroundColor: colors.blue,
     flex: 1,
+    justifyContent: "space-evenly",
     alignItems: "center",
     flexDirection: "row",
     flexWrap: "wrap",
     paddingTop: 25,
-    justifyContent: "space-evenly",
   },
   image: {
     width: 180,

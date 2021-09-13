@@ -16,6 +16,7 @@ import { useFonts } from "@expo-google-fonts/montserrat";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
+// import font from "@styles/font.js";
 
 function Card(props) {
   let [fontsLoaded] = useFonts({
@@ -50,6 +51,7 @@ function Card(props) {
         iconColor={colors.yellow}
         title={props.title}
         titleFontFamily={"Montserrat"}
+        // titleFontFamily={font.Montserrat}
         titleTextAlign={"left"}
         titleFontSize={20}
         borderRadius={50}
