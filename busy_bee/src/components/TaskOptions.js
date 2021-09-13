@@ -7,69 +7,116 @@
  * Helpful Links: https://reactnativeelements.com/docs/listitem/
  */
 import React from "react";
-import { View, StyleSheet, TextInput, FlatList, TouchableHighlight, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  FlatList,
+  TouchableHighlight,
+  Text,
+} from "react-native";
 
-import SocialIcon from 'react-native-vector-icons/AntDesign';
-import BookingIcon from 'react-native-vector-icons/FontAwesome';
-import FeatherIcons from 'react-native-vector-icons/Feather';
+import SocialIcon from "react-native-vector-icons/AntDesign";
+import BookingIcon from "react-native-vector-icons/FontAwesome";
+import FeatherIcons from "react-native-vector-icons/Feather";
 
-export const bookIcon = (<BookingIcon name="pencil-square-o" size={40} color="purple" />);
-export const calendarIcon = (<SocialIcon name="calendar" size={40} color="purple" />);
-export const questionIcon = (<SocialIcon name="questioncircleo" size={40} color="purple" />);
-export const externalLinkIcon = (<FeatherIcons name="external-link" size={40} color="purple" />);
+export const bookIcon = (
+  <BookingIcon name="pencil-square-o" size={40} color="purple" />
+);
+export const calendarIcon = (
+  <SocialIcon name="calendar" size={40} color="purple" />
+);
+export const questionIcon = (
+  <SocialIcon name="questioncircleo" size={40} color="purple" />
+);
+export const externalLinkIcon = (
+  <FeatherIcons name="external-link" size={40} color="purple" />
+);
 
 import TextField from "@components/TextField";
 import { colors } from "react-native-elements";
+import CalendarIcon from "@components/CalendarIcon";
+import NoteIcon from "@components/NoteIcon";
+import ListIcon from "@components/ListIcon";
 
-const IconList = (props) => {
+const TaskOptions = (props) => {
   //   const [text, onChangeText] = React.useState(null);
 
   return (
-    <View style={styles.layout}>
-      <FlatList
-        contentContainerStyle={styles.listItem}
-        data={[
-          { key: <TextField placeholderText="Add due date"/>, icon: bookIcon },
-          { key: <TextField placeholderText="Add details"/>, icon: calendarIcon },
-          { key: <TextField placeholderText="Add to list"/>, icon: questionIcon },
-        ]}
-        renderItem={({ item }) => {
-          return (
-            <TouchableHighlight onPress={() => console.log("clicked button")}>
-              <Text>
-                {item.icon}
-                {item.key}
-              </Text>
-            </TouchableHighlight>
-          );
-        }}
-      />
+    <View style={styles.container}>
+      <View style={styles.row}>
+        <CalendarIcon />
+        <TextField placeholderText="Add due date"/>
+      </View>
+      <View style={styles.row}>
+        <NoteIcon />
+        <TextField placeholderText="Add details"/>
+      </View>
+      <View style={styles.row}>
+        <ListIcon />
+        <TextField placeholderText="Add to list"/>
+      </View>
     </View>
+
+    //   <View style={styles.layout}>
+    //     <FlatList
+    //       contentContainerStyle={styles.listItem}
+    //       data={[
+    //         { key: <TextField placeholderText="Add due date"/>, icon: bookIcon },
+    //         { key: <TextField placeholderText="Add details"/>, icon: calendarIcon },
+    //         { key: <TextField placeholderText="Add to list"/>, icon: questionIcon },
+    //       ]}
+    //       renderItem={({ item }) => {
+    //         return (
+    //           <TouchableHighlight onPress={() => console.log("clicked button")}>
+    //             <Text>
+    //               {item.icon}
+    //               {item.key}
+    //             </Text>
+    //           </TouchableHighlight>
+    //         );
+    //       }}
+    //     />
+    //   </View>
   );
 };
 
 const styles = StyleSheet.create({
-  layout: {
-    // flex: 4,
-    backgroundColor: "orange",
-    padding: 20,
+  container: {
+    flex: 1,
+    backgroundColor: "tomato",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
     width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center"
   },
-  listItem: {
+  row: {
     backgroundColor: colors.white,
+    flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    paddingHorizontal: 100
   },
-  text: {
-    fontSize: 20,
-  },
+
+  // layout: {
+  //   // flex: 4,
+  //   backgroundColor: "orange",
+  //   padding: 20,
+  //   width: "100%",
+  //   height: "100%",
+  //   justifyContent: "center",
+  //   alignItems: "center"
+  // },
+  // listItem: {
+  //   backgroundColor: colors.white,
+  //   justifyContent: "space-evenly",
+  //   alignItems: "center",
+  //   paddingHorizontal: 100
+  // },
+  // text: {
+  //   fontSize: 20,
+  // },
 });
 
-export default IconList;
+export default TaskOptions;
 
 // import SocialIcon from 'react-native-vector-icons/AntDesign';
 // import BookingIcon from 'react-native-vector-icons/FontAwesome';

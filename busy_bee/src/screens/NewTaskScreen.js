@@ -1,6 +1,5 @@
 /**
  * This file contains the code for the NewTask screen.
- * 
  * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  */
 
@@ -13,11 +12,12 @@ import icons from "@styles/icons";
 
 import CancelButton from "@components/CancelButton";
 import TextField from "@components/TextField";
-import IconList from "@components/IconList";
 
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+
+import TaskOptions from "@components/TaskOptions";
 
 const NewTaskScreen = () => {
   return (
@@ -33,8 +33,8 @@ const NewTaskScreen = () => {
         <TextField placeholderText="Add task name" />
       </View>
       <View style={styles.textFieldsView}>
-          <IconList></IconList>
-      {/* <MaterialCommunityIcons name={icons.calendar.name} size={icons.calendar.size} color={icons.calendar.color} />
+        <TaskOptions></TaskOptions>
+        {/* <MaterialCommunityIcons name={icons.calendar.name} size={icons.calendar.size} color={icons.calendar.color} />
       <FontAwesome name={icons.note.name} size={icons.note.size} color={icons.note.color} />
       <Ionicons name={icons.list.name} size={icons.list.size} color={icons.list.color} /> */}
       </View>
