@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   topView: {
-    backgroundColor: colors.green,
+    backgroundColor: "blue",
     flex: 0.5,
   },
   cardView: {

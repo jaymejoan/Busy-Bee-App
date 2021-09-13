@@ -5,7 +5,6 @@
 
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
-import { Icon } from "react-native-elements";
 
 import colors from "@styles/colors";
 import FAB from "@components/FloatingActionButton";

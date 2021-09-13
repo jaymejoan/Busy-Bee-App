@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 
 function Card(props) {
   let [fontsLoaded] = useFonts({
-    Montserrat: require("../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf"),
+    Montserrat: require("../assets/fonts/Montserrat/Montserrat-Bold.ttf"),
   });
 
   const navigation = useNavigation();
@@ -26,11 +26,12 @@ function Card(props) {
   } else {
     return (
       <CardViewWithIcon
-        androidIcon={"md-bonfire"}
-        iosIcon={"ios-bonfire-outline"}
-        iconType="Entypo"
-        iconBgColor={"#b13757"}
-        iconColor={"#FFFFFF"}
+        // androidIcon={"md-bonfire"}
+        // iosIcon={"ios-bonfire-outline"}
+        // width={20}
+        // iconType="Entypo"
+        // iconBgColor={"#b13757"}
+        // iconColor={"#FFFFFF"}
         title={props.title}
         titleFontFamily={"Montserrat"}
         titleFontSize={20}

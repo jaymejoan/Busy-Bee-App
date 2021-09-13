@@ -10,13 +10,14 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
+import icons from "@styles/icons";
 
 const MenuButton = (props) => {
   const navigation = useNavigation();
 
   return (
     <Ionicons
-      name="ios-menu-sharp"
+      name={icons.menuButton}
       size={35}
       color={colors.black}
       onPress={() => navigation.navigate("NewTaskScreen")}
