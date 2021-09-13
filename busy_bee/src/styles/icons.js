@@ -6,9 +6,40 @@
 import colors from "@styles/colors";
 
 export default {
+  allList: "list-outline",
+  allTasks: "grid-outline",
+  calendar: {
+    // https://icons.expo.fyi/MaterialCommunityIcons/calendar-check
+    name: "calendar-check",
+    size: 30,
+    color: colors.black,
+  },
+  cancelButton: {
+    name: "cross",
+    size: 30,
+    color: colors.black,
+  },
+  createList: "create-outline",
+  fab: {
+    name: "pluscircleo",
+    size: 70,
+    color: colors.black,
+  },
+  list: {
+    // https://icons.expo.fyi/Ionicons/list-outline
+    name: "list-outline",
+    size: 30,
+    color: colors.black,
+  },
   menuButton: {
     name: "ios-menu-sharp",
     size: 35,
+    color: colors.black,
+  },
+  notepad: {
+    // https://icons.expo.fyi/FontAwesome/sticky-note-o
+    name: "sticky-note-o",
+    size: 30,
     color: colors.black,
   },
   optionsButton: {
@@ -16,18 +47,6 @@ export default {
     size: 35,
     color: colors.black,
   },
-  fab: {
-    name: "pluscircleo",
-    size: 70,
-    color: colors.black,
-  },
+
   topTasks: "star-outline",
-  allList: "list-outline",
-  createList: "create-outline",
-  allTasks: "grid-outline",
-  cancelButton: {
-    name: "cross",
-    size: 30,
-    color: colors.black,
-  },
 };

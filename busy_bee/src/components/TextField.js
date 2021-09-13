@@ -10,7 +10,7 @@ const TextField = (props) => {
   const [text, onChangeText] = React.useState(null);
 
   return (
-    <View style={styles.text}>
+    <View>
       <TextInput
         style={styles.layout}
         onChangeText={onChangeText}
@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 20,
-    width: "100%",
+    // width: "100%",
     fontSize: 20,
-    fontFamily: "Montserrat"
-  }
+    fontFamily: "Montserrat",
+  },
 });
 
 export default TextField;
