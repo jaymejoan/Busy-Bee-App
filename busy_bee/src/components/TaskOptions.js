@@ -45,19 +45,31 @@ const TaskOptions = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <CalendarIcon />
+        <View style={styles.icon}>
+          <CalendarIcon />
+        </View>
         <View style={styles.spacer} />
-        <TextField placeholderText="Add due date" />
+        <View style={styles.field}>
+          <TextField placeholderText="Add due date" />
+        </View>
       </View>
       <View style={styles.row}>
-        <NoteIcon />
+        <View style={styles.icon}>
+          <NoteIcon />
+        </View>
         <View style={styles.spacer} />
-        <TextField placeholderText="Add details" />
+        <View style={styles.field}>
+          <TextField placeholderText="Add details" />
+        </View>
       </View>
       <View style={styles.row}>
-        <ListIcon />
+        <View style={styles.icon}>
+          <ListIcon />
+        </View>
         <View style={styles.spacer} />
-        <TextField placeholderText="Add to list" />
+        <View style={styles.field}>
+          <TextField placeholderText="Add to list" />
+        </View>
       </View>
     </View>
   );
@@ -71,7 +83,14 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     width: "100%",
-    paddingTop: 20
+    paddingTop: 20,
+  },
+  field: {
+    width: "80%",
+  },
+  icon: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
   },
   row: {
     backgroundColor: colors.white,
@@ -82,7 +101,7 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   spacer: {
-    flex: 0.15,
+    flex: 0.5,
   },
 });
 
