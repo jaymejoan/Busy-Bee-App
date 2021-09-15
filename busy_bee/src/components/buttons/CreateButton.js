@@ -13,6 +13,7 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import addNewTask from "@data/utilities/addNewTask";
+import resetTaskData from "@data/utilities/resetTaskData";
 
 const CreateButton = (props) => {
   const navigation = useNavigation();
@@ -21,6 +22,7 @@ const CreateButton = (props) => {
       style={styles.buttonContainer}
       onPress={() => {
         addNewTask();
+        resetTaskData();
         navigation.navigate(props.nextPage);
       }}
     >

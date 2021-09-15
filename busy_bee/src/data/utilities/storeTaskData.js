@@ -5,10 +5,10 @@
  */
 
 const taskData = {
-  taskName: "N/A",
-  dueDate: "N/A",
-  details: "N/A",
-  listName: "N/A",
+  taskName: null,
+  dueDate: null,
+  details: null,
+  listName: null,
 };
 
 export default taskData;

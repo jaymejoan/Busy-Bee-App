@@ -13,7 +13,15 @@ function addNewTask() {
     details: taskData.details,
     listName: taskData.listName,
   });
+  printNewTask();
+}
+
+function printNewTask() {
   console.log("sent to database");
+  console.log("sent taskName: " + taskData.taskName);
+  console.log("sent dueDate: " + taskData.dueDate);
+  console.log("sent details: " + taskData.details);
+  console.log("sent listName: " + taskData.listName);
 }
 
 export default addNewTask;
