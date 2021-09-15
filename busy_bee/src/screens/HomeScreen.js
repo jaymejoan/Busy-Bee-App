@@ -24,22 +24,22 @@ const HomeScreen = (props) => {
       <View style={styles.cardView}>
         <Card
           title="Top 3 Tasks"
-          nextPage="New Task Screen"
+          nextPage="Top Tasks Screen"
           iconName={icons.topTasks}
         />
         <Card
           title="All Lists"
-          nextPage="New Task Screen"
+          nextPage="All Lists Screen"
           iconName={icons.allList}
         />
         <Card
           title="Create List"
-          nextPage="New Task Screen"
+          nextPage="New List Screen"
           iconName={icons.createList}
         />
         <Card
           title="All Tasks"
-          nextPage="New Task Screen"
+          nextPage="All Tasks Screen"
           iconName={icons.allTasks}
         />
       </View>
