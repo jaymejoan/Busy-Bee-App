@@ -1,6 +1,7 @@
 /**
  * This file contains the code for the Splash screen.
- */
+ * Note: Redundant code as splash screen is loaded from App.js
+ *
 
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
@@ -31,3 +32,4 @@ const styles = StyleSheet.create({
 });
 
 export default SplashScreen;
+*/

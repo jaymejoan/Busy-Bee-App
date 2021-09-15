@@ -10,28 +10,21 @@
 
 import React from "react";
 import { CardViewWithIcon } from "react-native-simple-card-view";
-import AppLoading from "expo-app-loading";
-import { useFonts } from "@expo-google-fonts/montserrat";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
-// import font from "@styles/font.js";
 
-function Card(props) {
-  let [fontsLoaded] = useFonts({
-    Montserrat: require("../assets/fonts/Montserrat/Montserrat-Bold.ttf"),
-  });
-
+const Card = (props) => {
   const navigation = useNavigation();
 
   const miniCardStyle = {
-    shadowColor: "#000000",
+    shadowColor: colors.black,
     shadowOffsetWidth: 5,
     shadowOffsetHeight: 5,
     shadowOpacity: 0.1,
     shadowRadius: 10,
-    bgColor: "#ffffff",
+    bgColor: colors.white,
     padding: 5,
     margin: 10,
     borderRadius: 15,
@@ -39,26 +32,20 @@ function Card(props) {
     width: 160,
   };
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  } else {
-    return (
-      <CardViewWithIcon
-        style={miniCardStyle}
-        androidIcon={props.iconName}
-        iosIcon={props.iconName}
-        iconBgColor={colors.white}
-        iconColor={colors.yellow}
-        title={props.title}
-        titleFontFamily={"Montserrat"}
-        // titleFontFamily={font.Montserrat}
-        titleTextAlign={"left"}
-        titleFontSize={text.cardTitle}
-        borderRadius={50}
-        onPress={() => navigation.navigate(props.nextPage)}
-      />
-    );
-  }
+  return (
+    <CardViewWithIcon
+      style={miniCardStyle}
+      androidIcon={props.iconName}
+      iosIcon={props.iconName}
+      iconBgColor={colors.white}
+      iconColor={colors.yellow}
+      title={props.title}
+      titleFontFamily={text.cardTitle.fontFamily}
+      titleFontSize={text.cardTitle.fontSize}
+      borderRadius={50}
+      onPress={() => navigation.navigate(props.nextPage)}
+    />
+  );
 }
 
 export default Card;

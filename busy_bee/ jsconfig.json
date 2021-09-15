@@ -2,10 +2,12 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "@screens/*": ["./src/screens/*"],
-        "@components/*": ["./src/components/*"],
         "@assets/*": ["./src/assets/*"],
+        "@buttons/*": ["./src/components/buttons/*"],
+        "@components/*": ["./src/components/*"],
+        "@screens/*": ["./src/screens/*"],
         "@styles/*": ["./src/styles/*"]
+
       }
     },
     "exclude": ["node_modules", "dist"]
