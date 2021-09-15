@@ -11,22 +11,9 @@ import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
-import dbh from "@data/service-agents/firebaseConfigs.js";
 
 const FloatingActionButton = () => {
   const navigation = useNavigation();
-
-  function test() {
-    dbh
-      .collection("list-test")
-      .doc("task-test")
-      .set({
-        dueDate: "new",
-        details: "new",
-        list: "new",
-      });
-      console.log("connected to database");
-  }
 
   return (
     <AntDesign
