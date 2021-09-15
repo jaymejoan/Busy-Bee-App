@@ -11,6 +11,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
+import addNewTask from "@data/utilities/addNewTask";
 
 const FloatingActionButton = () => {
   const navigation = useNavigation();
@@ -22,7 +23,7 @@ const FloatingActionButton = () => {
       color={icons.fab.color}
       onPress={() => {
         navigation.navigate("New Task Screen");
-        test();
+        addNewTask("in FAB taskName", "date", "details", "listName in FAB");
       }}
     />
   );
