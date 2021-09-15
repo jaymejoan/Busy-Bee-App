@@ -19,9 +19,10 @@ module.exports = function (api) {
             ".json",
           ],
           alias: {
-            "@screens": "./src/screens",
-            "@components": "./src/components",
             "@assets": "./src/assets",
+            "@buttons": "./src/components/buttons",
+            "@components": "./src/components",
+            "@screens": "./src/screens",
             "@styles": "./src/styles",
           },
         },

@@ -8,9 +8,9 @@ import { View, StyleSheet } from "react-native";
 
 import colors from "@styles/colors";
 
-import FAB from "@components/FloatingActionButton";
-import MenuBotton from "@components/MenuButton";
-import OptionsButton from "@components/OptionsButton";
+import FAB from "@buttons/FloatingActionButton";
+import MenuBotton from "@buttons/MenuButton";
+import OptionsButton from "@buttons/OptionsButton";
 
 const BottomMenu = () => {
   return (
