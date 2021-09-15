@@ -12,12 +12,17 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
+import addNewTask from "@data/utilities/addNewTask";
+
 const CreateButton = ({ title, nextPage }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.buttonContainer}
-      onPress={() => navigation.navigate(nextPage)}
+      onPress={() => {
+        addNewTask("in FAB taskName", "date", "details", "listName in create");
+        navigation.navigate(nextPage);
+      }}
     >
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
