@@ -1,5 +1,5 @@
 /**
- * This file contains the code for the Confirm buttons located at the bottom of the New Task/List screens.
+ * This file contains the code for the Create buttons located at the bottom of the New Task/List screens.
  * The text on the button is either "Create Task" or "Create List" which indicates to users that
  * they want to confirm their actions.
  * Reference: https://blog.logrocket.com/creating-custom-buttons-in-react-native/
@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-const ConfirmButton = ({ title, nextPage }) => {
+const CreateButton = ({ title, nextPage }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
     elevation: 8,
     position: "absolute",
     width: "100%",
-    height: 100,
-    // height: 80,
+    // height: 100,
+    height: 80,
     bottom: 0,
     zIndex: 1,
     justifyContent: "center",
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ConfirmButton;
+export default CreateButton;
