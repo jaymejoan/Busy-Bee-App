@@ -14,10 +14,12 @@ import taskData from "@data/utilities/storeTaskData";
  * These values will be sent to database once user creates the task.
  */
 function storeTextInput(type, text) {
-  if (type == "taskName") return (taskData.taskName = text);
-  if (type == "dueDate") return (taskData.dueDate = text);
-  if (type == "details") return (taskData.details = text);
-  if (type == "listName") return (taskData.listName = text);
+  if (text != null) {
+    if (type == "taskName") return (taskData.taskName = text);
+    if (type == "dueDate") return (taskData.dueDate = text);
+    if (type == "details") return (taskData.details = text);
+    if (type == "listName") return (taskData.listName = text);
+  }
 }
 
 const TextField = (props) => {

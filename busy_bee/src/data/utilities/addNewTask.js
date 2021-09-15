@@ -8,6 +8,7 @@ import dbh from "@data/service-agents/firebaseConfigs.js";
 import taskData from "@data/utilities/storeTaskData";
 
 function addNewTask() {
+    printNewTask();
     dbh.collection(taskData.listName).doc(taskData.taskName).set({
       taskName: taskData.taskName,
       dueDate: taskData.dueDate,
