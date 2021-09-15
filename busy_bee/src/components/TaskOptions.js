@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     borderRadius: 20,
     borderWidth: 1,
+    borderColor: colors.black
   },
   field: {
     width: "80%",

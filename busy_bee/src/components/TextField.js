@@ -4,9 +4,10 @@
  */
 import React from "react";
 import { View, StyleSheet, TextInput } from "react-native";
-import { colors } from "react-native-elements";
 
-const TextField = () => {
+import colors from "@styles/colors"
+
+const TextField = (props) => {
   const [text, onChangeText] = React.useState(null);
 
   return (
@@ -28,6 +29,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 20,
+    borderColor: colors.black,
+    borderWidth: 1,
     fontSize: 20,
     fontFamily: "Montserrat",
   },
