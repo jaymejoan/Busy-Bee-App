@@ -3,34 +3,48 @@
  * The text on the button is either "Create Task" or "Create List" which indicates to users that
  * they want to confirm their actions.
  */
+
+import React from "react";
 import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-const ConfirmButton = ({ onPress, title }) => (
-  <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
-    <Text style={styles.appButtonText}>{title}</Text>
-  </TouchableOpacity>
-);
+const ConfirmButton = ({ title, nextPage }) => {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity
+      style={styles.buttonContainer}
+      onPress={() => navigation.navigate(nextPage)}
+    >
+      <Text style={styles.buttonText}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    elevation: 8,
     backgroundColor: colors.yellow,
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
+    elevation: 8,
+    position: "absolute",
+    width: "100%",
+    height: 100,
+    // height: 80,
+    bottom: 0,
+    zIndex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  appButtonText: {
+  buttonText: {
     fontFamily: text.cardTitle.fontFamily,
     fontSize: text.cardTitle.fontSize,
     color: colors.black,
     alignSelf: "center",
-    textTransform: "uppercase",
   },
 });
+
+export default ConfirmButton;
 
 // cardTitle: {
 //     fontFamily: "MontserratBold",

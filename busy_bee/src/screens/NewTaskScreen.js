@@ -10,6 +10,7 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import CancelButton from "@buttons/CancelButton";
+import ConfirmButton from "@buttons/ConfirmButton";
 import TextField from "@components/TextField";
 import TaskOptions from "@components/TaskOptions";
 
@@ -30,8 +31,10 @@ const NewTaskScreen = () => {
       <View style={styles.textFieldsView}>
         <TaskOptions></TaskOptions>
       </View>
-      <View style={{ flex: 0.4 }} />
-      <View style={styles.confirmView}></View>
+      <View style={{ flex: 0.1 }} />
+      <View style={styles.confirmView}>
+        <ConfirmButton title="CREATE TASK" nextPage="Home" />
+      </View>
     </View>
   );
 };
@@ -42,13 +45,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   confirmView: {
-    backgroundColor: colors.yellow,
-    position: "absolute",
+    backgroundColor: colors.white,
     width: "100%",
-    height: 80,
-    bottom: 0,
-    zIndex: 1,
-    // flex: 0.3
+    height: 100,
+    // height: 80,
   },
   cancelView: {
     position: "absolute",
