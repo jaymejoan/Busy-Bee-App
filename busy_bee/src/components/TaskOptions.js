@@ -32,7 +32,7 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <TextField placeholderText="Add due date" />
+          <TextField placeholderText="Add due date" type="dueDate" />
         </View>
       </View>
       <View style={styles.colSpacer}></View>
@@ -42,7 +42,7 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <TextField placeholderText="Add details" />
+          <TextField placeholderText="Add details" type="details" />
         </View>
       </View>
       <View style={styles.colSpacer}></View>
@@ -52,7 +52,7 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <TextField placeholderText="Add to list" />
+          <TextField placeholderText="Add to list" type="listName" />
         </View>
       </View>
     </View>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: colors.black
+    borderColor: colors.black,
   },
   field: {
     width: "80%",

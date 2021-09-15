@@ -14,17 +14,17 @@ import text from "@styles/text";
 
 import addNewTask from "@data/utilities/addNewTask";
 
-const CreateButton = ({ title, nextPage }) => {
+const CreateButton = (props) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.buttonContainer}
       onPress={() => {
-        addNewTask("in FAB taskName", "date", "details", "listName in create");
-        navigation.navigate(nextPage);
+        addNewTask();
+        navigation.navigate(props.nextPage);
       }}
     >
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text style={styles.buttonText}>{props.title}</Text>
     </TouchableOpacity>
   );
 };
@@ -32,13 +32,9 @@ const CreateButton = ({ title, nextPage }) => {
 const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: colors.yellow,
-    elevation: 8,
-    position: "absolute",
-    width: "100%",
-    // height: 100,
+    width: "75%",
     height: 80,
     bottom: 0,
-    zIndex: 1,
     justifyContent: "center",
     alignItems: "center",
   },

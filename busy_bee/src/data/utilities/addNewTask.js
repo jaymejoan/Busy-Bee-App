@@ -4,14 +4,14 @@
  * If no list name is specified, the task will be saved in a default collection called "allTasks".
  */
 import dbh from "@data/service-agents/firebaseConfigs.js";
+import taskData from "@data/utilities/storeTaskData";
 
-function addNewTask(tName, date, info, lName) {
-  //   dbh.collection(listName).doc(taskName).set({
-  dbh.collection("allTasks").doc("test-task").set({
-    taskName: tName,
-    dueDate: date,
-    details: info,
-    list: lName,
+function addNewTask() {
+  dbh.collection("list-test").doc("task-test").set({
+    taskName: taskData.taskName,
+    dueDate: taskData.dueDate,
+    details: taskData.details,
+    listName: taskData.listName,
   });
   console.log("sent to database");
 }

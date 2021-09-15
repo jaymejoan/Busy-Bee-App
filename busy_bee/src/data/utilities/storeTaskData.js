@@ -4,11 +4,11 @@
  * and can be easily sent to the database.
  */
 
-const injuryReportData = {
+const taskData = {
   taskName: "N/A",
   dueDate: "N/A",
   details: "N/A",
-  list: "N/A",
+  listName: "N/A",
 };
 
-export default injuryReportData;
+export default taskData;

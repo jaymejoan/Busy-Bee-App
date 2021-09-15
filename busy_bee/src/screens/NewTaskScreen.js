@@ -26,10 +26,10 @@ const NewTaskScreen = () => {
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add task name" />
+        <TextField placeholderText="Add task name" type="taskName"/>
       </View>
       <View style={styles.textFieldsView}>
-        <TaskOptions></TaskOptions>
+        <TaskOptions/>
       </View>
       <View style={{ flex: 0.1 }} />
       <View style={styles.confirmView}>
@@ -45,10 +45,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   confirmView: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.yellow,
     width: "100%",
     // height: 100,
     height: 80,
+    justifyContent: "center",
+    alignItems: "center"
   },
   cancelView: {
     position: "absolute",
