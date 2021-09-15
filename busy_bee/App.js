@@ -7,8 +7,12 @@ import * as SplashScreenTiming from "expo-splash-screen";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "@expo-google-fonts/montserrat";
 
-import HomeScreen from "./src/screens/HomeScreen";
-import NewTaskScreen from "./src/screens/NewTaskScreen";
+import HomeScreen from "@screens/HomeScreen";
+import NewTaskScreen from "@screens/NewTaskScreen";
+import NewListScreen from "@screens/NewListScreen";
+import AllListsScreen from "@screens/AllListsScreen";
+import AllTasksScreen from "@screens/AllTasksScreen";
+import TopTasksScreen from "@screens/TopTasksScreen";
 
 // Displays Splash Screen for 3 seconds
 SplashScreenTiming.preventAutoHideAsync();
@@ -20,7 +24,7 @@ export default function App() {
     Montserrat: require("@assets/fonts/Montserrat/Montserrat-Regular.ttf"),
     MontserratBold: require("@assets/fonts/Montserrat/Montserrat-Bold.ttf"),
     MontserratItalic: require("@assets/fonts/Montserrat/Montserrat-Italic.ttf"),
-    MontserratExtraBold: require("@assets/fonts/Montserrat/Montserrat-ExtraBold.ttf")
+    MontserratExtraBold: require("@assets/fonts/Montserrat/Montserrat-ExtraBold.ttf"),
   };
 
   const [isLoaded] = useFonts(customFonts);
@@ -35,6 +39,10 @@ export default function App() {
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="New Task Screen" component={NewTaskScreen} />
+          <Stack.Screen name="New List Screen" component={NewListScreen} />
+          <Stack.Screen name="All Lists Screen" component={AllListsScreen} />
+          <Stack.Screen name="All Tasks Screen" component={AllTasksScreen} />
+          <Stack.Screen name="Top Tasks Screen" component={TopTasksScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
