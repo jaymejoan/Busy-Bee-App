@@ -5,10 +5,10 @@
 import taskData from "@data/utilities/storeTaskData";
 
 function resetTaskData() {
-  taskData.taskName = null;
-  taskData.dueDate = null;
-  taskData.details = null;
-  taskData.listName = null;
+  taskData.taskName = "N/A";
+  taskData.dueDate = "N/A";
+  taskData.details = "N/A";
+  taskData.listName = "N/A";
   printReset();
 }
 
