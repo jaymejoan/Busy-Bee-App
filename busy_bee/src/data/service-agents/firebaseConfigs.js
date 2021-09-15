@@ -2,11 +2,10 @@
  * This file contains the configurations required to connect to the external database hosted on Firebase.
  * Reference: https://docs.expo.dev/guides/using-firebase/
  */
-import * as React from "react";
 
 import * as firebase from "firebase";
-// import firebase from "firebase/app";
 import "firebase/firestore";
+// import firebase from "firebase/app";
 
 // Firebase configurations
 const firebaseConfig = {
@@ -27,5 +26,3 @@ if (!firebase.apps.length) {
 const dbh = firebase.firestore();
 
 export default dbh;
-
-// const analytics = getAnalytics(app);

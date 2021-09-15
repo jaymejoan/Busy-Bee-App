@@ -5,12 +5,13 @@
  */
 import dbh from "@data/service-agents/firebaseConfigs.js";
 
-function addNewTask(taskName, date, info, listName) {
+function addNewTask(tName, date, info, lName) {
   //   dbh.collection(listName).doc(taskName).set({
   dbh.collection("allTasks").doc("test-task").set({
+    taskName: tName,
     dueDate: date,
     details: info,
-    list: listName,
+    list: lName,
   });
   console.log("sent to database");
 }
