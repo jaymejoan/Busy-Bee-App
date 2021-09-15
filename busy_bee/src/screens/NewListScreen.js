@@ -17,15 +17,15 @@
    return (
      <View style={styles.background}>
        <View style={styles.topView}>
-         <Text style={text.title}>New Task</Text>
+         <Text style={text.title}>New List</Text>
          <View style={styles.cancelView}>
            <CancelButton />
          </View>
        </View>
        <View style={styles.taskNameView}>
-         <Text style={text.normalText}>What would you like to achieve?</Text>
+         <Text style={text.normalText}>What would you like to name your list?</Text>
          <View style={{ flex: 0.3 }} />
-         <TextField placeholderText="Add task name" />
+         <TextField placeholderText="Add list name" />
        </View>
        <View style={styles.textFieldsView}>
          <TaskOptions></TaskOptions>
