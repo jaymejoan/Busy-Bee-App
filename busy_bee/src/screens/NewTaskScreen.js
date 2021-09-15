@@ -30,8 +30,8 @@ const NewTaskScreen = () => {
       <View style={styles.textFieldsView}>
         <TaskOptions></TaskOptions>
       </View>
-      <View style={{ flex: 0.1 }} />
-      <View style={styles.bottomView}></View>
+      <View style={{ flex: 0.4 }} />
+      <View style={styles.confirmView}></View>
     </View>
   );
 };
@@ -41,9 +41,14 @@ const styles = StyleSheet.create({
     backgroundColor: colors.yellowBackground,
     flex: 1,
   },
-  bottomView: {
+  confirmView: {
     backgroundColor: colors.yellow,
-    flex: 0.3,
+    position: "absolute",
+    width: "100%",
+    height: 80,
+    bottom: 0,
+    zIndex: 1,
+    // flex: 0.3
   },
   cancelView: {
     position: "absolute",
