@@ -4,14 +4,11 @@
  */
 
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import icons from "@styles/icons";
 
 const NoteIcon = () => {
-  const navigation = useNavigation();
-
   return (
     <FontAwesome
       name={icons.note.name}
