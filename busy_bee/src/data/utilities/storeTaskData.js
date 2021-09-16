@@ -8,7 +8,7 @@ const taskData = {
   taskName: "default",
   dueDate: "N/A",
   details: "N/A",
-  listName: "allTasks",
+  listName: "All Tasks",
 };
 
 export default taskData;

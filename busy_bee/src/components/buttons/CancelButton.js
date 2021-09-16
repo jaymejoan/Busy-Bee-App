@@ -9,7 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
 
-const CancelButton = (props) => {
+const CancelButton = () => {
   const navigation = useNavigation();
 
   return (
