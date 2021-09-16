@@ -1,6 +1,7 @@
 /**
- * This file contains the code for the NewTask screen.
- * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * This file contains the code for the New List screen.
+ * Once users enter a list name, a new collection is created in the database with that name.
+ * A default document filled with default values is automatically assigned to the collection as per Firebase requirements.
  */
 
 import React from "react";
@@ -13,7 +14,6 @@ import CancelButton from "@buttons/CancelButton";
 import CreateButton from "@buttons/CreateButton";
 
 import TextField from "@components/TextField";
-import TaskOptions from "@components/TaskOptions";
 
 const NewTaskScreen = () => {
   return (
@@ -29,7 +29,7 @@ const NewTaskScreen = () => {
           What would you like to name your list?
         </Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add list name" />
+        <TextField placeholderText="Add list name" type="listName" />
       </View>
       <View style={styles.textFieldsView} />
       <View style={styles.confirmView}>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     // height: 100,
     height: 80,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   taskNameView: {
     padding: 20,
