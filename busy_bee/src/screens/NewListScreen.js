@@ -24,6 +24,7 @@ const NewTaskScreen = () => {
           <CancelButton />
         </View>
       </View>
+      <View style={styles.divider} />
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>
           What would you like to name your list?
@@ -55,6 +56,12 @@ const styles = StyleSheet.create({
     height: 80,
     justifyContent: "center",
     alignItems: "center",
+  },
+  divider: {
+    borderBottomColor: colors.yellow,
+    borderBottomWidth: 3,
+    width: "90%",
+    alignSelf: "center",
   },
   taskNameView: {
     padding: 20,
