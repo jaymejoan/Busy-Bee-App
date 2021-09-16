@@ -7,21 +7,14 @@
  * Helpful Links: https://reactnativeelements.com/docs/listitem/
  */
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  TextInput,
-  FlatList,
-  TouchableHighlight,
-  Text,
-} from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import colors from "@styles/colors";
 
 import TextField from "@components/TextField";
-import CalendarIcon from "@components/CalendarIcon";
-import NoteIcon from "@components/NoteIcon";
-import ListIcon from "@components/ListIcon";
+import CalendarIcon from "@components/icons/CalendarIcon";
+import NoteIcon from "@components/icons/NoteIcon";
+import ListIcon from "@components/icons/ListIcon";
 
 const TaskOptions = () => {
   return (

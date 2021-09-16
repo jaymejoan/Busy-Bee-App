@@ -24,7 +24,7 @@ const NewTaskScreen = () => {
           <CancelButton />
         </View>
       </View>
-      <View style={styles.divider}/>
+      <View style={styles.divider} />
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
         <View style={{ flex: 0.3 }} />
