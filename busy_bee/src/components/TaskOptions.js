@@ -12,9 +12,10 @@ import { View, StyleSheet } from "react-native";
 import colors from "@styles/colors";
 
 import TextField from "@components/TextField";
-import CalendarIcon from "@components/icons/CalendarIcon";
-import NoteIcon from "@components/icons/NoteIcon";
-import ListIcon from "@components/icons/ListIcon";
+
+import CalendarIcon from "@assets/icons/CalendarIcon";
+import NoteIcon from "@assets/icons/NoteIcon";
+import ListIcon from "@assets/icons/ListIcon";
 
 const TaskOptions = () => {
   return (
