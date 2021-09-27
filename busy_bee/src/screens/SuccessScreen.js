@@ -1,26 +1,29 @@
 /**
  * This file contains the code for the Splash screen.
  * Note: Redundant code as splash screen is loaded from App.js
- *
+ */
 
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 
-import colours from "../config/colors";
+import colors from "@styles/colors";
 
-function SplashScreen(props) {
-  return <View style={styles.container}>
-     <Image
+function SuccessScreen(props) {
+  return (
+    <View style={styles.container}>
+      <Image
         resizeMode="contain"
         style={styles.image}
-        source={require("../assets/beeLogo.png")}
+        source={require("../assets/beeLogo.png")
+      }
       />
-  </View>;
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colours.yellow,
+    backgroundColor: colors.yellow,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -31,5 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SplashScreen;
-*/
+export default SuccessScreen;

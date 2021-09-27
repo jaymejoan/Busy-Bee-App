@@ -13,9 +13,8 @@ import CancelButton from "@buttons/CancelButton";
 
 import TextField from "@components/TextField";
 import TaskOptions from "@components/TaskOptions";
-import { Montserrat_500Medium } from "@expo-google-fonts/montserrat";
 
-const NewTaskScreen = () => {
+const AllListsScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
@@ -79,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewTaskScreen;
+export default AllListsScreen;

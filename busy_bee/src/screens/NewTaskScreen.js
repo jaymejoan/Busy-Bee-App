@@ -35,7 +35,7 @@ const NewTaskScreen = () => {
       </View>
       <View style={{ flex: 0.1 }} />
       <View style={styles.confirmView}>
-        <CreateButton title="CREATE TASK" nextPage="Home" />
+        <CreateButton title="CREATE TASK" nextPage="Success Screen" />
       </View>
     </View>
   );
