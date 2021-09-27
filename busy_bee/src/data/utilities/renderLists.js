@@ -5,20 +5,28 @@
  * Reference: https://reactnative.dev/docs/flatlist
  */
 import React, { useEffect, useState } from "react";
-import { View, FlatList, StyleSheet, Text } from "react-native";
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
+
 import dbh from "@data/service-agents/firebaseConfigs.js";
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={text.cardTitle}>{title}</Text>
-  </View>
+const Item = ({ item, onPress }) => (
+  <TouchableOpacity style={styles.item} onPress={onPress}>
+    <Text style={text.cardTitle}>{item.name}</Text>
+  </TouchableOpacity>
 );
 
 const renderLists = () => {
-  const renderItem = ({ item }) => <Item title={item.title} />;
+  const navigation = useNavigation();
   const [listNames, setListNames] = useState([]);
 
   useEffect(() => {
@@ -27,7 +35,7 @@ const renderLists = () => {
       querySnapshot.forEach((documentSnapshot) => {
         names.push({
           id: documentSnapshot.data().name,
-          title: documentSnapshot.data().name,
+          name: documentSnapshot.data().name,
         });
       });
       setListNames(names);
@@ -47,6 +55,10 @@ const renderLists = () => {
   //             });
   //       });
   //   }, [setListNames]);
+
+  const renderItem = ({ item }) => {
+    return <Item item={item} onPress={() => navigation.navigate("Home")} />;
+  };
 
   return (
     <View style={styles.container}>

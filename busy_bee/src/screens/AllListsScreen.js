@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   listView: {
-    backgroundColor: colors.white,
+    paddingTop: 10,
     // alignItems: "center",
     flex: 2,
   },
