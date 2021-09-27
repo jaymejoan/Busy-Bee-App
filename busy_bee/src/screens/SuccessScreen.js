@@ -10,7 +10,7 @@ import text from "@styles/text";
 
 import CreateButton from "@buttons/CreateButton";
 
-function SuccessScreen(props) {
+const SuccessScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.imageView}>
@@ -21,7 +21,7 @@ function SuccessScreen(props) {
         />
       </View>
       <View style={styles.text}>
-        <Text style={text.cardTitle}>Successfullly added task!</Text>
+        <Text style={text.cardTitle}>Successfullly added!</Text>
       </View>
       <View style={styles.divider} />
       <View style={styles.confirmView}>
@@ -29,7 +29,7 @@ function SuccessScreen(props) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   background: {
