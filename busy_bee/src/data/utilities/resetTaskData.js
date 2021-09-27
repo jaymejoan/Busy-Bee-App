@@ -11,7 +11,7 @@ function resetTaskData() {
   taskData.taskName = "default";
   taskData.dueDate = "N/A";
   taskData.details = "N/A";
-  taskData.listName = "allTasks";
+  taskData.listName = "All Tasks";
   printReset();
 }
 

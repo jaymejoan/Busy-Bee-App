@@ -8,7 +8,8 @@ import dbh from "@data/service-agents/firebaseConfigs.js";
 import taskData from "@data/utilities/storeTaskData";
 
 /**
- * Adds to list specified by user.
+ * Adds task to list specified by user.
+ * If no list has been specified, task is added to All Tasks list by default.
  */
 function addNewTask() {
   dbh.collection(taskData.listName).doc(taskData.taskName).set({
