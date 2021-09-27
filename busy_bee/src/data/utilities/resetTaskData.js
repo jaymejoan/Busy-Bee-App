@@ -4,6 +4,9 @@
  */
 import taskData from "@data/utilities/storeTaskData";
 
+/**
+ * Resets taskData array to default values.
+ */
 function resetTaskData() {
   taskData.taskName = "default";
   taskData.dueDate = "N/A";
@@ -12,7 +15,9 @@ function resetTaskData() {
   printReset();
 }
 
-// helper function - can delete later
+/**
+ * Helper method to check reset was successful.
+ */ 
 function printReset() {
   console.log("reset successful");
   console.log("reset taskName: " + taskData.taskName);

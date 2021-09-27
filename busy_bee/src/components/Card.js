@@ -18,6 +18,7 @@ import text from "@styles/text";
 const Card = (props) => {
   const navigation = useNavigation();
 
+  // styling for Card
   const miniCardStyle = {
     shadowColor: colors.black,
     shadowOffsetWidth: 5,

@@ -22,6 +22,11 @@ function storeTextInput(type, text) {
   }
 }
 
+/**
+ * Displays and stores text input.
+ * @param {*} props
+ * @returns
+ */
 const TextField = (props) => {
   const [text, onChangeText] = React.useState(null);
 

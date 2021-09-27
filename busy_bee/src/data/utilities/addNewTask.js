@@ -7,26 +7,36 @@
 import dbh from "@data/service-agents/firebaseConfigs.js";
 import taskData from "@data/utilities/storeTaskData";
 
+/**
+ * Adds to list specified by user.
+ */
 function addNewTask() {
-    // add to list
-    dbh.collection(taskData.listName).doc(taskData.taskName).set({
-      taskName: taskData.taskName,
-      dueDate: taskData.dueDate,
-      details: taskData.details,
-      listName: taskData.listName,
-    });
+  dbh.collection(taskData.listName).doc(taskData.taskName).set({
+    taskName: taskData.taskName,
+    dueDate: taskData.dueDate,
+    details: taskData.details,
+    listName: taskData.listName,
+  });
 
-    // add to All Tasks list
-    dbh.collection("All Tasks").doc(taskData.taskName).set({
-      taskName: taskData.taskName,
-      dueDate: taskData.dueDate,
-      details: taskData.details,
-      listName: taskData.listName,
-    });
-
+  addToAllTasks();
   printNewTask();
 }
 
+/**
+ * Adds task to All Tasks list.
+ */
+function addToAllTasks() {
+  dbh.collection("All Tasks").doc(taskData.taskName).set({
+    taskName: taskData.taskName,
+    dueDate: taskData.dueDate,
+    details: taskData.details,
+    listName: taskData.listName,
+  });
+}
+
+/**
+ * Helper method to print task.
+ */
 function printNewTask() {
   console.log("sent to database");
   console.log("sent taskName: " + taskData.taskName);
@@ -37,7 +47,7 @@ function printNewTask() {
 
 export default addNewTask;
 
-// dbh 
+// dbh
 //     .collection("reports")
 //     .add({
 //       date: null,
