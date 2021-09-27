@@ -18,21 +18,19 @@ const NewTaskScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
-        <Text style={text.title}>New Task</Text>
-        <View style={styles.cancelView}>
-          <CancelButton />
-        </View>
+        <Text style={text.title}>All Tasks</Text>
       </View>
+      <View style={styles.divider} />
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add task name" />
+        <TextField placeholderText="Add task name" type="taskName" />
       </View>
       <View style={styles.textFieldsView}>
-        <TaskOptions></TaskOptions>
+        <TaskOptions />
       </View>
       <View style={{ flex: 0.1 }} />
-      <View style={styles.bottomView}></View>
+      <View style={styles.confirmView}></View>
     </View>
   );
 };
@@ -50,6 +48,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20,
   },
+  divider: {
+    borderBottomColor: colors.yellow,
+    borderBottomWidth: 3,
+    width: "90%",
+    alignSelf: "center",
+  },
   taskNameView: {
     padding: 20,
     flexDirection: "column",
@@ -63,10 +67,14 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   topView: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    flex: 0.3,
+    // backgroundColor: colors.white,
+    justifyContent: "space-evenly",
+    alignItems: "stretch",
+    flexDirection: "column",
+    padding: 25,
+    // paddingTop: 25,
+    // paddingLeft: 50,
+    flex: 0.1,
   },
 });
 
