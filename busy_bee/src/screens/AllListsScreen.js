@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
@@ -13,6 +13,9 @@ import CancelButton from "@buttons/CancelButton";
 
 import TextField from "@components/TextField";
 import TaskOptions from "@components/TaskOptions";
+import BottomMenu from "@components/BottomMenu";
+
+import RenderLists from "@data/utilities/renderLists";
 
 const AllListsScreen = () => {
   return (
@@ -21,16 +24,12 @@ const AllListsScreen = () => {
         <Text style={text.title}>All Lists</Text>
       </View>
       <View style={styles.divider} />
-      <View style={styles.taskNameView}>
-        <Text style={text.normalText}>What would you like to achieve?</Text>
-        <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add task name" type="taskName" />
+      <View style={styles.listView}>
+        <RenderLists></RenderLists>
       </View>
-      <View style={styles.textFieldsView}>
-        <TaskOptions />
+      <View style={styles.bottomView}>
+        <BottomMenu />
       </View>
-      <View style={{ flex: 0.1 }} />
-      <View style={styles.confirmView}></View>
     </View>
   );
 };
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
   },
   bottomView: {
     backgroundColor: colors.yellow,
-    flex: 0.3,
+    flex: 0.2,
   },
   divider: {
     borderBottomColor: colors.yellow,
@@ -51,7 +50,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   listView: {
-    // backgroundColor: colors.white,
+    backgroundColor: colors.white,
+    // alignItems: "center",
     flex: 2,
   },
   taskNameView: {
