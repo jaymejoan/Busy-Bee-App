@@ -14,7 +14,7 @@ import CancelButton from "@buttons/CancelButton";
 import TextField from "@components/TextField";
 import TaskOptions from "@components/TaskOptions";
 
-const NewTaskScreen = () => {
+const AllTasksScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewTaskScreen;
+export default AllTasksScreen;

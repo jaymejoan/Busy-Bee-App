@@ -14,7 +14,7 @@
  import TextField from "@components/TextField";
  import TaskOptions from "@components/TaskOptions";
  
- const NewTaskScreen = () => {
+ const TopTasksScreen = () => {
    return (
      <View style={styles.background}>
        <View style={styles.topView}>
@@ -70,5 +70,5 @@
    },
  });
  
- export default NewTaskScreen;
+ export default TopTasksScreen;
  

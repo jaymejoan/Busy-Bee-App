@@ -8,6 +8,7 @@ import AppLoading from "expo-app-loading";
 import { useFonts } from "@expo-google-fonts/montserrat";
 
 import HomeScreen from "@screens/HomeScreen";
+import SuccessScreen from "@screens/SuccessScreen";
 import NewTaskScreen from "@screens/NewTaskScreen";
 import NewListScreen from "@screens/NewListScreen";
 import AllListsScreen from "@screens/AllListsScreen";
@@ -38,6 +39,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Success Screen" component={SuccessScreen} />
           <Stack.Screen name="New Task Screen" component={NewTaskScreen} />
           <Stack.Screen name="New List Screen" component={NewListScreen} />
           <Stack.Screen name="All Lists Screen" component={AllListsScreen} />

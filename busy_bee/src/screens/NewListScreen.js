@@ -15,7 +15,7 @@ import CreateButton from "@buttons/CreateButton";
 
 import TextField from "@components/TextField";
 
-const NewTaskScreen = () => {
+const NewListScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
@@ -34,7 +34,7 @@ const NewTaskScreen = () => {
       </View>
       <View style={styles.textFieldsView} />
       <View style={styles.confirmView}>
-        <CreateButton title="CREATE LIST" nextPage="Home" />
+        <CreateButton title="CREATE LIST" nextPage="Success Screen" />
       </View>
     </View>
   );
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NewTaskScreen;
+export default NewListScreen;
