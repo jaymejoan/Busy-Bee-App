@@ -34,7 +34,11 @@ const NewListScreen = () => {
       </View>
       <View style={styles.textFieldsView} />
       <View style={styles.confirmView}>
-        <CreateButton title="CREATE LIST" nextPage="Success Screen" />
+        <CreateButton
+          title="CREATE LIST"
+          nextPage="Success Screen"
+          type="list"
+        />
       </View>
     </View>
   );

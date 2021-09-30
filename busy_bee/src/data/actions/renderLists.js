@@ -1,5 +1,5 @@
 /**
- * This file renders all the Lists stored in the database. Data and Business Layer?
+ * This file renders all the Tasks stored within a specific list in the database. Data and Business Layer?
  * Displayed when the user navigates to the AllLists screen.
  *
  * Reference: https://reactnative.dev/docs/flatlist
@@ -34,8 +34,8 @@ const renderLists = () => {
       const names = []; // list names stored in database
       querySnapshot.forEach((documentSnapshot) => {
         names.push({
-          id: documentSnapshot.data().name,
-          name: documentSnapshot.data().name,
+          id: documentSnapshot.data().listName,
+          name: documentSnapshot.data().listName,
         });
       });
       setListNames(names);
@@ -47,7 +47,9 @@ const renderLists = () => {
       <Item
         item={item}
         onPress={() =>
-          navigation.navigate("All Tasks Screen", { listName: item.name })
+          navigation.navigate("All Tasks Screen", {
+            listName: item.name,
+          })
         }
       />
     );
@@ -68,15 +70,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.yellowBackground,
-    // flexDirection: "column",
-    // justifyContent: "flex-start",
-    // alignItems: "center",
-    // width: "90%",
-    // height: "10%",
-    // paddingTop: 20,
-    // borderRadius: 20,
-    // borderWidth: 1,
-    // borderColor: colors.black,
   },
   item: {
     backgroundColor: colors.yellow,

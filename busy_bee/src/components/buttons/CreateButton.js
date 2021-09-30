@@ -13,6 +13,7 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import addNewTask from "@data/utilities/addNewTask";
+import addNewList from "@data/utilities/addNewList";
 import resetTaskData from "@data/utilities/resetTaskData";
 
 const CreateButton = (props) => {
@@ -21,7 +22,10 @@ const CreateButton = (props) => {
     <TouchableOpacity
       style={styles.buttonContainer}
       onPress={() => {
-        addNewTask();
+        // create a new task/list depending on type of action
+        if (props.type == "task") addNewTask();
+        else addNewList();
+
         resetTaskData();
         navigation.navigate(props.nextPage);
       }}

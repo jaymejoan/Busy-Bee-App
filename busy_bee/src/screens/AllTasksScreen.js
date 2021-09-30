@@ -6,10 +6,8 @@
  * https://github.com/react-native-checkbox/react-native-checkbox
  */
 
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-// import CheckBox from "@react-native-community/checkbox";
-// import { CheckBox } from 'react-native-elements'
 
 import colors from "@styles/colors";
 import text from "@styles/text";
@@ -19,7 +17,7 @@ import RenderTasks from "@data/actions/renderTasks";
 import BottomMenu from "@components/BottomMenu";
 import CheckBoxButton from "@components/CheckBox";
 
-const AllTasksScreen = ({ route, navigation }) => {
+const AllTasksScreen = ({ route }) => {
   const { listName } = route.params;
 
   return (
@@ -29,11 +27,6 @@ const AllTasksScreen = ({ route, navigation }) => {
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
-        {/* <CheckBox
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={(newValue) => setToggleCheckBox(newValue)}
-        /> */}
         <CheckBoxButton />
         <RenderTasks listName={listName} />
       </View>

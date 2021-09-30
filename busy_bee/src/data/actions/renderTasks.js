@@ -29,7 +29,7 @@ const renderTasks = (listName) => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // gets all the tasks within the passed in listName
+  // gets all the tasks within the specified listName
   useEffect(() => {
     dbh
       .collection("All Tasks")
@@ -67,15 +67,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.yellowBackground,
-    // flexDirection: "column",
-    // justifyContent: "flex-start",
-    // alignItems: "center",
-    // width: "90%",
-    // height: "10%",
-    // paddingTop: 20,
-    // borderRadius: 20,
-    // borderWidth: 1,
-    // borderColor: colors.black,
   },
   item: {
     backgroundColor: colors.yellow,

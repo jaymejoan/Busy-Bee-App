@@ -39,7 +39,7 @@ function addToAllTasks() {
  * Helper method to print task.
  */
 function printNewTask() {
-  console.log("sent to database");
+  console.log("sent task to database");
   console.log("sent taskName: " + taskData.taskName);
   console.log("sent dueDate: " + taskData.dueDate);
   console.log("sent details: " + taskData.details);
