@@ -25,7 +25,7 @@ const CheckBoxButton = () => {
       uncheckedColor={colors.black}
       checkedColor={colors.black}
       checked={toggleCheckBox}
-      size={25}
+      size={30}
       onPress={(check) => setToggleCheckBox(!toggleCheckBox)}
     />
   );
@@ -33,10 +33,12 @@ const CheckBoxButton = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.yellow,
-    width: "15%",
-    borderRadius: 50,
-    paddingLeft: 20,
+    // backgroundColor: colors.yellow,
+    justifyContent: "center",
+    alignItems: "center",
+    // height: "70%",
+    // borderRadius: 90,
+    marginTop: 10,
   },
 });
 export default CheckBoxButton;

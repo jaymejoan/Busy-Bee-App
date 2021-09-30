@@ -28,7 +28,6 @@ const TasksScreen = ({ route }) => {
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
-        <CheckBoxButton />
         <RenderTasks listName={listName} />
       </View>
       <View style={styles.bottomView}>
