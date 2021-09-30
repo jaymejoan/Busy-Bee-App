@@ -48,6 +48,7 @@ const renderTasks = (listName) => {
             dueDate: documentSnapshot.data().dueDate,
             details: documentSnapshot.data().details,
             listName: documentSnapshot.data().listName,
+            completed: documentSnapshot.data().completed,
           });
         });
         setTasks(taskData);
@@ -58,7 +59,7 @@ const renderTasks = (listName) => {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.taskView}>
-        <CheckBoxButton />
+        <CheckBoxButton task={item} />
         <Item item={item} onPress={() => navigation.navigate("Home")} />
       </View>
     );
