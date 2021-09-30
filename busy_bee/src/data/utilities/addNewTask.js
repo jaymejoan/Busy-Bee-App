@@ -7,49 +7,46 @@
 import dbh from "@data/service-agents/firebaseConfigs.js";
 import taskData from "@data/utilities/storeTaskData";
 
+/**
+ * Adds task to list specified by user.
+ * If no list has been specified, task is added to All Tasks list by default.
+ */
 function addNewTask() {
-    // add to list
-    dbh.collection(taskData.listName).doc(taskData.taskName).set({
-      taskName: taskData.taskName,
-      dueDate: taskData.dueDate,
-      details: taskData.details,
-      listName: taskData.listName,
-    });
+  dbh.collection(taskData.listName).doc(taskData.taskName).set({
+    taskName: taskData.taskName,
+    dueDate: taskData.dueDate,
+    details: taskData.details,
+    listName: taskData.listName,
+    completed: taskData.completed,
+  });
 
-    // add to All Tasks list
-    dbh.collection("All Tasks").doc(taskData.taskName).set({
-      taskName: taskData.taskName,
-      dueDate: taskData.dueDate,
-      details: taskData.details,
-      listName: taskData.listName,
-    });
-
+  addToAllTasks();
   printNewTask();
 }
 
+/**
+ * Adds task to All Tasks list.
+ */
+function addToAllTasks() {
+  dbh.collection("All Tasks").doc(taskData.taskName).set({
+    taskName: taskData.taskName,
+    dueDate: taskData.dueDate,
+    details: taskData.details,
+    listName: taskData.listName,
+    completed: taskData.completed,
+  });
+}
+
+/**
+ * Helper method to print task.
+ */
 function printNewTask() {
-  console.log("sent to database");
+  console.log("sent task to database");
   console.log("sent taskName: " + taskData.taskName);
   console.log("sent dueDate: " + taskData.dueDate);
   console.log("sent details: " + taskData.details);
   console.log("sent listName: " + taskData.listName);
+  console.log("sent completed: " + taskData.completed);
 }
 
 export default addNewTask;
-
-// dbh 
-//     .collection("reports")
-//     .add({
-//       date: null,
-//       region: null,
-//       areaOfInjury: null,
-//       severity: null,
-//       equipmentInvolved: null,
-//     })
-//     .then((docRef) => {
-//       console.log("Document written with ID: ", docRef.id);
-//       reportID = docRef.id;
-//     })
-//     .catch((error) => {
-//       console.error("Error adding document: ", error);
-//     });

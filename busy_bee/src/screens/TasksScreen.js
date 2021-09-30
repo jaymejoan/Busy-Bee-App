@@ -1,27 +1,34 @@
 /**
- * This file contains the code for the NewTask screen.
+ * This file contains the code to display the tasks within a specific list.
+ * Displayed when the user selects a specific list from the All List screen.
+ *
+ * References:
  * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * https://github.com/react-native-checkbox/react-native-checkbox
  */
 
 import React from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
 
+import RenderTasks from "@data/actions/renderTasks";
+
 import BottomMenu from "@components/BottomMenu";
+import CheckBoxButton from "@components/CheckBox";
 
-import TopTasks from "@data/actions/renderTopTasks";
+const TasksScreen = ({ route }) => {
+  const { listName } = route.params;
 
-const TopTasksScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
-        <Text style={text.title}>Top 3 Tasks</Text>
+        <Text style={text.title}>{listName}</Text>
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
-        <TopTasks />
+        <RenderTasks listName={listName} />
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
@@ -58,4 +65,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TopTasksScreen;
+export default TasksScreen;

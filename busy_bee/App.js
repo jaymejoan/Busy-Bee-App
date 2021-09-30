@@ -13,6 +13,7 @@ import NewTaskScreen from "@screens/NewTaskScreen";
 import NewListScreen from "@screens/NewListScreen";
 import AllListsScreen from "@screens/AllListsScreen";
 import AllTasksScreen from "@screens/AllTasksScreen";
+import TasksScreen from "@screens/TasksScreen";
 import TopTasksScreen from "@screens/TopTasksScreen";
 
 // Displays Splash Screen for 3 seconds
@@ -37,6 +38,7 @@ export default function App() {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
+        {/* <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}> */}
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Success Screen" component={SuccessScreen} />
@@ -44,6 +46,7 @@ export default function App() {
           <Stack.Screen name="New List Screen" component={NewListScreen} />
           <Stack.Screen name="All Lists Screen" component={AllListsScreen} />
           <Stack.Screen name="All Tasks Screen" component={AllTasksScreen} />
+          <Stack.Screen name="Tasks Screen" component={TasksScreen} />
           <Stack.Screen name="Top Tasks Screen" component={TopTasksScreen} />
         </Stack.Navigator>
       </NavigationContainer>

@@ -35,7 +35,11 @@ const NewTaskScreen = () => {
       </View>
       <View style={{ flex: 0.1 }} />
       <View style={styles.confirmView}>
-        <CreateButton title="CREATE TASK" nextPage="Success Screen" />
+        <CreateButton
+          title="CREATE TASK"
+          nextPage="Success Screen"
+          type="task"
+        />
       </View>
     </View>
   );
@@ -49,7 +53,6 @@ const styles = StyleSheet.create({
   confirmView: {
     backgroundColor: colors.yellow,
     width: "100%",
-    // height: 100,
     height: 80,
     justifyContent: "center",
     alignItems: "center",

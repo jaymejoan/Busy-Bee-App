@@ -34,7 +34,11 @@ const NewListScreen = () => {
       </View>
       <View style={styles.textFieldsView} />
       <View style={styles.confirmView}>
-        <CreateButton title="CREATE LIST" nextPage="Success Screen" />
+        <CreateButton
+          title="CREATE LIST"
+          nextPage="Success Screen"
+          type="list"
+        />
       </View>
     </View>
   );
@@ -52,7 +56,6 @@ const styles = StyleSheet.create({
   confirmView: {
     backgroundColor: colors.yellow,
     width: "100%",
-    // height: 100,
     height: 80,
     justifyContent: "center",
     alignItems: "center",
