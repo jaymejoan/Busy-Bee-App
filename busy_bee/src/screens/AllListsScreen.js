@@ -9,13 +9,9 @@ import { StyleSheet, View, Text, FlatList } from "react-native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-import CancelButton from "@buttons/CancelButton";
-
-import TextField from "@components/TextField";
-import TaskOptions from "@components/TaskOptions";
 import BottomMenu from "@components/BottomMenu";
 
-import RenderLists from "@data/actions/renderAllLists";
+import RenderAllLists from "@data/actions/renderAllLists";
 
 const AllListsScreen = () => {
   return (
@@ -25,7 +21,7 @@ const AllListsScreen = () => {
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
-        <RenderLists />
+        <RenderAllLists />
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
@@ -55,13 +51,10 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   topView: {
-    // backgroundColor: colors.white,
     justifyContent: "space-evenly",
     alignItems: "stretch",
     flexDirection: "column",
     padding: 25,
-    // paddingTop: 25,
-    // paddingLeft: 50,
     flex: 0.1,
   },
 });

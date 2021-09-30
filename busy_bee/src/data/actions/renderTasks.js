@@ -1,6 +1,6 @@
 /**
- * This file renders all the tasks within a specified list.
- * Displayed when the user selects a specific list from the All List screen.
+ * This file renders all the tasks within a selected list.
+ * Displayed when the user selects a list from the All List screen.
  *
  * Reference: https://reactnative.dev/docs/flatlist
  */
@@ -25,11 +25,15 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
+/**
+ * Renders all the tasks within a selected list by displaying the task names.
+ * @returns a Flatlist containing every task related to a selected list within the database.
+ * */
 const renderTasks = (listName) => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // gets all the tasks within the specified listName
+  // Gets all the tasks related to the selected listName
   useEffect(() => {
     dbh
       .collection("All Tasks")
@@ -48,10 +52,12 @@ const renderTasks = (listName) => {
       });
   }, []);
 
+  // Renders each individual item within the list
   const renderItem = ({ item }) => {
     return <Item item={item} onPress={() => navigation.navigate("Home")} />;
   };
 
+  // Displays all the tasks within a selected list
   return (
     <View style={styles.container}>
       <FlatList

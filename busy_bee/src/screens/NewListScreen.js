@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
   confirmView: {
     backgroundColor: colors.yellow,
     width: "100%",
-    // height: 100,
     height: 80,
     justifyContent: "center",
     alignItems: "center",

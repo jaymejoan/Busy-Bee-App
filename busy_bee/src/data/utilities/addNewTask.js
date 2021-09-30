@@ -47,20 +47,3 @@ function printNewTask() {
 }
 
 export default addNewTask;
-
-// dbh
-//     .collection("reports")
-//     .add({
-//       date: null,
-//       region: null,
-//       areaOfInjury: null,
-//       severity: null,
-//       equipmentInvolved: null,
-//     })
-//     .then((docRef) => {
-//       console.log("Document written with ID: ", docRef.id);
-//       reportID = docRef.id;
-//     })
-//     .catch((error) => {
-//       console.error("Error adding document: ", error);
-//     });

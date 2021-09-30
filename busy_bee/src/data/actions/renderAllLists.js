@@ -1,5 +1,5 @@
 /**
- * This file renders all the lists stored within the all Lists collection in the database.
+ * This file renders all the lists stored within the All Lists collection in the database.
  * Displayed when the user navigates to the All Lists screen.
  *
  * Reference: https://reactnative.dev/docs/flatlist
@@ -33,6 +33,7 @@ const renderLists = () => {
   const navigation = useNavigation();
   const [listNames, setListNames] = useState([]);
 
+  // Gets all the data from the All Lists collection
   useEffect(() => {
     dbh.collection("All Lists").onSnapshot((querySnapshot) => {
       const names = []; // list names stored in database
@@ -46,6 +47,10 @@ const renderLists = () => {
     });
   }, []);
 
+  
+   // Renders each individual list within the All Lists collection.
+   // If the user selects the All Tasks list, the app will navigate to the All Tasks screen
+   // otherwise it will navigate to the Tasks screen which displays only the tasks linked to the selected list.
   const renderItem = ({ item }) => {
     return (
       <Item
@@ -61,6 +66,7 @@ const renderLists = () => {
     );
   };
 
+  // Displays all the lists in the All List collection
   return (
     <View style={styles.container}>
       <FlatList

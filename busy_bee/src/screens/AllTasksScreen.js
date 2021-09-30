@@ -13,7 +13,7 @@
  
  import RenderAllTasks from "@data/actions/renderAllTasks";
  
- const AllListsScreen = () => {
+ const AllTasksScreen = () => {
    return (
      <View style={styles.background}>
        <View style={styles.topView}>
@@ -47,20 +47,16 @@
    },
    listView: {
      paddingTop: 10,
-     // alignItems: "center",
      flex: 2,
    },
    topView: {
-     // backgroundColor: colors.white,
      justifyContent: "space-evenly",
      alignItems: "stretch",
      flexDirection: "column",
      padding: 25,
-     // paddingTop: 25,
-     // paddingLeft: 50,
      flex: 0.1,
    },
  });
  
- export default AllListsScreen;
+ export default AllTasksScreen;
  

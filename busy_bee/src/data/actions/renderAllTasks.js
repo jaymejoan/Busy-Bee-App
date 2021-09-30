@@ -1,5 +1,6 @@
 /**
- * This file renders all the tasks stored in the All Tasks collection in database.
+ * This file renders all the tasks stored in the All Tasks collection within the database.
+ * All tasks are displayed regardless of the list they belong to.
  * Displayed when the user navigates to the All Tasks screen from the Home page.
  *
  * Reference: https://reactnative.dev/docs/flatlist
@@ -26,34 +27,38 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
+/**
+ * Renders all the tasks stored in the database by displaying the task names.
+ * @returns a Flatlist containing every task stored within in the database, regardless of the list they belong to.
+ */
 const renderAllTasks = () => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // gets all the tasks within the All Tasks list
+  // Gets all the tasks within the All Tasks collection
   useEffect(() => {
-    dbh
-      .collection("All Tasks")
-      .onSnapshot((querySnapshot) => {
-        const taskData = []; // tasks stored in database
-        querySnapshot.forEach((documentSnapshot) => {
-          taskData.push({
-            taskName: documentSnapshot.data().taskName,
-            dueDate: documentSnapshot.data().dueDate,
-            details: documentSnapshot.data().details,
-            listName: documentSnapshot.data().listName,
-          });
+    dbh.collection("All Tasks").onSnapshot((querySnapshot) => {
+      const taskData = []; // tasks stored in database
+      querySnapshot.forEach((documentSnapshot) => {
+        taskData.push({
+          taskName: documentSnapshot.data().taskName,
+          dueDate: documentSnapshot.data().dueDate,
+          details: documentSnapshot.data().details,
+          listName: documentSnapshot.data().listName,
         });
-        setTasks(taskData);
       });
+      setTasks(taskData);
+    });
   }, []);
 
+  // Renders each individual item within the list
   const renderItem = ({ item }) => {
     return (
       <Item item={item} onPress={() => navigation.navigate("Home")}></Item>
     );
   };
 
+  // Displays all the tasks in the All Tasks collection
   return (
     <View style={styles.container}>
       <FlatList

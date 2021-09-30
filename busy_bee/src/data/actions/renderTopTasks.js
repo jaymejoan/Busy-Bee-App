@@ -26,11 +26,15 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
+/**
+ * Renders all the tasks related to the Top 3 Tasks list in the database.
+ * @returns a Flatlist containing every task related to the Top 3 Tasks list within the database.
+ */
 const renderTopTasks = () => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // gets all the tasks within the Top 3 Tasks list
+  // Gets all the tasks within the Top 3 Tasks list
   useEffect(() => {
     dbh
       .collection("All Tasks")
@@ -49,10 +53,12 @@ const renderTopTasks = () => {
       });
   }, []);
 
+  // Renders each individual item within the list
   const renderItem = ({ item }) => {
     return <Item item={item} onPress={() => navigation.navigate("Home")} />;
   };
 
+  // Displays all the tasks within the Top 3 Tasks list
   return (
     <View style={styles.container}>
       <FlatList

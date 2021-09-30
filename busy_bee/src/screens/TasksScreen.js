@@ -55,17 +55,13 @@ const styles = StyleSheet.create({
   },
   listView: {
     paddingTop: 10,
-    // alignItems: "center",
     flex: 2,
   },
   topView: {
-    // backgroundColor: colors.white,
     justifyContent: "space-evenly",
     alignItems: "stretch",
     flexDirection: "column",
     padding: 25,
-    // paddingTop: 25,
-    // paddingLeft: 50,
     flex: 0.1,
   },
 });

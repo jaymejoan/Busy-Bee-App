@@ -12,7 +12,7 @@ import icons from "@styles/icons";
 import BottomMenu from "@components/BottomMenu";
 import Card from "@components/Card.js";
 
-const HomeScreen = (props) => {
+const HomeScreen = () => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
