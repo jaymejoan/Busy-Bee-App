@@ -54,10 +54,11 @@ const renderAllTasks = () => {
 
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
-    console.log("completed Task renderItem", item.completedTask);
+    console.log("completed Task renderItem", item.completed);
     return (
       <View style={styles.taskView}>
-        <CheckBoxButton completedTask={item.completed} />
+        {/* <CheckBoxButton completedTask={item.completed} /> */}
+        <CheckBoxButton task={item} />
         <Item item={item} onPress={() => navigation.navigate("Home")} />
       </View>
     );

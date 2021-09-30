@@ -13,8 +13,10 @@ import { CheckBox } from "react-native-elements";
 
 import colors from "@styles/colors";
 
-const CheckBoxButton = (props) => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(props.completedTask);
+import updateTask from "@data/utilities/updateTask";
+
+const CheckBoxButton = ({ task }) => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(task.completed);
 
   return (
     <CheckBox
@@ -26,7 +28,11 @@ const CheckBoxButton = (props) => {
       checkedColor={colors.black}
       checked={toggleCheckBox}
       size={30}
-      onPress={(check) => setToggleCheckBox(!toggleCheckBox)}
+      onPress={(check) => {
+        setToggleCheckBox(!toggleCheckBox);
+        task.completed = !task.completed;
+        updateTask(task);
+      }}
     />
   );
 };
