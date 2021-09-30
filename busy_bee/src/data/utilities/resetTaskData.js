@@ -12,18 +12,20 @@ function resetTaskData() {
   taskData.dueDate = "N/A";
   taskData.details = "N/A";
   taskData.listName = "All Tasks";
+  taskData.completed = false;
   printReset();
 }
 
 /**
  * Helper method to check reset was successful.
- */ 
+ */
 function printReset() {
   console.log("reset successful");
   console.log("reset taskName: " + taskData.taskName);
   console.log("reset dueDate: " + taskData.dueDate);
   console.log("reset details: " + taskData.details);
   console.log("reset listName: " + taskData.listName);
+  console.log("reset completed: " + taskData.completed);
 }
 
 export default resetTaskData;

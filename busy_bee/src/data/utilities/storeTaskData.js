@@ -9,6 +9,7 @@ const taskData = {
   dueDate: "N/A",
   details: "N/A",
   listName: "All Tasks",
+  completed: false,
 };
 
 export default taskData;

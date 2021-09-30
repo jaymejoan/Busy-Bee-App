@@ -45,6 +45,7 @@ const renderAllTasks = () => {
           dueDate: documentSnapshot.data().dueDate,
           details: documentSnapshot.data().details,
           listName: documentSnapshot.data().listName,
+          completed: documentSnapshot.data().completed,
         });
       });
       setTasks(taskData);
@@ -53,9 +54,10 @@ const renderAllTasks = () => {
 
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
+    console.log("completed Task renderItem", item.completedTask);
     return (
       <View style={styles.taskView}>
-        <CheckBoxButton />
+        <CheckBoxButton completedTask={item.completed} />
         <Item item={item} onPress={() => navigation.navigate("Home")} />
       </View>
     );

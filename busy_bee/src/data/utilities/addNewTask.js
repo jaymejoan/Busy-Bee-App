@@ -17,6 +17,7 @@ function addNewTask() {
     dueDate: taskData.dueDate,
     details: taskData.details,
     listName: taskData.listName,
+    completed: taskData.completed,
   });
 
   addToAllTasks();
@@ -32,6 +33,7 @@ function addToAllTasks() {
     dueDate: taskData.dueDate,
     details: taskData.details,
     listName: taskData.listName,
+    completed: taskData.completed,
   });
 }
 
@@ -44,6 +46,7 @@ function printNewTask() {
   console.log("sent dueDate: " + taskData.dueDate);
   console.log("sent details: " + taskData.details);
   console.log("sent listName: " + taskData.listName);
+  console.log("sent completed: " + taskData.completed);
 }
 
 export default addNewTask;

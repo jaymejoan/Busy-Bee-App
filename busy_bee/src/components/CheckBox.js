@@ -8,13 +8,13 @@
  */
 
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { CheckBox } from "react-native-elements";
 
 import colors from "@styles/colors";
 
-const CheckBoxButton = () => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+const CheckBoxButton = (props) => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(props.completedTask);
 
   return (
     <CheckBox
