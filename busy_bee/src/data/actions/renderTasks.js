@@ -56,7 +56,6 @@ const renderTasks = (listName) => {
 
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
-    // return <Item item={item} onPress={() => navigation.navigate("Home")} />;
     return (
       <View style={styles.taskView}>
         <CheckBoxButton />
@@ -88,15 +87,11 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     width: "80%",
     borderRadius: 50,
-    // marginHorizontal: 16,
-    // width: "100%",
   },
   taskView: {
-    // backgroundColor: colors.white,
     flexDirection: "row",
     justifyContent: "space-between",
     width: "90%",
-    // paddingLeft: 20,
     marginLeft: 20,
   },
   title: {

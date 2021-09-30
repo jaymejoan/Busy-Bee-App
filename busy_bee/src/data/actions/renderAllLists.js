@@ -47,10 +47,9 @@ const renderLists = () => {
     });
   }, []);
 
-  
-   // Renders each individual list within the All Lists collection.
-   // If the user selects the All Tasks list, the app will navigate to the All Tasks screen
-   // otherwise it will navigate to the Tasks screen which displays only the tasks linked to the selected list.
+  // Renders each individual list within the All Lists collection.
+  // If the user selects the All Tasks list, the app will navigate to the All Tasks screen
+  // otherwise it will navigate to the Tasks screen which displays only the tasks linked to the selected list.
   const renderItem = ({ item }) => {
     return (
       <Item
@@ -88,6 +87,7 @@ const styles = StyleSheet.create({
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
+    borderRadius:30,
   },
   title: {
     fontSize: 32,

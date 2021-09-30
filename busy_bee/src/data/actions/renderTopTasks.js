@@ -20,6 +20,8 @@ import text from "@styles/text";
 
 import dbh from "@data/service-agents/firebaseConfigs.js";
 
+import CheckBoxButton from "@components/CheckBox";
+
 const Item = ({ item, onPress }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
     <Text style={text.cardTitle}>{item.taskName}</Text>
@@ -55,7 +57,12 @@ const renderTopTasks = () => {
 
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
-    return <Item item={item} onPress={() => navigation.navigate("Home")} />;
+    return (
+      <View style={styles.taskView}>
+        <CheckBoxButton />
+        <Item item={item} onPress={() => navigation.navigate("Home")} />
+      </View>
+    );
   };
 
   // Displays all the tasks within the Top 3 Tasks list
@@ -72,14 +79,21 @@ const renderTopTasks = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: colors.yellowBackground,
+    flex: 1,
   },
   item: {
     backgroundColor: colors.yellow,
     padding: 20,
     marginVertical: 8,
-    marginHorizontal: 16,
+    width: "80%",
+    borderRadius: 50,
+  },
+  taskView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "90%",
+    marginLeft: 20,
   },
   title: {
     fontSize: 32,

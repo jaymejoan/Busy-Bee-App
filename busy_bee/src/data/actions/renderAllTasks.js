@@ -54,7 +54,10 @@ const renderAllTasks = () => {
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
     return (
-      <Item item={item} onPress={() => navigation.navigate("Home")}></Item>
+      <View style={styles.taskView}>
+        <CheckBoxButton />
+        <Item item={item} onPress={() => navigation.navigate("Home")} />
+      </View>
     );
   };
 
@@ -72,14 +75,21 @@ const renderAllTasks = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: colors.yellowBackground,
+    flex: 1,
   },
   item: {
     backgroundColor: colors.yellow,
     padding: 20,
     marginVertical: 8,
-    marginHorizontal: 16,
+    width: "80%",
+    borderRadius: 50,
+  },
+  taskView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "90%",
+    marginLeft: 20,
   },
   title: {
     fontSize: 32,
