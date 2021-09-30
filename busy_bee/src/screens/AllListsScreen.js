@@ -15,7 +15,7 @@ import TextField from "@components/TextField";
 import TaskOptions from "@components/TaskOptions";
 import BottomMenu from "@components/BottomMenu";
 
-import RenderLists from "@data/utilities/renderLists";
+import RenderLists from "@data/actions/renderLists";
 
 const AllListsScreen = () => {
   return (
@@ -25,7 +25,7 @@ const AllListsScreen = () => {
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
-        <RenderLists></RenderLists>
+        <RenderLists />
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
