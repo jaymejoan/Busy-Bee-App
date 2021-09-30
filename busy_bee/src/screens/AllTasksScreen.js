@@ -1,23 +1,26 @@
 /**
  * This file contains the code for the NewTask screen.
+ *
+ * References:
  * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * https://github.com/react-native-checkbox/react-native-checkbox
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
+// import CheckBox from "@react-native-community/checkbox";
+// import { CheckBox } from 'react-native-elements'
 
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-import RenderLists from "@data/actions/renderLists";
 import RenderTasks from "@data/actions/renderTasks";
 
 import BottomMenu from "@components/BottomMenu";
+import CheckBoxButton from "@components/CheckBox";
 
 const AllTasksScreen = ({ route, navigation }) => {
   const { listName } = route.params;
-
-  // console.log("list name: ", listName);
 
   return (
     <View style={styles.background}>
@@ -26,6 +29,12 @@ const AllTasksScreen = ({ route, navigation }) => {
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
+        {/* <CheckBox
+          disabled={false}
+          value={toggleCheckBox}
+          onValueChange={(newValue) => setToggleCheckBox(newValue)}
+        /> */}
+        <CheckBoxButton />
         <RenderTasks listName={listName} />
       </View>
       <View style={styles.bottomView}>
