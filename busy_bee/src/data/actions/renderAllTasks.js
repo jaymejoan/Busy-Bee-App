@@ -26,7 +26,7 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
-const renderAllTasks = (listName) => {
+const renderAllTasks = () => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 

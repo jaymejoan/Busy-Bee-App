@@ -25,6 +25,10 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
+/**
+ * Renders all the lists stored in the database by displaying the list names.
+ * @returns a Flatlist containing the list names of every list in the database.
+ */
 const renderLists = () => {
   const navigation = useNavigation();
   const [listNames, setListNames] = useState([]);
@@ -46,11 +50,13 @@ const renderLists = () => {
     return (
       <Item
         item={item}
-        onPress={() =>
-          navigation.navigate("Tasks Screen", {
-            listName: item.name,
-          })
-        }
+        onPress={() => {
+          item.name == "All Tasks"
+            ? navigation.navigate("All Tasks Screen")
+            : navigation.navigate("Tasks Screen", {
+                listName: item.name,
+              });
+        }}
       />
     );
   };

@@ -4,7 +4,7 @@
  */
 
  import React from "react";
- import { StyleSheet, View, Text, FlatList } from "react-native";
+ import { StyleSheet, View, Text } from "react-native";
  
  import colors from "@styles/colors";
  import text from "@styles/text";
