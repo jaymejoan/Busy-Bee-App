@@ -1,6 +1,6 @@
 /**
- * This file renders all the Tasks stored within a specific list in the database. Data and Business Layer?
- * Displayed when the user navigates to the AllLists screen.
+ * This file renders all the lists stored within the all Lists collection in the database.
+ * Displayed when the user navigates to the All Lists screen.
  *
  * Reference: https://reactnative.dev/docs/flatlist
  */
@@ -47,7 +47,7 @@ const renderLists = () => {
       <Item
         item={item}
         onPress={() =>
-          navigation.navigate("All Tasks Screen", {
+          navigation.navigate("Tasks Screen", {
             listName: item.name,
           })
         }

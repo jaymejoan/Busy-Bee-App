@@ -3,72 +3,63 @@
  * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  */
 
- import React from "react";
- import { StyleSheet, View, Text } from "react-native";
- 
- import colors from "@styles/colors";
- import text from "@styles/text";
- 
- import CancelButton from "@buttons/CancelButton";
- 
- import TextField from "@components/TextField";
- import TaskOptions from "@components/TaskOptions";
- 
- const TopTasksScreen = () => {
-   return (
-     <View style={styles.background}>
-       <View style={styles.topView}>
-         <Text style={text.title}>New Task</Text>
-         <View style={styles.cancelView}>
-           <CancelButton />
-         </View>
-       </View>
-       <View style={styles.taskNameView}>
-         <Text style={text.normalText}>What would you like to achieve?</Text>
-         <View style={{ flex: 0.3 }} />
-         <TextField placeholderText="Add task name" />
-       </View>
-       <View style={styles.textFieldsView}>
-         <TaskOptions></TaskOptions>
-       </View>
-       <View style={{ flex: 0.1 }} />
-       <View style={styles.bottomView}></View>
-     </View>
-   );
- };
- 
- const styles = StyleSheet.create({
-   background: {
-     backgroundColor: colors.yellowBackground,
-     flex: 1,
-   },
-   bottomView: {
-     backgroundColor: colors.yellow,
-     flex: 0.3,
-   },
-   cancelView: {
-     position: "absolute",
-     right: 20,
-   },
-   taskNameView: {
-     padding: 20,
-     flexDirection: "column",
-     flex: 0.35,
-   },
-   textFieldsView: {
-     backgroundColor: colors.yellowBackground,
-     flexDirection: "column",
-     justifyContent: "center",
-     alignItems: "center",
-     flex: 2,
-   },
-   topView: {
-     justifyContent: "center",
-     alignItems: "center",
-     flexDirection: "row",
-     flex: 0.3,
-   },
- });
- 
- export default TopTasksScreen;
- 
+import React from "react";
+import { StyleSheet, View, Text, FlatList } from "react-native";
+
+import colors from "@styles/colors";
+import text from "@styles/text";
+
+import BottomMenu from "@components/BottomMenu";
+
+import TopTasks from "@data/actions/renderTopTasks";
+
+const TopTasksScreen = () => {
+  return (
+    <View style={styles.background}>
+      <View style={styles.topView}>
+        <Text style={text.title}>Top 3 Tasks</Text>
+      </View>
+      <View style={styles.divider} />
+      <View style={styles.listView}>
+        <TopTasks />
+      </View>
+      <View style={styles.bottomView}>
+        <BottomMenu />
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  background: {
+    backgroundColor: colors.yellowBackground,
+    flex: 1,
+  },
+  bottomView: {
+    backgroundColor: colors.yellow,
+    flex: 0.2,
+  },
+  divider: {
+    borderBottomColor: colors.yellow,
+    borderBottomWidth: 3,
+    width: "90%",
+    alignSelf: "center",
+  },
+  listView: {
+    paddingTop: 10,
+    // alignItems: "center",
+    flex: 2,
+  },
+  topView: {
+    // backgroundColor: colors.white,
+    justifyContent: "space-evenly",
+    alignItems: "stretch",
+    flexDirection: "column",
+    padding: 25,
+    // paddingTop: 25,
+    // paddingLeft: 50,
+    flex: 0.1,
+  },
+});
+
+export default TopTasksScreen;

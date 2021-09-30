@@ -1,6 +1,6 @@
 /**
- * This file renders all the tasks within a specified list.
- * Displayed when the user selects a specific list from the All List screen.
+ * This file renders all the tasks stored in the All Tasks collection in database.
+ * Displayed when the user navigates to the All Tasks screen from the Home page.
  *
  * Reference: https://reactnative.dev/docs/flatlist
  */
@@ -18,6 +18,7 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import dbh from "@data/service-agents/firebaseConfigs.js";
+import CheckBoxButton from "@components/CheckBox";
 
 const Item = ({ item, onPress }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
@@ -25,15 +26,14 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
-const renderTasks = (listName) => {
+const renderAllTasks = (listName) => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // gets all the tasks within the specified listName
+  // gets all the tasks within the All Tasks list
   useEffect(() => {
     dbh
       .collection("All Tasks")
-      .where("listName", "==", listName.listName)
       .onSnapshot((querySnapshot) => {
         const taskData = []; // tasks stored in database
         querySnapshot.forEach((documentSnapshot) => {
@@ -49,7 +49,9 @@ const renderTasks = (listName) => {
   }, []);
 
   const renderItem = ({ item }) => {
-    return <Item item={item} onPress={() => navigation.navigate("Home")} />;
+    return (
+      <Item item={item} onPress={() => navigation.navigate("Home")}></Item>
+    );
   };
 
   return (
@@ -79,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default renderTasks;
+export default renderAllTasks;

@@ -1,6 +1,7 @@
 /**
- * This file renders all the tasks within a specified list.
- * Displayed when the user selects a specific list from the All List screen.
+ * This file renders all the tasks stored in the Top 3 Tasks collection in database.
+ * Displayed when the user navigates to the Top 3 Tasks screen from the Home page or
+ * when they select the Top 3 Tasks list from the All Lists page.
  *
  * Reference: https://reactnative.dev/docs/flatlist
  */
@@ -25,15 +26,15 @@ const Item = ({ item, onPress }) => (
   </TouchableOpacity>
 );
 
-const renderTasks = (listName) => {
+const renderTopTasks = () => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // gets all the tasks within the specified listName
+  // gets all the tasks within the Top 3 Tasks list
   useEffect(() => {
     dbh
       .collection("All Tasks")
-      .where("listName", "==", listName.listName)
+      .where("listName", "==", "Top 3 Tasks")
       .onSnapshot((querySnapshot) => {
         const taskData = []; // tasks stored in database
         querySnapshot.forEach((documentSnapshot) => {
@@ -79,4 +80,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default renderTasks;
+export default renderTopTasks;
