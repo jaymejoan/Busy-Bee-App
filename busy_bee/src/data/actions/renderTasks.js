@@ -21,44 +21,43 @@ import dbh from "@data/service-agents/firebaseConfigs.js";
 
 const Item = ({ item, onPress }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
-    <Text style={text.cardTitle}>{item.name}</Text>
+    <Text style={text.cardTitle}>{item.taskName}</Text>
   </TouchableOpacity>
 );
 
-const renderLists = () => {
+const renderTasks = (listName) => {
   const navigation = useNavigation();
-  const [listNames, setListNames] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
+  // gets all the tasks within the passed in listName
   useEffect(() => {
-    dbh.collection("All Lists").onSnapshot((querySnapshot) => {
-      const names = []; // list names stored in database
-      querySnapshot.forEach((documentSnapshot) => {
-        names.push({
-          id: documentSnapshot.data().name,
-          name: documentSnapshot.data().name,
+    dbh
+      .collection("All Tasks")
+      .where("listName", "==", listName.listName)
+      .onSnapshot((querySnapshot) => {
+        const taskData = []; // tasks stored in database
+        querySnapshot.forEach((documentSnapshot) => {
+          taskData.push({
+            taskName: documentSnapshot.data().taskName,
+            dueDate: documentSnapshot.data().dueDate,
+            details: documentSnapshot.data().details,
+            listName: documentSnapshot.data().listName,
+          });
         });
+        setTasks(taskData);
       });
-      setListNames(names);
-    });
   }, []);
 
   const renderItem = ({ item }) => {
-    return (
-      <Item
-        item={item}
-        onPress={() =>
-          navigation.navigate("All Tasks Screen", { listName: item.name })
-        }
-      />
-    );
+    return <Item item={item} onPress={() => navigation.navigate("Home")} />;
   };
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={listNames}
+        data={tasks}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.taskName}
       />
     </View>
   );
@@ -89,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default renderLists;
+export default renderTasks;

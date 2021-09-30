@@ -9,28 +9,28 @@ import { StyleSheet, View, Text } from "react-native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-import CancelButton from "@buttons/CancelButton";
+import RenderLists from "@data/actions/renderLists";
+import RenderTasks from "@data/actions/renderTasks";
 
-import TextField from "@components/TextField";
-import TaskOptions from "@components/TaskOptions";
+import BottomMenu from "@components/BottomMenu";
 
-const AllTasksScreen = () => {
+const AllTasksScreen = ({ route, navigation }) => {
+  const { listName } = route.params;
+
+  // console.log("list name: ", listName);
+
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
         <Text style={text.title}>All Tasks</Text>
       </View>
       <View style={styles.divider} />
-      <View style={styles.taskNameView}>
-        <Text style={text.normalText}>What would you like to achieve?</Text>
-        <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add task name" type="taskName" />
+      <View style={styles.listView}>
+        <RenderTasks listName={listName} />
       </View>
-      <View style={styles.textFieldsView}>
-        <TaskOptions />
+      <View style={styles.bottomView}>
+        <BottomMenu />
       </View>
-      <View style={{ flex: 0.1 }} />
-      <View style={styles.confirmView}></View>
     </View>
   );
 };
@@ -42,11 +42,7 @@ const styles = StyleSheet.create({
   },
   bottomView: {
     backgroundColor: colors.yellow,
-    flex: 0.3,
-  },
-  cancelView: {
-    position: "absolute",
-    right: 20,
+    flex: 0.2,
   },
   divider: {
     borderBottomColor: colors.yellow,
@@ -54,16 +50,9 @@ const styles = StyleSheet.create({
     width: "90%",
     alignSelf: "center",
   },
-  taskNameView: {
-    padding: 20,
-    flexDirection: "column",
-    flex: 0.35,
-  },
-  textFieldsView: {
-    backgroundColor: colors.yellowBackground,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+  listView: {
+    paddingTop: 10,
+    // alignItems: "center",
     flex: 2,
   },
   topView: {

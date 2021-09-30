@@ -54,18 +54,6 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     flex: 2,
   },
-  taskNameView: {
-    padding: 20,
-    flexDirection: "column",
-    flex: 0.35,
-  },
-  textFieldsView: {
-    backgroundColor: colors.yellowBackground,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 2,
-  },
   topView: {
     // backgroundColor: colors.white,
     justifyContent: "space-evenly",
