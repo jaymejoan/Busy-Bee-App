@@ -23,7 +23,7 @@ const AllTasksScreen = ({ route }) => {
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
-        <Text style={text.title}>All Tasks</Text>
+        <Text style={text.title}>{listName}</Text>
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
