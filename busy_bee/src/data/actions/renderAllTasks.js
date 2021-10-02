@@ -21,6 +21,7 @@ import text from "@styles/text";
 import dbh from "@data/service-agents/firebaseConfigs.js";
 
 import CheckBoxButton from "@components/CheckBox";
+
 import DeleteButton from "@buttons/DeleteButton";
 
 const Item = ({ item, onPress, textStyle }) => (
@@ -57,7 +58,6 @@ const renderAllTasks = () => {
 
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
-    console.log("completed Task renderItem", item.completed);
     return (
       <View style={styles.taskView}>
         <CheckBoxButton task={item} />

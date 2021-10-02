@@ -30,6 +30,11 @@ export default {
     size: 30,
     color: colors.black,
   },
+  editButton: {
+    name: "edit",
+    size: 30,
+    color: colors.black,
+  },
   list: {
     // https://icons.expo.fyi/Ionicons/list-outline
     name: "list-outline",

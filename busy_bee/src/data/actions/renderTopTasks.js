@@ -22,9 +22,14 @@ import dbh from "@data/service-agents/firebaseConfigs.js";
 
 import CheckBoxButton from "@components/CheckBox";
 
+import DeleteButton from "@buttons/DeleteButton";
+import EditButton from "@buttons/EditButton";
+
 const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
     <Text style={textStyle}>{item.taskName}</Text>
+    <DeleteButton taskName={item.taskName} />
+    <EditButton taskName={item.taskName} />
   </TouchableOpacity>
 );
 
