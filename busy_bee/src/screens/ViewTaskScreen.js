@@ -12,7 +12,6 @@ import text from "@styles/text";
 import CancelButton from "@buttons/CancelButton";
 import CreateButton from "@buttons/CreateButton";
 
-import TextField from "@components/TextField";
 import TaskOptions from "@components/TaskOptions";
 
 const ViewTaskScreen = ({ route }) => {
@@ -22,9 +21,6 @@ const ViewTaskScreen = ({ route }) => {
     <View style={styles.background}>
       <View style={styles.topView}>
         <Text style={text.title}>{taskName}</Text>
-        <View style={styles.cancelView}>
-          <CancelButton />
-        </View>
       </View>
       <View style={styles.divider} />
       <View style={styles.taskNameView}>

@@ -28,8 +28,11 @@ import EditButton from "@buttons/EditButton";
 const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
     <Text style={textStyle}>{item.taskName}</Text>
-    <DeleteButton taskName={item.taskName} />
-    <EditButton taskName={item.taskName} />
+    <View style={{ flex: 1 }} />
+    <View style={styles.buttons}>
+      <EditButton taskName={item.taskName} />
+      <DeleteButton taskName={item.taskName} />
+    </View>
   </TouchableOpacity>
 );
 
@@ -88,6 +91,11 @@ const renderTopTasks = () => {
 };
 
 const styles = StyleSheet.create({
+  buttons: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    flex: 1,
+  },
   container: {
     backgroundColor: colors.yellowBackground,
     flex: 1,
@@ -98,6 +106,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     width: "80%",
     borderRadius: 50,
+    flexDirection: "row",
+    alignItems: "stretch",
   },
   taskView: {
     flexDirection: "row",
