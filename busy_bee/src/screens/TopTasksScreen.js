@@ -10,7 +10,7 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
-// import Dropdown from "@components/Dropdown";
+import Dropdown from "@components/Dropdown";
 
 import TopTasks from "@data/actions/renderTopTasks";
 
@@ -28,7 +28,7 @@ const TopTasksScreen = () => {
       <View style={styles.divider} />
       <View style={styles.completedTasksView}>
         <Text style={text.cardTitle}>Completed</Text>
-        {/* <Dropdown></Dropdown> */}
+        <Dropdown></Dropdown>
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
