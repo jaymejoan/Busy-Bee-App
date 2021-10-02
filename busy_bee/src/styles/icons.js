@@ -25,6 +25,11 @@ export default {
     size: 70,
     color: colors.black,
   },
+  deleteButton: {
+    name: "delete",
+    size: 30,
+    color: colors.black,
+  },
   list: {
     // https://icons.expo.fyi/Ionicons/list-outline
     name: "list-outline",

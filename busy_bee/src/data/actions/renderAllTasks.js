@@ -19,11 +19,14 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import dbh from "@data/service-agents/firebaseConfigs.js";
+
 import CheckBoxButton from "@components/CheckBox";
+import DeleteButton from "@buttons/DeleteButton";
 
 const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
     <Text style={textStyle}>{item.taskName}</Text>
+    <DeleteButton taskName={item.taskName} />
   </TouchableOpacity>
 );
 
@@ -57,7 +60,6 @@ const renderAllTasks = () => {
     console.log("completed Task renderItem", item.completed);
     return (
       <View style={styles.taskView}>
-        {/* <CheckBoxButton completedTask={item.completed} /> */}
         <CheckBoxButton task={item} />
         <Item
           item={item}
