@@ -8,6 +8,11 @@ export default {
     fontFamily: "MontserratBold",
     fontSize: 20,
   },
+  completedTask: {
+    fontFamily: "MontserratBold",
+    fontSize: 20,
+    textDecorationLine: 'line-through',
+  },
   normalText: {
     fontFamily: "Montserrat",
     fontSize: 17,

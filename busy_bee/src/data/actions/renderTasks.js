@@ -21,9 +21,9 @@ import dbh from "@data/service-agents/firebaseConfigs.js";
 
 import CheckBoxButton from "@components/CheckBox";
 
-const Item = ({ item, onPress }) => (
+const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
-    <Text style={text.cardTitle}>{item.taskName}</Text>
+    <Text style={textStyle}>{item.taskName}</Text>
   </TouchableOpacity>
 );
 
@@ -60,7 +60,11 @@ const renderTasks = (listName) => {
     return (
       <View style={styles.taskView}>
         <CheckBoxButton task={item} />
-        <Item item={item} onPress={() => navigation.navigate("Home")} />
+        <Item
+          item={item}
+          onPress={() => navigation.navigate("Home")}
+          textStyle={item.completed ? text.completedTask : text.cardTitle}
+        />
       </View>
     );
   };

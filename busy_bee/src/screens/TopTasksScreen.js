@@ -18,6 +18,7 @@ const TopTasksScreen = () => {
     <View style={styles.background}>
       <View style={styles.topView}>
         <Text style={text.title}>Top 3 Tasks</Text>
+        {/* <Text style={text.completedTask}>Top 3 Tasks</Text>  */}
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>
