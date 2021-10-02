@@ -91,9 +91,11 @@ const renderTasks = (listName) => {
 
 const styles = StyleSheet.create({
   buttons: {
+    // backgroundColor: colors.white,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    flex: 1,
+    position: "relative",
+    width: 85,
   },
   container: {
     backgroundColor: colors.yellowBackground,
