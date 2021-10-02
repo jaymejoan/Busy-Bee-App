@@ -10,6 +10,7 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
+// import Dropdown from "@components/Dropdown";
 
 import TopTasks from "@data/actions/renderTopTasks";
 
@@ -23,6 +24,11 @@ const TopTasksScreen = () => {
       <View style={styles.divider} />
       <View style={styles.listView}>
         <TopTasks />
+      </View>
+      <View style={styles.divider} />
+      <View style={styles.completedTasksView}>
+        <Text style={text.cardTitle}>Completed</Text>
+        {/* <Dropdown></Dropdown> */}
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
@@ -40,15 +46,26 @@ const styles = StyleSheet.create({
     backgroundColor: colors.yellow,
     flex: 0.2,
   },
+  completedTasksView: {
+    backgroundColor: colors.white,
+    padding: 20,
+    flex: 0.8,
+  },
   divider: {
     borderBottomColor: colors.yellow,
     borderBottomWidth: 3,
     width: "90%",
     alignSelf: "center",
   },
+  divider2: {
+    borderBottomColor: colors.yellow,
+    borderBottomWidth: 3,
+    width: "100%",
+    alignSelf: "center",
+  },
   listView: {
     paddingTop: 10,
-    flex: 2,
+    flex: 1,
   },
   topView: {
     justifyContent: "space-evenly",

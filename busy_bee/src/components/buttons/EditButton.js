@@ -11,7 +11,6 @@ import icons from "@styles/icons";
 
 const EditButton = (props) => {
   const navigation = useNavigation();
-  console.log(props.taskName);
 
   return (
     <AntDesign
