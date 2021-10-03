@@ -38,7 +38,7 @@ function addNewTask() {
     image: taskData.image,
   });
 
-    printNewTask();
+  printNewTask();
 }
 
 /**

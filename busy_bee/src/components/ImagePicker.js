@@ -64,10 +64,6 @@ export default function ImagePickerExample() {
           <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />
         )}
       </TouchableOpacity>
-      {/* <Button title="Add an image" onPress={pickImage} />
-      {image && (
-        <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
-      )} */}
     </View>
   );
 }
@@ -75,7 +71,6 @@ export default function ImagePickerExample() {
 const styles = StyleSheet.create({
   button: {
     flex: 1,
-    // backgroundColor: colors.yellow,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",

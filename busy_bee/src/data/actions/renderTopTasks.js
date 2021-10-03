@@ -58,6 +58,7 @@ const renderTopTasks = () => {
             details: documentSnapshot.data().details,
             listName: documentSnapshot.data().listName,
             completed: documentSnapshot.data().completed,
+            image: documentSnapshot.data().image,
           });
         });
         setTasks(taskData);
@@ -71,7 +72,9 @@ const renderTopTasks = () => {
         <CheckBoxButton task={item} />
         <Item
           item={item}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() =>
+            navigation.navigate("View Task Screen", { task: item })
+          }
           textStyle={item.completed ? text.completedTask : text.cardTitle}
         />
       </View>

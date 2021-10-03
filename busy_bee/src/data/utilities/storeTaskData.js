@@ -10,7 +10,7 @@ const taskData = {
   details: "N/A",
   listName: "All Tasks",
   completed: false,
-  image: "N/A"
+  image: "N/A",
 };
 
 export default taskData;
