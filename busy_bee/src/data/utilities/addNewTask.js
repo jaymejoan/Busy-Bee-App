@@ -10,24 +10,25 @@ import taskData from "@data/utilities/storeTaskData";
 /**
  * Adds task to list specified by user.
  * If no list has been specified, task is added to All Tasks list by default.
+ * Redundant function as don't want to create a new collection for each list!
  */
-function addNewTask() {
-  dbh.collection(taskData.listName).doc(taskData.taskName).set({
-    taskName: taskData.taskName,
-    dueDate: taskData.dueDate,
-    details: taskData.details,
-    listName: taskData.listName,
-    completed: taskData.completed,
-  });
+// function addNewTask() {
+//   dbh.collection(taskData.listName).doc(taskData.taskName).set({
+//     taskName: taskData.taskName,
+//     dueDate: taskData.dueDate,
+//     details: taskData.details,
+//     listName: taskData.listName,
+//     completed: taskData.completed,
+//   });
 
-  addToAllTasks();
-  printNewTask();
-}
+//   addToAllTasks();
+//   printNewTask();
+// }
 
 /**
  * Adds task to All Tasks list.
  */
-function addToAllTasks() {
+function addNewTask() {
   dbh.collection("All Tasks").doc(taskData.taskName).set({
     taskName: taskData.taskName,
     dueDate: taskData.dueDate,
