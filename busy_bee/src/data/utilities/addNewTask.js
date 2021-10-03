@@ -35,7 +35,10 @@ function addNewTask() {
     details: taskData.details,
     listName: taskData.listName,
     completed: taskData.completed,
+    image: taskData.image,
   });
+
+    printNewTask();
 }
 
 /**
@@ -48,6 +51,7 @@ function printNewTask() {
   console.log("sent details: " + taskData.details);
   console.log("sent listName: " + taskData.listName);
   console.log("sent completed: " + taskData.completed);
+  console.log("sent image: " + taskData.image);
 }
 
 export default addNewTask;
