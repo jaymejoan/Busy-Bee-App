@@ -28,7 +28,7 @@ const TopTasksScreen = () => {
       <View style={styles.divider} />
       <View style={styles.completedTasksView}>
         <Text style={text.cardTitle}>Completed</Text>
-        <Dropdown></Dropdown>
+        {/* <Dropdown></Dropdown> */}
       </View>
       <View style={styles.bottomView}>
         <BottomMenu />
