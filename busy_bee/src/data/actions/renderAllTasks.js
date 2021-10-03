@@ -19,11 +19,20 @@ import colors from "@styles/colors";
 import text from "@styles/text";
 
 import dbh from "@data/service-agents/firebaseConfigs.js";
+
 import CheckBoxButton from "@components/CheckBox";
 
-const Item = ({ item, onPress }) => (
+import DeleteButton from "@buttons/DeleteButton";
+import EditButton from "@buttons/EditButton";
+
+const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
-    <Text style={text.cardTitle}>{item.taskName}</Text>
+    <Text style={textStyle}>{item.taskName}</Text>
+    <View style={{ flex: 1 }} />
+    <View style={styles.buttons}>
+      <EditButton taskName={item.taskName} />
+      <DeleteButton taskName={item.taskName} />
+    </View>
   </TouchableOpacity>
 );
 
@@ -54,12 +63,14 @@ const renderAllTasks = () => {
 
   // Renders each individual item within the list
   const renderItem = ({ item }) => {
-    console.log("completed Task renderItem", item.completed);
     return (
       <View style={styles.taskView}>
-        {/* <CheckBoxButton completedTask={item.completed} /> */}
         <CheckBoxButton task={item} />
-        <Item item={item} onPress={() => navigation.navigate("Home")} />
+        <Item
+          item={item}
+          onPress={() => navigation.navigate("Home")}
+          textStyle={item.completed ? text.completedTask : text.cardTitle}
+        />
       </View>
     );
   };
@@ -77,6 +88,13 @@ const renderAllTasks = () => {
 };
 
 const styles = StyleSheet.create({
+  buttons: {
+    // backgroundColor: colors.white,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    position: "relative",
+    width: 85,
+  },
   container: {
     backgroundColor: colors.yellowBackground,
     flex: 1,
@@ -87,6 +105,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     width: "80%",
     borderRadius: 50,
+    flexDirection: "row",
+    alignItems: "stretch",
   },
   taskView: {
     flexDirection: "row",
