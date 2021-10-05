@@ -20,7 +20,7 @@ import NoteIcon from "@assets/icons/NoteIcon";
 import ListIcon from "@assets/icons/ListIcon";
 
 const TaskOptions = (props) => {
-  console.log("new task: ", props.newTask);
+  var task = props.newTask ? "" : props.task; // allows task to be udpated if user is editing an existing task
 
   // default placeholder values for New Task screen
   const [text, setText] = useState({
@@ -30,14 +30,14 @@ const TaskOptions = (props) => {
     image: "Add an image",
   });
 
-  // displays inputted values stored in database for View Task screen
+  // displays existing values stored in database when on Edit Task screen
   useEffect(() => {
     if (!props.newTask) {
       setText({
-        dueDate: props.task.dueDate,
-        details: props.task.details,
-        listName: props.task.listName,
-        image: props.task.image,
+        dueDate: task.dueDate,
+        details: task.details,
+        listName: task.listName,
+        image: task.image,
       });
     }
   }, []);
@@ -54,6 +54,7 @@ const TaskOptions = (props) => {
             placeholderText={text.dueDate}
             type="dueDate"
             newTask={props.newTask}
+            task={task}
           />
         </View>
       </View>
@@ -68,6 +69,7 @@ const TaskOptions = (props) => {
             placeholderText={text.details}
             type="details"
             newTask={props.newTask}
+            task={task}
           />
         </View>
       </View>
@@ -82,6 +84,7 @@ const TaskOptions = (props) => {
             placeholderText={text.listName}
             type="listName"
             newTask={props.newTask}
+            task={task}
           />
         </View>
       </View>
@@ -92,7 +95,7 @@ const TaskOptions = (props) => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <ImagePicker text={text.image} newTask={props.newTask} />
+          <ImagePicker text={text.image} newTask={props.newTask} task={task} />
         </View>
       </View>
     </View>

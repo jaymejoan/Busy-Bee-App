@@ -30,7 +30,7 @@ const Item = ({ item, onPress, textStyle }) => (
     <Text style={textStyle}>{item.taskName}</Text>
     <View style={{ flex: 1 }} />
     <View style={styles.buttons}>
-      <EditButton taskName={item.taskName} />
+      <EditButton task={item} />
       <DeleteButton taskName={item.taskName} />
     </View>
   </TouchableOpacity>
@@ -70,7 +70,7 @@ const renderAllTasks = () => {
         <Item
           item={item}
           onPress={() =>
-            navigation.navigate("View Task Screen", { task: item })
+            navigation.navigate("Edit Task Screen", { task: item })
           }
           textStyle={item.completed ? text.completedTask : text.cardTitle}
         />

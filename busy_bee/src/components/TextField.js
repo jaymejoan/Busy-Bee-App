@@ -8,17 +8,33 @@ import { View, StyleSheet, TextInput } from "react-native";
 import colors from "@styles/colors";
 
 import taskData from "@data/utilities/storeTaskData";
+import updateTask from "../data/utilities/updateTask";
 
 /**
- * Stores inputted fields into taskData array.
+ * Stores inputted fields into taskData array (used on New Task screen).
  * These values will be sent to database once user creates the task.
  */
 function storeTextInput(type, text) {
+  console.log("text: ", text, " type: ", type);
   if (text != null) {
     if (type == "taskName") return (taskData.taskName = text);
     if (type == "dueDate") return (taskData.dueDate = text);
     if (type == "details") return (taskData.details = text);
     if (type == "listName") return (taskData.listName = text);
+  }
+}
+
+/**
+ * Updates inputted fields in task (used on Edit Task Screen).
+ * These values are updated within the database once user updates the task.
+ */
+function updateTextInput(type, text, task) {
+  console.log("text: ", text, " type: ", type);
+  if (text != null) {
+    if (type == "taskName") return (task.taskName = text);
+    if (type == "dueDate") return (task.dueDate = text);
+    if (type == "details") return (task.details = text);
+    if (type == "listName") return (task.listName = text);
   }
 }
 
@@ -29,7 +45,9 @@ function storeTextInput(type, text) {
  */
 const TextField = (props) => {
   const [text, onChangeText] = React.useState(null);
-  storeTextInput(props.type, text);
+
+  if (props.newTask) storeTextInput(props.type, text);
+  else updateTextInput(props.type, text, props.task);
 
   // changes text color based on whether the user is creating a new task or viewing/editing a task
   var placeholderColor = props.newTask ? colors.grey : colors.black;

@@ -26,7 +26,9 @@ export default function ImagePickerExample(props) {
   const [openGallery, setOpenGallery] = useState(false);
 
   // changes text color based on whether the user is creating a new task or viewing/editing a task
-  var placeholderText = props.newTask ? text.imageTextGrey : text.imageTextBlack;
+  var placeholderText = props.newTask
+    ? text.imageTextGrey
+    : text.imageTextBlack;
 
   // Requests permission to open photo gallery
   function requestPermission() {
@@ -58,8 +60,8 @@ export default function ImagePickerExample(props) {
     // store the image URI so it can be sent to the database
     if (!result.cancelled) {
       setImage(result.uri);
-      taskData.image = result.uri;
-      console.log("sent image to database: ", taskData.image);
+      if (props.newTask) taskData.image = result.uri;
+      else props.task.image = result.uri;
     }
   };
 

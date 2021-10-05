@@ -14,7 +14,7 @@ import CreateButton from "@buttons/CreateButton";
 import TaskOptions from "@components/TaskOptions";
 import TextField from "@components/TextField";
 
-const ViewTaskScreen = ({ route }) => {
+const EditTaskScreen = ({ route }) => {
   const { task } = route.params;
 
   return (
@@ -24,20 +24,24 @@ const ViewTaskScreen = ({ route }) => {
       </View>
       <View style={styles.divider} />
       <View style={styles.taskNameView}>
-        {/* <Text style={text.normalText}>Select a field to edit its value</Text> */}
         <Text style={text.normalText}>Select a field to edit its value</Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText={task.taskName} type="taskName" newTask={false}/>
+        <TextField
+          placeholderText={task.taskName}
+          type="taskName"
+          newTask={false}
+        />
       </View>
       <View style={styles.textFieldsView}>
-        <TaskOptions newTask={false} task={task}/>
+        <TaskOptions newTask={false} task={task} />
       </View>
       <View style={{ flex: 0.1 }} />
       <View style={styles.confirmView}>
         <CreateButton
-          title="CREATE TASK"
+          title="UPDATE TASK"
           nextPage="Success Screen"
-          type="task"
+          type="update"
+          task={task}
         />
       </View>
     </View>
@@ -84,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ViewTaskScreen;
+export default EditTaskScreen;
