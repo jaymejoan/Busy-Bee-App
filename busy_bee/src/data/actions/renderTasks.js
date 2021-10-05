@@ -74,7 +74,7 @@ const renderTasks = (listName) => {
           onPress={() =>
             navigation.navigate("View Task Screen", { task: item })
           }
-          textStyle={item.completed ? text.completedTask : text.cardTitle}
+          textStyle={item.completed ? text.completedTask : text.cardTitle}  // displays strikethrough text if task is completed
         />
       </View>
     );

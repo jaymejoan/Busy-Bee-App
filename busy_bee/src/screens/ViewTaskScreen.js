@@ -1,5 +1,5 @@
 /**
- * This file contains the code for the NewTask screen.
+ * This file contains the code to view or edit a task.
  * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  */
 

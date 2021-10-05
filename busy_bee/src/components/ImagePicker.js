@@ -4,7 +4,7 @@
  *
  * Reference: https://docs.expo.dev/versions/latest/sdk/imagepicker/
  */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Image,
@@ -23,19 +23,23 @@ import taskData from "@data/utilities/storeTaskData";
 
 export default function ImagePickerExample() {
   const [image, setImage] = useState(null);
+  const [openGallery, setOpenGallery] = useState(false);
 
-  // Requests permission to open gallery
-  useEffect(() => {
+  // Requests permission to open photo gallery
+  function requestPermission() {
     (async () => {
       if (Platform.OS !== "web") {
         const { status } =
           await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (status !== "granted") {
           alert("Sorry, we need camera roll permissions to make this work!");
+          return setOpenGallery(false);
         }
+        setOpenGallery(true);
+        pickImage();
       }
     })();
-  }, []);
+  }
 
   // Allows the user to pick an image from the gallery
   const pickImage = async () => {
@@ -46,7 +50,7 @@ export default function ImagePickerExample() {
       quality: 1,
     });
 
-    console.log(result);
+    // console.log(result);
 
     // store the image URI so it can be sent to the database
     if (!result.cancelled) {
@@ -58,7 +62,13 @@ export default function ImagePickerExample() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={pickImage}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          if (!openGallery) requestPermission();
+          else pickImage();
+        }}
+      >
         <Text style={text.imageText}>Add an image</Text>
         {image && (
           <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />
