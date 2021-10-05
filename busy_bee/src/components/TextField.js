@@ -29,8 +29,10 @@ function storeTextInput(type, text) {
  */
 const TextField = (props) => {
   const [text, onChangeText] = React.useState(null);
-
   storeTextInput(props.type, text);
+
+  // changes text color based on whether the user is creating a new task or viewing/editing a task
+  var placeholderColor = props.newTask ? colors.grey : colors.black;
 
   return (
     <View>
@@ -39,6 +41,7 @@ const TextField = (props) => {
         onChangeText={onChangeText}
         value={text}
         placeholder={props.placeholderText}
+        placeholderTextColor={placeholderColor}
       />
     </View>
   );

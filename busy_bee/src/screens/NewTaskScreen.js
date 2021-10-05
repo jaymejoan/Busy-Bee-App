@@ -28,10 +28,10 @@ const NewTaskScreen = () => {
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add task name" type="taskName" />
+        <TextField placeholderText="Add task name" type="taskName" newTask={true}/>
       </View>
       <View style={styles.textFieldsView}>
-        <TaskOptions />
+        <TaskOptions newTask={true}/>
       </View>
       <View style={{ flex: 0.1 }} />
       <View style={styles.confirmView}>

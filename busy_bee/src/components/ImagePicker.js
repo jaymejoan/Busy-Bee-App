@@ -21,9 +21,12 @@ import text from "@styles/text";
 
 import taskData from "@data/utilities/storeTaskData";
 
-export default function ImagePickerExample() {
+export default function ImagePickerExample(props) {
   const [image, setImage] = useState(null);
   const [openGallery, setOpenGallery] = useState(false);
+
+  // changes text color based on whether the user is creating a new task or viewing/editing a task
+  var placeholderText = props.newTask ? text.imageTextGrey : text.imageTextBlack;
 
   // Requests permission to open photo gallery
   function requestPermission() {
@@ -69,7 +72,7 @@ export default function ImagePickerExample() {
           else pickImage();
         }}
       >
-        <Text style={text.imageText}>Add an image</Text>
+        <Text style={placeholderText}>{props.text}</Text>
         {image && (
           <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />
         )}
