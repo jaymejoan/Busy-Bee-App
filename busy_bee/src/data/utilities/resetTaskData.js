@@ -13,6 +13,7 @@ function resetTaskData() {
   taskData.details = "N/A";
   taskData.listName = "All Tasks";
   taskData.completed = false;
+  taskData.image = "N/A";
   printReset();
 }
 

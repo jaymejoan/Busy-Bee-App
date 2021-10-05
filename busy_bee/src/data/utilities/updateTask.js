@@ -14,6 +14,7 @@ function updateTask(item) {
     details: item.details,
     listName: item.listName,
     completed: item.completed,
+    image: item.image,
   });
 }
 

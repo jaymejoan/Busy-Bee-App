@@ -19,6 +19,11 @@ export default {
     size: 30,
     color: colors.black,
   },
+  camera: {
+    name: "camera-outline",
+    size: 40,
+    color: colors.black,
+  },
   createList: "create-outline",
   fab: {
     name: "pluscircleo",

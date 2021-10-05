@@ -1,5 +1,5 @@
 /**
- * This file contains the code to display the tasks within a specific list.
+ * This file contains the code to display all the tasks within a specific list.
  * Displayed when the user selects a specific list from the All List screen.
  *
  * References:

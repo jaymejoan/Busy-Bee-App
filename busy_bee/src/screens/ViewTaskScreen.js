@@ -1,5 +1,5 @@
 /**
- * This file contains the code for the NewTask screen.
+ * This file contains the code to view or edit a task.
  * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  */
 
@@ -14,12 +14,12 @@ import CreateButton from "@buttons/CreateButton";
 import TaskOptions from "@components/TaskOptions";
 
 const ViewTaskScreen = ({ route }) => {
-  const { taskName } = route.params;
+  const { task } = route.params;
 
   return (
     <View style={styles.background}>
       <View style={styles.topView}>
-        <Text style={text.title}>{taskName}</Text>
+        <Text style={text.title}>{task.taskName}</Text>
       </View>
       <View style={styles.divider} />
       <View style={styles.taskNameView}>

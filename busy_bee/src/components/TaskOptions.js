@@ -12,8 +12,10 @@ import { View, StyleSheet } from "react-native";
 import colors from "@styles/colors";
 
 import TextField from "@components/TextField";
+import ImagePicker from "@components/ImagePicker";
 
 import CalendarIcon from "@assets/icons/CalendarIcon";
+import CameraIcon from "@assets/icons/CameraIcon";
 import NoteIcon from "@assets/icons/NoteIcon";
 import ListIcon from "@assets/icons/ListIcon";
 
@@ -49,6 +51,17 @@ const TaskOptions = () => {
           <TextField placeholderText="Add to list" type="listName" />
         </View>
       </View>
+      <View style={styles.colSpacer}></View>
+      <View style={styles.row}>
+        <View style={styles.icon}>
+          <CameraIcon />
+        </View>
+        <View style={styles.spacer} />
+        <View style={styles.field}>
+        <ImagePicker/>
+        </View>
+      </View>
+      
     </View>
   );
 };
