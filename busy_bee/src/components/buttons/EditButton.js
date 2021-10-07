@@ -18,8 +18,8 @@ const EditButton = (props) => {
       size={icons.editButton.size}
       color={icons.editButton.color}
       onPress={() => {
-        navigation.navigate("View Task Screen", {
-          taskName: props.taskName,
+        navigation.navigate("Edit Task Screen", {
+          task: props.task,
         });
       }}
     />

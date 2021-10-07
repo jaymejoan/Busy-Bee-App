@@ -6,7 +6,7 @@
  * References: https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  * Helpful Links: https://reactnativeelements.com/docs/listitem/
  */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 
 import colors from "@styles/colors";
@@ -19,7 +19,29 @@ import CameraIcon from "@assets/icons/CameraIcon";
 import NoteIcon from "@assets/icons/NoteIcon";
 import ListIcon from "@assets/icons/ListIcon";
 
-const TaskOptions = () => {
+const TaskOptions = (props) => {
+  var task = props.newTask ? "" : props.task; // allows task to be udpated if user is editing an existing task
+
+  // default placeholder values for New Task screen
+  const [text, setText] = useState({
+    dueDate: "Add due date",
+    details: "Add details",
+    listName: "Add to list",
+    image: "Add an image",
+  });
+
+  // displays existing values stored in database when on Edit Task screen
+  useEffect(() => {
+    if (!props.newTask) {
+      setText({
+        dueDate: task.dueDate,
+        details: task.details,
+        listName: task.listName,
+        image: task.image,
+      });
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.row}>
@@ -28,7 +50,12 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <TextField placeholderText="Add due date" type="dueDate" />
+          <TextField
+            placeholderText={text.dueDate}
+            type="dueDate"
+            newTask={props.newTask}
+            task={task}
+          />
         </View>
       </View>
       <View style={styles.colSpacer}></View>
@@ -38,7 +65,12 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <TextField placeholderText="Add details" type="details" />
+          <TextField
+            placeholderText={text.details}
+            type="details"
+            newTask={props.newTask}
+            task={task}
+          />
         </View>
       </View>
       <View style={styles.colSpacer}></View>
@@ -48,7 +80,12 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-          <TextField placeholderText="Add to list" type="listName" />
+          <TextField
+            placeholderText={text.listName}
+            type="listName"
+            newTask={props.newTask}
+            task={task}
+          />
         </View>
       </View>
       <View style={styles.colSpacer}></View>
@@ -58,10 +95,9 @@ const TaskOptions = () => {
         </View>
         <View style={styles.spacer} />
         <View style={styles.field}>
-        <ImagePicker/>
+          <ImagePicker text={text.image} newTask={props.newTask} task={task} />
         </View>
       </View>
-      
     </View>
   );
 };

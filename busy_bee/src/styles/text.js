@@ -18,7 +18,12 @@ export default {
     fontFamily: "Montserrat",
     fontSize: 17,
   },
-  imageText: {
+  imageTextBlack: {
+    fontFamily: "Montserrat",
+    fontSize: 20,
+    color: colors.black,
+  },
+  imageTextGrey: {
     fontFamily: "Montserrat",
     fontSize: 20,
     color: colors.grey,

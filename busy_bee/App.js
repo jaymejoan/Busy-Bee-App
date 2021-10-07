@@ -15,7 +15,7 @@ import AllListsScreen from "@screens/AllListsScreen";
 import AllTasksScreen from "@screens/AllTasksScreen";
 import TasksScreen from "@screens/TasksScreen";
 import TopTasksScreen from "@screens/TopTasksScreen";
-import ViewTaskScreen from "@screens/ViewTaskScreen";
+import EditTaskScreen from "@screens/EditTaskScreen";
 
 // Displays Splash Screen for 3 seconds
 SplashScreenTiming.preventAutoHideAsync();
@@ -49,7 +49,7 @@ export default function App() {
           <Stack.Screen name="All Tasks Screen" component={AllTasksScreen} />
           <Stack.Screen name="Tasks Screen" component={TasksScreen} />
           <Stack.Screen name="Top Tasks Screen" component={TopTasksScreen} />
-          <Stack.Screen name="View Task Screen" component={ViewTaskScreen} />
+          <Stack.Screen name="Edit Task Screen" component={EditTaskScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
