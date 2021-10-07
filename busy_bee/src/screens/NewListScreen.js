@@ -30,7 +30,7 @@ const NewListScreen = () => {
           What would you like to name your list?
         </Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add list name" type="listName" />
+        <TextField placeholderText="Add list name" type="listName" newTask={true} />
       </View>
       <View style={styles.textFieldsView} />
       <View style={styles.confirmView}>

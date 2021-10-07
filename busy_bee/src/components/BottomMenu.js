@@ -9,8 +9,9 @@ import { View, StyleSheet } from "react-native";
 import colors from "@styles/colors";
 
 import FAB from "@buttons/FloatingActionButton";
-import MenuBotton from "@buttons/MenuButton";
-import OptionsButton from "@buttons/OptionsButton";
+import HomeButton from "@buttons/HomeButton";
+import QuoteButton from "@buttons/QuoteButton";
+// import OptionsButton from "@buttons/OptionsButton";
 
 const BottomMenu = () => {
   return (
@@ -19,8 +20,9 @@ const BottomMenu = () => {
         <FAB />
       </View>
       <View style={styles.bottomContainer}>
-        <MenuBotton />
-        <OptionsButton />
+        <HomeButton />
+        <QuoteButton />
+        {/* <OptionsButton /> */}
       </View>
     </View>
   );

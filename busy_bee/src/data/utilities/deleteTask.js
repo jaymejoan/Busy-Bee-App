@@ -28,13 +28,13 @@ function deleteTask(taskName) {
 }
 
 /**
- * Triggers an alert message which informs the user the task has been successfully deleted
+ * Displays an alert message which informs the user the task has been successfully deleted
  */
 const displayAlert = (taskName) => {
-  var message = "'" + taskName + "' was successfully deleted!";
+  let message = "'" + taskName + "' was successfully deleted!";
 
   Alert.alert("Task Deleted", message, [
-    { text: "OK", onPress: () => console.log("OK Pressed") },
+    { text: "OK", onPress: () => console.log("") },
   ]);
 };
 

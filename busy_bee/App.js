@@ -1,9 +1,8 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as SplashScreenTiming from "expo-splash-screen";
+import { LogBox } from "react-native";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "@expo-google-fonts/montserrat";
 
@@ -22,6 +21,8 @@ SplashScreenTiming.preventAutoHideAsync();
 setTimeout(SplashScreenTiming.hideAsync, 3000);
 
 export default function App() {
+  LogBox.ignoreAllLogs(); // prevents non-important warnings from displaying on screen
+
   // loads all the required fonts
   const customFonts = {
     Montserrat: require("@assets/fonts/Montserrat/Montserrat-Regular.ttf"),

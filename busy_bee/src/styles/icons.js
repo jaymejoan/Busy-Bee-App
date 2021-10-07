@@ -40,6 +40,11 @@ export default {
     size: 30,
     color: colors.black,
   },
+  homeButton: {
+    name: "home",
+    size: 35,
+    color: colors.black,
+  },
   list: {
     // https://icons.expo.fyi/Ionicons/list-outline
     name: "list-outline",
@@ -59,6 +64,11 @@ export default {
   },
   optionsButton: {
     name: "dots-three-horizontal",
+    size: 35,
+    color: colors.black,
+  },
+  quoteButton: {
+    name: "comment-quote-outline",
     size: 35,
     color: colors.black,
   },
