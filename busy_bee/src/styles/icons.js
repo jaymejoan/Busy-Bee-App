@@ -40,6 +40,11 @@ export default {
     size: 30,
     color: colors.black,
   },
+  homeButton: {
+    name: "home",
+    size: 35,
+    color: colors.black,
+  },
   list: {
     // https://icons.expo.fyi/Ionicons/list-outline
     name: "list-outline",

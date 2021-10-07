@@ -9,7 +9,7 @@ import { View, StyleSheet } from "react-native";
 import colors from "@styles/colors";
 
 import FAB from "@buttons/FloatingActionButton";
-import MenuBotton from "@buttons/MenuButton";
+import HomeButton from "@buttons/HomeButton";
 import OptionsButton from "@buttons/OptionsButton";
 
 const BottomMenu = () => {
@@ -19,7 +19,7 @@ const BottomMenu = () => {
         <FAB />
       </View>
       <View style={styles.bottomContainer}>
-        <MenuBotton />
+        <HomeButton/>
         <OptionsButton />
       </View>
     </View>
