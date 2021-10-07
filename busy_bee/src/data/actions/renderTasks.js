@@ -29,7 +29,7 @@ const Item = ({ item, onPress, textStyle }) => (
     <Text style={textStyle}>{item.taskName}</Text>
     <View style={{ flex: 1 }} />
     <View style={styles.buttons}>
-    <EditButton task={item} />
+      <EditButton task={item} />
       <DeleteButton taskName={item.taskName} />
     </View>
   </TouchableOpacity>
@@ -74,7 +74,7 @@ const renderTasks = (listName) => {
           onPress={() =>
             navigation.navigate("Edit Task Screen", { task: item })
           }
-          textStyle={item.completed ? text.completedTask : text.cardTitle}  // displays strikethrough text if task is completed
+          textStyle={item.completed ? text.completedTask : text.cardTitle} // displays strikethrough text if task is completed
         />
       </View>
     );

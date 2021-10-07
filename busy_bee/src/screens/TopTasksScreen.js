@@ -25,11 +25,6 @@ const TopTasksScreen = () => {
       <View style={styles.listView}>
         <TopTasks />
       </View>
-      <View style={styles.divider} />
-      <View style={styles.completedTasksView}>
-        <Text style={text.cardTitle}>Completed</Text>
-        {/* <Dropdown></Dropdown> */}
-      </View>
       <View style={styles.bottomView}>
         <BottomMenu />
       </View>
@@ -43,24 +38,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bottomView: {
-    backgroundColor: colors.yellow,
+    backgroundColor: colors.yellowBackground,
     flex: 0.2,
-  },
-  completedTasksView: {
-    backgroundColor: colors.white,
-    padding: 20,
-    flex: 0.8,
   },
   divider: {
     borderBottomColor: colors.yellow,
     borderBottomWidth: 3,
     width: "90%",
-    alignSelf: "center",
-  },
-  divider2: {
-    borderBottomColor: colors.yellow,
-    borderBottomWidth: 3,
-    width: "100%",
     alignSelf: "center",
   },
   listView: {
