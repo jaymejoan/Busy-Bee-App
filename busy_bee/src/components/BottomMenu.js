@@ -10,7 +10,8 @@ import colors from "@styles/colors";
 
 import FAB from "@buttons/FloatingActionButton";
 import HomeButton from "@buttons/HomeButton";
-import OptionsButton from "@buttons/OptionsButton";
+import QuoteButton from "@buttons/QuoteButton";
+// import OptionsButton from "@buttons/OptionsButton";
 
 const BottomMenu = () => {
   return (
@@ -19,8 +20,9 @@ const BottomMenu = () => {
         <FAB />
       </View>
       <View style={styles.bottomContainer}>
-        <HomeButton/>
-        <OptionsButton />
+        <HomeButton />
+        <QuoteButton />
+        {/* <OptionsButton /> */}
       </View>
     </View>
   );

@@ -10,7 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import icons from "@styles/icons";
 
-const MenuButton = () => {
+const HomeButton = () => {
   const navigation = useNavigation();
 
   return (
@@ -23,4 +23,4 @@ const MenuButton = () => {
   );
 };
 
-export default MenuButton;
+export default HomeButton;

@@ -19,7 +19,7 @@ const HomeScreen = () => {
         <Image style={styles.image} source={require("../assets/beehive.png")} />
       </View>
       <View style={styles.quoteView}>
-        <Text style={text.quote}>"Motivational Quote"</Text>
+        <Text style={text.quote}>"You can do this!"</Text>
       </View>
       <View style={styles.cardView}>
         <Card

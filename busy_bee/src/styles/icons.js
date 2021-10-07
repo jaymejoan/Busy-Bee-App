@@ -67,6 +67,11 @@ export default {
     size: 35,
     color: colors.black,
   },
+  quoteButton: {
+    name: "comment-quote-outline",
+    size: 35,
+    color: colors.black,
+  },
 
   topTasks: "star-outline",
 };
