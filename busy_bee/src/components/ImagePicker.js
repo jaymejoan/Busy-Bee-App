@@ -2,9 +2,11 @@
  * The ImagePicker provides access to the photo library and camera.
  * This allows the user to upload or take photos to include in their task.
  *
- * Reference: https://docs.expo.dev/versions/latest/sdk/imagepicker/
+ * Reference:
+ * https://docs.expo.dev/versions/latest/sdk/imagepicker/
+ * https://reactnavigation.org/docs/use-is-focused/
  */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Image,
@@ -15,6 +17,7 @@ import {
   Text,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
+import { useIsFocused } from "@react-navigation/native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
@@ -24,6 +27,11 @@ import taskData from "@data/utilities/storeTaskData";
 export default function ImagePickerExample(props) {
   const [image, setImage] = useState(null);
   const [openGallery, setOpenGallery] = useState(false);
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    setImage(props.task.image);
+  }, [isFocused]);
 
   // changes text color based on whether the user is creating a new task or viewing/editing a task
   var placeholderText = props.newTask
@@ -46,6 +54,11 @@ export default function ImagePickerExample(props) {
     })();
   }
 
+  // Launches the camera
+  const camera = async () => {
+    let result = await ImagePicker.launchCameraAsync();
+  };
+
   // Allows the user to pick an image from the gallery
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -54,8 +67,6 @@ export default function ImagePickerExample(props) {
       aspect: [4, 3],
       quality: 1,
     });
-
-    // console.log(result);
 
     // store the image URI so it can be sent to the database
     if (!result.cancelled) {

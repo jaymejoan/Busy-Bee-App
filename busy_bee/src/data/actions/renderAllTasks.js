@@ -46,20 +46,28 @@ const renderAllTasks = () => {
 
   // Gets all the tasks within the All Tasks collection
   useEffect(() => {
-    dbh.collection("All Tasks").onSnapshot((querySnapshot) => {
-      const taskData = []; // tasks stored in database
-      querySnapshot.forEach((documentSnapshot) => {
-        taskData.push({
-          taskName: documentSnapshot.data().taskName,
-          dueDate: documentSnapshot.data().dueDate,
-          details: documentSnapshot.data().details,
-          listName: documentSnapshot.data().listName,
-          completed: documentSnapshot.data().completed,
-          image: documentSnapshot.data().image,
+    let mounted = true; // ensures tasks is only updated if it needs to be mounted (re-displayed)
+
+    if (mounted) {
+      dbh.collection("All Tasks").onSnapshot((querySnapshot) => {
+        const taskData = []; // tasks stored in database
+        querySnapshot.forEach((documentSnapshot) => {
+          taskData.push({
+            taskName: documentSnapshot.data().taskName,
+            dueDate: documentSnapshot.data().dueDate,
+            details: documentSnapshot.data().details,
+            listName: documentSnapshot.data().listName,
+            completed: documentSnapshot.data().completed,
+            image: documentSnapshot.data().image,
+          });
         });
+        setTasks(taskData);
       });
-      setTasks(taskData);
-    });
+    }
+    return () => {
+      console.log("set mounted back to false");
+      mounted = false;
+    };
   }, []);
 
   // Renders each individual item within the list
