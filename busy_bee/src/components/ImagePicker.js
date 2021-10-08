@@ -8,7 +8,7 @@
  */
 import React, { useEffect, useState } from "react";
 import {
-  Button,
+  Alert,
   Image,
   View,
   Platform,
@@ -27,6 +27,7 @@ import taskData from "@data/utilities/storeTaskData";
 export default function ImagePickerExample(props) {
   const [image, setImage] = useState(null);
   const [openGallery, setOpenGallery] = useState(false);
+  const [openCamera, setOpenCamera] = useState(false);
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function ImagePickerExample(props) {
     : text.imageTextBlack;
 
   // Requests permission to open photo gallery
-  function requestPermission() {
+  function requestPhotoGalleryPermission() {
     (async () => {
       if (Platform.OS !== "web") {
         const { status } =
@@ -54,9 +55,32 @@ export default function ImagePickerExample(props) {
     })();
   }
 
+  // Requests permission to open camera
+  function requestCameraPermission() {
+    (async () => {
+      if (Platform.OS !== "web") {
+        const { status } = await ImagePicker.requestCameraPermissionsAsync();
+        if (status !== "granted") {
+          alert("Sorry, we need camera permissions to make this work!");
+          return setOpenCamera(false);
+        }
+        setOpenCamera(true);
+        displayCamera();
+      }
+    })();
+  }
+
   // Launches the camera
-  const camera = async () => {
+  const displayCamera = async () => {
     let result = await ImagePicker.launchCameraAsync();
+    // setImage(result.uri);
+
+    // store the image URI so it can be sent to the database
+    if (!result.cancelled) {
+      setImage(result.uri);
+      if (props.newTask) taskData.image = result.uri;
+      else props.task.image = result.uri;
+    }
   };
 
   // Allows the user to pick an image from the gallery
@@ -76,13 +100,37 @@ export default function ImagePickerExample(props) {
     }
   };
 
+  const displayActions = () => {
+    Alert.alert("Choose an action", "", [
+      {
+        text: "Take Photo", //Open the camera
+        onPress: () => {
+          if (!openCamera) requestCameraPermission();
+          else displayCamera();
+        },
+      },
+      {
+        text: "Choose from photo library", //Close the pop-up if cancel is clicked
+        onPress: () => {
+          if (!openGallery) requestPhotoGalleryPermission();
+          else pickImage();
+        },
+      },
+      {
+        text: "Cancel", //Close the pop-up if cancel is clicked
+        style: "cancel",
+      },
+    ]);
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          if (!openGallery) requestPermission();
-          else pickImage();
+          // if (!openGallery) requestPermission();
+          // else pickImage();
+          displayActions();
         }}
       >
         <Text style={placeholderText}>{props.text}</Text>
