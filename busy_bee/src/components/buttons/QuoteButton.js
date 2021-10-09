@@ -1,7 +1,8 @@
 /**
  * This file contains the code for the Quote Button located in the right corner of the Bottom Menu.
  * The Quote Button displays a random motivational quote to the user within an Alert message.
- * Reference:
+ * 
+ * References:
  * https://icons.expo.fyi/MaterialCommunityIcons/comment-quote-outline
  * https://7summitpathways.com/blog/mental-health-quotes/ (for quotes)
  */
@@ -27,9 +28,10 @@ const QuoteButton = () => {
 };
 
 /**
- * Displays an alert message which displays a motivational quote to the user.
+ * Displays an alert message which contains a random motivational quote for the user.
  */
 const displayQuote = () => {
+  // array of possible quotes to display
   let quotes = [
     "“Your future is created by what you do today, not tomorrow.” - Anon.",
     "“All our dreams can come true, if we have the courage to pursue them.” – Walt Disney",

@@ -1,6 +1,7 @@
 /**
- * This file contains all the text sizes used throughout the app.
- * References: https://www.youtube.com/watch?v=IY5OBeL9LNE
+ * This file contains all different type of text formats used throughout the app.
+ * 
+ * Reference: https://www.youtube.com/watch?v=IY5OBeL9LNE
  */
 import colors from "@styles/colors";
 

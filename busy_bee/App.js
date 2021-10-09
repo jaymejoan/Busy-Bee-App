@@ -1,3 +1,8 @@
+/**
+ * This file contains the code to implement navigation throughout the app.
+ * The Splash Screen and fonts are also loaded.
+ */
+
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -34,13 +39,12 @@ export default function App() {
   const [isLoaded] = useFonts(customFonts);
 
   if (!isLoaded) {
+    // ensures fonts are loaded before launching the app
     return <AppLoading />;
   } else {
-    // implements navigation throughout the app
-    const Stack = createStackNavigator();
+    const Stack = createStackNavigator(); // implements navigation throughout the app
     return (
       <NavigationContainer>
-        {/* <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}> */}
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Success Screen" component={SuccessScreen} />

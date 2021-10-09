@@ -1,6 +1,6 @@
 /**
- * This file contains the code for the NewTask screen.
- * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * This file contains the code for the All Tasks screen.
+ * This screen displays all the tasks stored in the database, regardless of the list they belong to.
  */
 
 import React from "react";
@@ -11,7 +11,7 @@ import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
 
-import RenderAllTasks from "@data/actions/renderAllTasks";
+import RenderAllTasks from "@business/renderAllTasks";
 
 const AllTasksScreen = () => {
   return (

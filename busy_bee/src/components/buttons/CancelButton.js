@@ -1,6 +1,8 @@
 /**
- * This file contains the code for the Cancel Button located in the
- * top-right corner when users create a new task.
+ * This file contains the code for the Cancel Button located in the top-right corner of the New Task and New List screens.
+ * When clicked, the user is navigated back to the Home screen.
+ * 
+ * Reference: https://icons.expo.fyi/Entypo/cross
  */
 
 import React from "react";

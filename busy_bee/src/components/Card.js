@@ -1,6 +1,9 @@
 /**
- * This file contains the code to display the Cards shown on the Home page.
- * Each card represents a key screen within the app that users can navigate to.
+ * This file contains the code to display the four Cards shown on the Home page.
+ * Each card represents a screen within the app that users can navigate to (Top 3 Tasks, Create List, All Lists, All Tasks).
+ * Once clicked, the user is navigated to the Card's corresponding screen. For example, clicking the "All Lists" card navigates the user
+ * to the "All Lists" screen.
+ * 
  * References:
  * https://github.com/talut/react-native-simple-card-view/blob/master/docs/en/cardviewwithicon.md
  * https://docs.expo.dev/guides/using-custom-fonts/

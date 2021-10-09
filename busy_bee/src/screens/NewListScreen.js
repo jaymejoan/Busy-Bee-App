@@ -1,7 +1,7 @@
 /**
  * This file contains the code for the New List screen.
- * Once users enter a list name, a new collection is created in the database with that name.
- * A default document filled with default values is automatically assigned to the collection as per Firebase requirements.
+ * This screen allows users to create a new list by entering a list name which is then stored in the database.
+ * The list name is stored in the All Lists collection which allows users to store tasks under certain lists.
  */
 
 import React from "react";

@@ -1,5 +1,6 @@
 /**
  * This file contains the code for the List Icon located in the New Task Screen.
+ * 
  * Reference: import { Ionicons } from '@expo/vector-icons';
  */
 

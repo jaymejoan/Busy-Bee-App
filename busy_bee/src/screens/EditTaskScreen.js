@@ -1,6 +1,7 @@
 /**
  * This file contains the code to view or edit a task.
- * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * Displayed after a user selects a specific task to view it or when the user clicks on the "Edit" button next to each task.
+ *
  */
 
 import React from "react";

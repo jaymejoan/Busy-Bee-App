@@ -1,6 +1,7 @@
 /**
  * This file contains the code for the Floating Action Button (FAB) located in the centre of the Bottom Menu.
- * The FAB is used to add a new task.
+ * When clicked, the FAB navigates to the New Task screen which allows the user to add a new task.
+ * 
  * References:
  * https://www.youtube.com/watch?v=IEyUouhcuNQ
  * https://rnfirebase.io/firestore/usage

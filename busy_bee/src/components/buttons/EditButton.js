@@ -1,6 +1,8 @@
 /**
- * This file contains the code for the Cancel Button located in the
- * top-right corner when users create a new task.
+ * This file contains the code for the Edit Button located next to each task.
+ * The button allows users to edit a task by navigating to the Edit Task screen which allows users to edit the selected task.
+ * 
+ * Reference: https://icons.expo.fyi/AntDesign/edit
  */
 
 import React from "react";
