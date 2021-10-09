@@ -24,7 +24,7 @@ import text from "@styles/text";
 
 import taskData from "@data/utilities/storeTaskData";
 
-export default function ImagePickerExample(props) {
+export default function ImagePickerComponent(props) {
   const [image, setImage] = useState(null);
   const [openGallery, setOpenGallery] = useState(false);
   const [openCamera, setOpenCamera] = useState(false);
