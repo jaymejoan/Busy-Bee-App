@@ -12,7 +12,7 @@ import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
 
-import RenderAllLists from "@data/actions/renderAllLists";
+import RenderAllLists from "@business/renderAllLists";
 
 const AllListsScreen = () => {
   return (

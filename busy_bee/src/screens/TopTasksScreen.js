@@ -13,7 +13,7 @@ import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
 
-import TopTasks from "@data/actions/renderTopTasks";
+import TopTasks from "@business/renderTopTasks";
 
 const TopTasksScreen = () => {
   return (

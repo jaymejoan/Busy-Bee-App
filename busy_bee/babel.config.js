@@ -21,6 +21,7 @@ module.exports = function (api) {
           alias: {
             "@assets": "./src/assets",
             "@buttons": "./src/components/buttons",
+            "@business": "./src/business",
             "@components": "./src/components",
             "@data": "./src/data",
             "@screens": "./src/screens",

@@ -11,7 +11,7 @@ import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
 
-import RenderAllTasks from "@data/actions/renderAllTasks";
+import RenderAllTasks from "@business/renderAllTasks";
 
 const AllTasksScreen = () => {
   return (

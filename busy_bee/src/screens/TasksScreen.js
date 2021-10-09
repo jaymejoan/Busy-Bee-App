@@ -13,7 +13,7 @@ import { StyleSheet, View, Text } from "react-native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-import RenderTasks from "@data/actions/renderTasks";
+import RenderTasks from "@business/renderTasks";
 
 import BottomMenu from "@components/BottomMenu";
 
