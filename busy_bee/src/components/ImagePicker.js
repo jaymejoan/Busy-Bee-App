@@ -1,5 +1,5 @@
 /**
- * The ImagePicker provides access to the photo library and camera.
+ * The ImagePicker provides access to the camera and photo gallery.
  * This allows the user to upload or take photos to include in their task.
  *
  * Reference:
@@ -30,6 +30,7 @@ export default function ImagePickerExample(props) {
   const [openCamera, setOpenCamera] = useState(false);
   const isFocused = useIsFocused();
 
+  // if a task already has an image attached, the image is immediately displayed when users view the task
   useEffect(() => {
     setImage(props.task.image);
   }, [isFocused]);
@@ -39,7 +40,9 @@ export default function ImagePickerExample(props) {
     ? text.imageTextGrey
     : text.imageTextBlack;
 
-  // Requests permission to open photo gallery
+  /**
+   *  Requests permission to open the device's photo gallery.
+   */
   function requestPhotoGalleryPermission() {
     (async () => {
       if (Platform.OS !== "web") {
@@ -55,7 +58,9 @@ export default function ImagePickerExample(props) {
     })();
   }
 
-  // Requests permission to open camera
+  /**
+   *  Requests permission to open the camera on the device.
+   */
   function requestCameraPermission() {
     (async () => {
       if (Platform.OS !== "web") {
@@ -65,17 +70,18 @@ export default function ImagePickerExample(props) {
           return setOpenCamera(false);
         }
         setOpenCamera(true);
-        displayCamera();
+        launchCamera();
       }
     })();
   }
 
-  // Launches the camera
-  const displayCamera = async () => {
+  /**
+   * Opens the device's camera. The image taken is stored in the database and displayed on the screen.
+   */
+  const launchCamera = async () => {
     let result = await ImagePicker.launchCameraAsync();
-    // setImage(result.uri);
 
-    // store the image URI so it can be sent to the database
+    // stores the image URI so it can be sent to the database
     if (!result.cancelled) {
       setImage(result.uri);
       if (props.newTask) taskData.image = result.uri;
@@ -83,7 +89,9 @@ export default function ImagePickerExample(props) {
     }
   };
 
-  // Allows the user to pick an image from the gallery
+  /**
+   * Allows the user to pick an image from the photo gallery.
+   */
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -92,7 +100,7 @@ export default function ImagePickerExample(props) {
       quality: 1,
     });
 
-    // store the image URI so it can be sent to the database
+    // stores the image URI so it can be sent to the database
     if (!result.cancelled) {
       setImage(result.uri);
       if (props.newTask) taskData.image = result.uri;
@@ -100,24 +108,28 @@ export default function ImagePickerExample(props) {
     }
   };
 
+  /**
+   * Displays an Alert message presenting the user with three options:
+   * Take an image, Choose from the photo gallery or Cancel the actin.
+   */
   const displayActions = () => {
     Alert.alert("Choose an action", "", [
       {
-        text: "Take Photo", //Open the camera
+        text: "Take Photo", // opens the camera
         onPress: () => {
           if (!openCamera) requestCameraPermission();
-          else displayCamera();
+          else launchCamera();
         },
       },
       {
-        text: "Choose from photo library", //Close the pop-up if cancel is clicked
+        text: "Choose from photo gallery", // opens the photo gallery
         onPress: () => {
           if (!openGallery) requestPhotoGalleryPermission();
           else pickImage();
         },
       },
       {
-        text: "Cancel", //Close the pop-up if cancel is clicked
+        text: "Cancel", // exits the pop-up
         style: "cancel",
       },
     ]);
@@ -125,14 +137,7 @@ export default function ImagePickerExample(props) {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          // if (!openGallery) requestPermission();
-          // else pickImage();
-          displayActions();
-        }}
-      >
+      <TouchableOpacity style={styles.button} onPress={() => displayActions()}>
         <Text style={placeholderText}>{props.text}</Text>
         {image && (
           <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />

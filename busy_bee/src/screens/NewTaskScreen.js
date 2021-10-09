@@ -1,6 +1,9 @@
 /**
  * This file contains the code for the NewTask screen.
- * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * This screen allows a user to add a new task which is then stored in the database.
+ * To create a new task, the user can enter the following fields: task name, due date, details, list name and image.
+ *
+ * Reference: https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  */
 
 import React from "react";
@@ -28,10 +31,14 @@ const NewTaskScreen = () => {
       <View style={styles.taskNameView}>
         <Text style={text.normalText}>What would you like to achieve?</Text>
         <View style={{ flex: 0.3 }} />
-        <TextField placeholderText="Add task name" type="taskName" newTask={true}/>
+        <TextField
+          placeholderText="Add task name"
+          type="taskName"
+          newTask={true}
+        />
       </View>
       <View style={styles.textFieldsView}>
-        <TaskOptions newTask={true}/>
+        <TaskOptions newTask={true} />
       </View>
       <View style={{ flex: 0.1 }} />
       <View style={styles.confirmView}>

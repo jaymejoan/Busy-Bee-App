@@ -1,5 +1,6 @@
 /**
  * This file contains the code for the Camera Icon located in the New Task Screen.
+ * 
  * Reference: https://icons.expo.fyi/Ionicons/camera-outline
  */
 
@@ -8,7 +9,7 @@
  
  import icons from "@styles/icons";
  
- const CalendarIcon = () => {
+ const CameraIcon = () => {
    return (
      <Ionicons
        name={icons.camera.name}
@@ -18,5 +19,5 @@
    );
  };
  
- export default CalendarIcon;
+ export default CameraIcon;
  

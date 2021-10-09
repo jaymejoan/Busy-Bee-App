@@ -1,5 +1,6 @@
 /**
  * This file contains all the icons used throughout the app.
+ *
  * Reference: https://icons.expo.fyi/
  */
 
@@ -9,7 +10,6 @@ export default {
   allList: "list-outline",
   allTasks: "grid-outline",
   calendar: {
-    // https://icons.expo.fyi/MaterialCommunityIcons/calendar-check
     name: "calendar-check",
     size: 40,
     color: colors.black,
@@ -46,25 +46,13 @@ export default {
     color: colors.black,
   },
   list: {
-    // https://icons.expo.fyi/Ionicons/list-outline
     name: "list-outline",
     size: 40,
     color: colors.black,
   },
-  menuButton: {
-    name: "ios-menu-sharp",
-    size: 35,
-    color: colors.black,
-  },
   note: {
-    // https://icons.expo.fyi/FontAwesome/sticky-note-o
     name: "sticky-note-o",
     size: 40,
-    color: colors.black,
-  },
-  optionsButton: {
-    name: "dots-three-horizontal",
-    size: 35,
     color: colors.black,
   },
   quoteButton: {
@@ -72,6 +60,5 @@ export default {
     size: 35,
     color: colors.black,
   },
-
   topTasks: "star-outline",
 };

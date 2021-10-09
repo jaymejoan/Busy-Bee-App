@@ -1,16 +1,17 @@
 /**
- * This file contains the code for the NewTask screen.
- * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * This file contains the code for the Top Tasks screen.
+ * This screen displays the tasks within the Top 3 Tasks list.
+ *
+ * Reference: https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
  */
 
 import React from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
 
 import BottomMenu from "@components/BottomMenu";
-import Dropdown from "@components/Dropdown";
 
 import TopTasks from "@data/actions/renderTopTasks";
 
@@ -19,7 +20,6 @@ const TopTasksScreen = () => {
     <View style={styles.background}>
       <View style={styles.topView}>
         <Text style={text.title}>Top 3 Tasks</Text>
-        {/* <Text style={text.completedTask}>Top 3 Tasks</Text>  */}
       </View>
       <View style={styles.divider} />
       <View style={styles.listView}>

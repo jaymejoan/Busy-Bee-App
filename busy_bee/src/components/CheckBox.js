@@ -1,6 +1,7 @@
 /**
- * This file contains the code for the CheckBox shown next to tasks.
- * When clicked, the task is marked as completed and moved to the "Completed" list.
+ * This file contains the code for the CheckBox component shown next to each task.
+ * When clicked, the task is marked as completed which is shown by the empty circle turning into a tick and
+ * the task name being "crossed off" (ie. line is drawn over text).
  *
  * References:
  * https://reactnativeelements.com/docs/checkbox/#checked
@@ -16,7 +17,7 @@ import colors from "@styles/colors";
 import updateTask from "@data/utilities/updateTask";
 
 const CheckBoxButton = ({ task }) => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(task.completed);
+  const [toggleCheckBox, setToggleCheckBox] = useState(task.completed); // allows CheckBox to change between empty circle and tick
 
   return (
     <CheckBox
@@ -39,11 +40,8 @@ const CheckBoxButton = ({ task }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: colors.yellow,
     justifyContent: "center",
     alignItems: "center",
-    // height: "70%",
-    // borderRadius: 90,
     marginTop: 10,
   },
 });

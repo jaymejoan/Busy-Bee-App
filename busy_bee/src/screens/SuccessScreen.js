@@ -1,5 +1,7 @@
 /**
- * The Success Screen confirms the user has created their task/list.
+ * The Success Screen confirms the user has created or updated their task/list.
+ * Displayed after the user selects the Create Button from the New Task, New List and Edit Task screen.
+ * The screen displays an image of the app logo and text indicating the action was successful.
  */
 
 import React from "react";
@@ -21,7 +23,7 @@ const SuccessScreen = () => {
         />
       </View>
       <View style={styles.text}>
-        <Text style={text.cardTitle}>Successfullly added!</Text>
+        <Text style={text.cardTitle}>Success!</Text>
       </View>
       <View style={styles.divider} />
       <View style={styles.confirmView}>

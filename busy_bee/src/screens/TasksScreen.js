@@ -16,7 +16,6 @@ import text from "@styles/text";
 import RenderTasks from "@data/actions/renderTasks";
 
 import BottomMenu from "@components/BottomMenu";
-import CheckBoxButton from "@components/CheckBox";
 
 const TasksScreen = ({ route }) => {
   const { listName } = route.params;

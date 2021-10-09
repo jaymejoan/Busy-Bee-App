@@ -1,5 +1,7 @@
 /**
- * This file contains the code for the Home page screen.
+ * This file contains the code for the Home screen.
+ * The screen contains four Card components which allows users to navigate to the app's main screens.
+ * It also displays the Bottom Menu, honeypot image and motivational quote.
  */
 
 import React from "react";

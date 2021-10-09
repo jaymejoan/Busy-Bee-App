@@ -1,5 +1,5 @@
 /**
- * This function resets the Task Data array in storeTaskData.js to its default values.
+ * This function resets the taskData array in storeTaskData.js to its default values.
  * This is called after the values in the array have been sent to the database - ensures the array is cleared for next task.
  */
 import taskData from "@data/utilities/storeTaskData";
@@ -14,12 +14,12 @@ function resetTaskData() {
   taskData.listName = "All Tasks";
   taskData.completed = false;
   taskData.image = "N/A";
-  printReset();
+  // printReset();
 }
 
 /**
- * Helper method to check reset was successful.
- */
+ * Helper method used to print the contents of the reset and check reset was successful.
+ *
 function printReset() {
   console.log("reset successful");
   console.log("reset taskName: " + taskData.taskName);
@@ -27,6 +27,7 @@ function printReset() {
   console.log("reset details: " + taskData.details);
   console.log("reset listName: " + taskData.listName);
   console.log("reset completed: " + taskData.completed);
-}
+} 
+*/
 
 export default resetTaskData;

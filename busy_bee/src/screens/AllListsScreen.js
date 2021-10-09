@@ -1,10 +1,11 @@
 /**
- * This file contains the code for the NewTask screen.
- * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * This file contains the code for the All Lists screen.
+ * This screen displays all the lists stored in the database. Users can click on a list which will navigate them to the Tasks Screen
+ * which displays all the tasks within a selected list.
  */
 
 import React from "react";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 import colors from "@styles/colors";
 import text from "@styles/text";
@@ -47,7 +48,6 @@ const styles = StyleSheet.create({
   },
   listView: {
     paddingTop: 10,
-    // alignItems: "center",
     flex: 2,
   },
   topView: {

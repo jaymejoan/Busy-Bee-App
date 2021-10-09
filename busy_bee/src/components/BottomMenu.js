@@ -1,9 +1,11 @@
 /**
  * This file contains the code for the Bottom Menu displayed at the bottom of the app.
+ * The Bottom Menu contains the main functions of the app.
+ *
  * Reference: https://medium.com/@prolongservices.com/inset-fab-in-bottomnavigation-react-native-ef239810419
  */
 
-import React, { Component } from "react";
+import React from "react";
 import { View, StyleSheet } from "react-native";
 
 import colors from "@styles/colors";
@@ -11,7 +13,6 @@ import colors from "@styles/colors";
 import FAB from "@buttons/FloatingActionButton";
 import HomeButton from "@buttons/HomeButton";
 import QuoteButton from "@buttons/QuoteButton";
-// import OptionsButton from "@buttons/OptionsButton";
 
 const BottomMenu = () => {
   return (
@@ -22,7 +23,6 @@ const BottomMenu = () => {
       <View style={styles.bottomContainer}>
         <HomeButton />
         <QuoteButton />
-        {/* <OptionsButton /> */}
       </View>
     </View>
   );

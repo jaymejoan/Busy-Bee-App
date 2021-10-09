@@ -1,5 +1,6 @@
 /**
  * This file contains the code for the Calendar Icon located in the New Task Screen.
+ * 
  * Reference: https://icons.expo.fyi/MaterialCommunityIcons/calendar-check
  */
 

@@ -1,10 +1,11 @@
 /**
  * This file displays the Icon List shown on the New Task Screen.
  * The list displays the multiple different fields that can be added to a task (date,
- * details, list) as well as their corresponding icon on the right side of the text field.
+ * details, list, image) as well as their corresponding icon on the right side of the text field.
  *
- * References: https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
- * Helpful Links: https://reactnativeelements.com/docs/listitem/
+ * References: 
+ * https://stackoverflow.com/questions/53463675/center-text-in-flatlist-next-to-icon-react-native
+ * https://reactnativeelements.com/docs/listitem/
  */
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
@@ -44,6 +45,7 @@ const TaskOptions = (props) => {
 
   return (
     <View style={styles.container}>
+      {/*Due Date field*/}
       <View style={styles.row}>
         <View style={styles.icon}>
           <CalendarIcon />
@@ -58,7 +60,8 @@ const TaskOptions = (props) => {
           />
         </View>
       </View>
-      <View style={styles.colSpacer}></View>
+      <View style={styles.colSpacer} />
+      {/*Details field*/}
       <View style={styles.row}>
         <View style={styles.icon}>
           <NoteIcon />
@@ -73,7 +76,8 @@ const TaskOptions = (props) => {
           />
         </View>
       </View>
-      <View style={styles.colSpacer}></View>
+      <View style={styles.colSpacer} />
+      {/*List field*/}
       <View style={styles.row}>
         <View style={styles.icon}>
           <ListIcon />
@@ -81,14 +85,15 @@ const TaskOptions = (props) => {
         <View style={styles.spacer} />
         <View style={styles.field}>
           <TextField
-            placeholderText={text.listName}
+            placeholderText={text.listName} // displays list name field
             type="listName"
             newTask={props.newTask}
             task={task}
           />
         </View>
       </View>
-      <View style={styles.colSpacer}></View>
+      <View style={styles.colSpacer} />
+      {/*Image field*/}
       <View style={styles.row}>
         <View style={styles.icon}>
           <CameraIcon />
