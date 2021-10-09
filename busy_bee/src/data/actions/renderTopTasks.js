@@ -18,12 +18,12 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-import dbh from "@data/service-agents/firebaseConfigs.js";
-
 import CheckBoxButton from "@components/CheckBox";
 
 import DeleteButton from "@buttons/DeleteButton";
 import EditButton from "@buttons/EditButton";
+
+import { getTopTasks } from "@data/utilities/getData";
 
 const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
@@ -45,28 +45,12 @@ const renderTopTasks = () => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // Gets all the tasks within the Top 3 Tasks list
+  // gets all the tasks within the Top 3 Tasks list
   useEffect(() => {
-    dbh
-      .collection("All Tasks")
-      .where("listName", "==", "Top 3 Tasks")
-      .onSnapshot((querySnapshot) => {
-        const taskData = []; // tasks stored in database
-        querySnapshot.forEach((documentSnapshot) => {
-          taskData.push({
-            taskName: documentSnapshot.data().taskName,
-            dueDate: documentSnapshot.data().dueDate,
-            details: documentSnapshot.data().details,
-            listName: documentSnapshot.data().listName,
-            completed: documentSnapshot.data().completed,
-            image: documentSnapshot.data().image,
-          });
-        });
-        setTasks(taskData);
-      });
+    getTopTasks(setTasks)
   }, []);
 
-  // Renders each individual item within the list
+  // renders each individual item within the list
   const renderItem = ({ item }) => {
     return (
       <View style={styles.taskView}>
@@ -82,7 +66,7 @@ const renderTopTasks = () => {
     );
   };
 
-  // Displays all the tasks within the Top 3 Tasks list
+  // displays all the tasks within the Top 3 Tasks list
   return (
     <View style={styles.container}>
       <FlatList
@@ -96,7 +80,6 @@ const renderTopTasks = () => {
 
 const styles = StyleSheet.create({
   buttons: {
-    // backgroundColor: colors.white,
     flexDirection: "row",
     justifyContent: "space-evenly",
     position: "relative",

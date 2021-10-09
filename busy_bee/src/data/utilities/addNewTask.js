@@ -20,21 +20,6 @@ function addNewTask() {
     completed: taskData.completed,
     image: taskData.image,
   });
-  // printNewTask();
 }
-
-/**
- * Helper method used to print the contents of the add task and check adding the task was successful.
- *
-function printNewTask() {
-  console.log("sent task to database");
-  console.log("sent taskName: " + taskData.taskName);
-  console.log("sent dueDate: " + taskData.dueDate);
-  console.log("sent details: " + taskData.details);
-  console.log("sent listName: " + taskData.listName);
-  console.log("sent completed: " + taskData.completed);
-  console.log("sent image: " + taskData.image);
-}
-*/
 
 export default addNewTask;

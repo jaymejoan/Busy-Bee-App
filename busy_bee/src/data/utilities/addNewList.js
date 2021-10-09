@@ -14,16 +14,6 @@ function addNewList() {
   dbh.collection("All Lists").doc(taskData.listName).set({
     listName: taskData.listName,
   });
-  printList();
 }
-
-/**
- * Helper method used to print the contents of the list check adding the list was successful.
- *
-function printList() {
-  console.log("sent list to database");
-  console.log("sent listName: " + taskData.listName);
-}
-*/
 
 export default addNewList;

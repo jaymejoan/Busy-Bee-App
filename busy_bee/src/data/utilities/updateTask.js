@@ -18,21 +18,6 @@ function updateTask(task) {
     completed: task.completed,
     image: task.image,
   });
-  // printUpdateTask(task);
 }
-
-/**
- * Helper method used to print the contents of the update and check update was successful.
- *
-function printUpdateTask(task) {
-  console.log("sent task to database");
-  console.log("update taskName: " + task.taskName);
-  console.log("update dueDate: " + task.dueDate);
-  console.log("update details: " + task.details);
-  console.log("update listName: " + task.listName);
-  console.log("update completed: " + task.completed);
-  console.log("update image: " + task.image);
-}
-*/
 
 export default updateTask;

@@ -18,12 +18,12 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "@styles/colors";
 import text from "@styles/text";
 
-import dbh from "@data/service-agents/firebaseConfigs.js";
-
 import CheckBoxButton from "@components/CheckBox";
 
 import DeleteButton from "@buttons/DeleteButton";
 import EditButton from "@buttons/EditButton";
+
+import { getAllTasksData } from "@data/utilities/getData";
 
 const Item = ({ item, onPress, textStyle }) => (
   <TouchableOpacity style={styles.item} onPress={onPress}>
@@ -44,33 +44,12 @@ const renderAllTasks = () => {
   const navigation = useNavigation();
   const [tasks, setTasks] = useState([]);
 
-  // Gets all the tasks within the All Tasks collection
+  // gets all the tasks within the All Tasks collection
   useEffect(() => {
-    let mounted = true; // ensures tasks is only updated if it needs to be mounted (re-displayed)
-
-    if (mounted) {
-      dbh.collection("All Tasks").onSnapshot((querySnapshot) => {
-        const taskData = []; // tasks stored in database
-        querySnapshot.forEach((documentSnapshot) => {
-          taskData.push({
-            taskName: documentSnapshot.data().taskName,
-            dueDate: documentSnapshot.data().dueDate,
-            details: documentSnapshot.data().details,
-            listName: documentSnapshot.data().listName,
-            completed: documentSnapshot.data().completed,
-            image: documentSnapshot.data().image,
-          });
-        });
-        setTasks(taskData);
-      });
-    }
-    return () => {
-      console.log("set mounted back to false");
-      mounted = false;
-    };
+    getAllTasksData(setTasks);
   }, []);
 
-  // Renders each individual item within the list
+  // renders each individual item within the list
   const renderItem = ({ item }) => {
     return (
       <View style={styles.taskView}>
@@ -86,7 +65,7 @@ const renderAllTasks = () => {
     );
   };
 
-  // Displays all the tasks in the All Tasks collection
+  // displays all the tasks in the All Tasks collection
   return (
     <View style={styles.container}>
       <FlatList
@@ -100,7 +79,6 @@ const renderAllTasks = () => {
 
 const styles = StyleSheet.create({
   buttons: {
-    // backgroundColor: colors.white,
     flexDirection: "row",
     justifyContent: "space-evenly",
     position: "relative",
