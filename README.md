@@ -9,7 +9,7 @@ This is a To-Do list app for SWEN325 Assignment 2.
 
 1. Install Expo CLI globally: `(sudo) npm install -g expo-cli`
 2. Clone the repository
-3. Open clonded repository in VS Code
+3. Open cloned repository in VS Code
 
 Reference: [ReactNative YouTube Tutorial](https://www.youtube.com/watch?v=0-S5a0eXPoc)
 
