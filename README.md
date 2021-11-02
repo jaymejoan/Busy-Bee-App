@@ -21,7 +21,7 @@ Reference: [ReactNative YouTube Tutorial](https://www.youtube.com/watch?v=0-S5a0
 2. Within terminal window on VS Code, run `npm start`
 3. Type `i` in the terminal to launch the app on the iOS simulator
 
-## Runnin on an Android emulator
+## Running on an Android emulator
 **Pre-requisites:**
 - Android Studio installed and Android SDK Tools properly configured (see tutorial video for instructions)
 
