@@ -18,16 +18,18 @@ Reference: [ReactNative YouTube Tutorial](https://www.youtube.com/watch?v=0-S5a0
 - XCode installed including latest command line tools (see tutorial video for instructions)
 
 1. Open XCode > Open Developer Tool > Simulator
-2. Within terminal window on VS Code, run `npm start`
-3. Type `i` in the terminal to launch the app on the iOS simulator
+2. Within terminal window on VS Code, run `npm i` to install required dependencies
+3. Then run `npm start`
+4. Type `i` in the terminal to launch the app on the iOS simulator
 
 ## Running on an Android emulator
 **Pre-requisites:**
 - Android Studio installed and Android SDK Tools properly configured (see tutorial video for instructions)
 
 1. Open Android Studio > AVD Manager > Select an Android emulator
-2. Within terminal window on VS Code, run `npm start`
-3. Type `a` in the terminal to launch the app on the Android emulator
+2. Within terminal window on VS Code, run run `npm i` to install required dependencies
+3. Then run `npm start`
+4. Type `a` in the terminal to launch the app on the Android emulator
 
 ## Running on a Physical Device
 1. Download Expo Client from the App Store or Google Playstore (depending on device)
